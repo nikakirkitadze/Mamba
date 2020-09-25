@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		F21BB002251E10D300A64B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB001251E10D300A64B34 /* AppDelegate.swift */; };
 		F21BB004251E10D300A64B34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB003251E10D300A64B34 /* SceneDelegate.swift */; };
-		F21BB006251E10D300A64B34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB005251E10D300A64B34 /* ViewController.swift */; };
-		F21BB009251E10D300A64B34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21BB007251E10D300A64B34 /* Main.storyboard */; };
+		F21BB006251E10D300A64B34 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB005251E10D300A64B34 /* MainViewController.swift */; };
 		F21BB00B251E10D500A64B34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21BB00A251E10D500A64B34 /* Assets.xcassets */; };
 		F21BB00E251E10D500A64B34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21BB00C251E10D500A64B34 /* LaunchScreen.storyboard */; };
 		F21BB019251E10D500A64B34 /* Movie_DBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB018251E10D500A64B34 /* Movie_DBTests.swift */; };
@@ -33,6 +32,9 @@
 		F21BB074251E12EA00A64B34 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB064251E12E900A64B34 /* AsyncOperation.swift */; };
 		F21BB075251E12EA00A64B34 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB065251E12EA00A64B34 /* ApiConfiguration.swift */; };
 		F21BB076251E12EA00A64B34 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB066251E12EA00A64B34 /* WebServiceManager.swift */; };
+		F282951D251E219300DA1140 /* TVShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F282951B251E219300DA1140 /* TVShowCell.xib */; };
+		F282951E251E219300DA1140 /* TVShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F282951C251E219300DA1140 /* TVShowCell.swift */; };
+		F2829526251E21BE00DA1140 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2829525251E21BE00DA1140 /* Main.storyboard */; };
 		F2F95FC6251E1F9400A83700 /* FiraGO-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2F95FC3251E1F9400A83700 /* FiraGO-Light.otf */; };
 		F2F95FC7251E1F9400A83700 /* FiraGO-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2F95FC4251E1F9400A83700 /* FiraGO-Medium.otf */; };
 		F2F95FC8251E1F9400A83700 /* FiraGO-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2F95FC5251E1F9400A83700 /* FiraGO-Book.otf */; };
@@ -59,8 +61,7 @@
 		F21BAFFE251E10D300A64B34 /* Movie DB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie DB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21BB001251E10D300A64B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F21BB003251E10D300A64B34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F21BB005251E10D300A64B34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F21BB008251E10D300A64B34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F21BB005251E10D300A64B34 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F21BB00A251E10D500A64B34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F21BB00D251E10D500A64B34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F21BB00F251E10D500A64B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +89,9 @@
 		F21BB064251E12E900A64B34 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		F21BB065251E12EA00A64B34 /* ApiConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConfiguration.swift; sourceTree = "<group>"; };
 		F21BB066251E12EA00A64B34 /* WebServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
+		F282951B251E219300DA1140 /* TVShowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TVShowCell.xib; sourceTree = "<group>"; };
+		F282951C251E219300DA1140 /* TVShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVShowCell.swift; sourceTree = "<group>"; };
+		F2829525251E21BE00DA1140 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F2F95FC3251E1F9400A83700 /* FiraGO-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Light.otf"; sourceTree = "<group>"; };
 		F2F95FC4251E1F9400A83700 /* FiraGO-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Medium.otf"; sourceTree = "<group>"; };
 		F2F95FC5251E1F9400A83700 /* FiraGO-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Book.otf"; sourceTree = "<group>"; };
@@ -144,9 +148,8 @@
 				F21BB08D251E159C00A64B34 /* App */,
 				F21BB08E251E15AE00A64B34 /* Resources */,
 				F21BB039251E123100A64B34 /* Infrastructure */,
+				F2F95FCD251E214400A83700 /* Presentation */,
 				F21BB08C251E159300A64B34 /* Supporting Files */,
-				F21BB005251E10D300A64B34 /* ViewController.swift */,
-				F21BB007251E10D300A64B34 /* Main.storyboard */,
 			);
 			path = "Movie DB";
 			sourceTree = "<group>";
@@ -245,6 +248,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F282951A251E218D00DA1140 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F282951C251E219300DA1140 /* TVShowCell.swift */,
+				F282951B251E219300DA1140 /* TVShowCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F282952A251E21C900DA1140 /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				F2F95FCE251E216600A83700 /* View */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
 		F2F95FBF251E1F6400A83700 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +273,24 @@
 				F2F95FC4251E1F9400A83700 /* FiraGO-Medium.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F2F95FCD251E214400A83700 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F282952A251E21C900DA1140 /* MainScene */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F2F95FCE251E216600A83700 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F282951A251E218D00DA1140 /* Cell */,
+				F2829525251E21BE00DA1140 /* Main.storyboard */,
+				F21BB005251E10D300A64B34 /* MainViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,11 +396,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2829526251E21BE00DA1140 /* Main.storyboard in Resources */,
 				F2F95FC8251E1F9400A83700 /* FiraGO-Book.otf in Resources */,
 				F2F95FC6251E1F9400A83700 /* FiraGO-Light.otf in Resources */,
 				F21BB00E251E10D500A64B34 /* LaunchScreen.storyboard in Resources */,
 				F21BB00B251E10D500A64B34 /* Assets.xcassets in Resources */,
-				F21BB009251E10D300A64B34 /* Main.storyboard in Resources */,
+				F282951D251E219300DA1140 /* TVShowCell.xib in Resources */,
 				F2F95FC7251E1F9400A83700 /* FiraGO-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,7 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F21BB006251E10D300A64B34 /* ViewController.swift in Sources */,
+				F21BB006251E10D300A64B34 /* MainViewController.swift in Sources */,
 				F21BB073251E12EA00A64B34 /* DeleteWebServiceOperation.swift in Sources */,
 				F21BB040251E128C00A64B34 /* UICollectionView+Extension.swift in Sources */,
 				F21BB075251E12EA00A64B34 /* ApiConfiguration.swift in Sources */,
@@ -400,6 +439,7 @@
 				F21BB06C251E12EA00A64B34 /* GetWebServiceOperation.swift in Sources */,
 				F21BB076251E12EA00A64B34 /* WebServiceManager.swift in Sources */,
 				F21BB072251E12EA00A64B34 /* PostWebServiceOperation.swift in Sources */,
+				F282951E251E219300DA1140 /* TVShowCell.swift in Sources */,
 				F21BB03F251E128C00A64B34 /* UIColor+Extension.swift in Sources */,
 				F21BB048251E12B500A64B34 /* Log.swift in Sources */,
 				F21BB042251E128C00A64B34 /* UIDevice+Extensions.swift in Sources */,
@@ -444,14 +484,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F21BB007251E10D300A64B34 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F21BB008251E10D300A64B34 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F21BB00C251E10D500A64B34 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
