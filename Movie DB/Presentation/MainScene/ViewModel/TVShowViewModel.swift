@@ -9,6 +9,7 @@ import Foundation
 
 struct TVShowViewModel {
     
+    var id: Int
     var title: String
     var avgRaiting: Double
     
@@ -20,8 +21,9 @@ struct TVShowViewModel {
     }
     
     init(show: TVShow) {
-        self.title          = show.originalName ?? ""
-        self.avgRaiting     = show.voteAverage ?? 0.0
-        self.posterPath       = show.posterPath ?? ""
+        id                 = show.id ?? 0
+        title              = show.originalName ?? ""
+        avgRaiting         = show.voteAverage ?? 0.0
+        posterPath         = show.posterPath ?? ""
     }
 }

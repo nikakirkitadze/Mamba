@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -15,16 +16,52 @@
                     <view key="view" contentMode="scaleToFill" id="4PT-Cb-ss8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="show_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="utn-id-NSe">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="WNN-Hx-LkB"/>
+                                </constraints>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vDJ-ez-is5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="su3-jA-EcJ" customClass="GradientView" customModule="Movie_DB" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="HcE-0t-QCa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hCo-ls-3gw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="utn-id-NSe" firstAttribute="top" secondItem="4PT-Cb-ss8" secondAttribute="top" id="4z2-IV-Vqu"/>
+                            <constraint firstItem="hCo-ls-3gw" firstAttribute="trailing" secondItem="su3-jA-EcJ" secondAttribute="trailing" id="AgK-Uc-ciu"/>
+                            <constraint firstItem="hCo-ls-3gw" firstAttribute="bottom" secondItem="vDJ-ez-is5" secondAttribute="bottom" id="DcG-23-jJO"/>
+                            <constraint firstItem="utn-id-NSe" firstAttribute="leading" secondItem="hCo-ls-3gw" secondAttribute="leading" id="EIr-W5-IlY"/>
+                            <constraint firstItem="vDJ-ez-is5" firstAttribute="top" secondItem="4PT-Cb-ss8" secondAttribute="top" id="Pby-bj-hg4"/>
+                            <constraint firstItem="su3-jA-EcJ" firstAttribute="leading" secondItem="hCo-ls-3gw" secondAttribute="leading" id="XQ0-Fi-pGm"/>
+                            <constraint firstItem="hCo-ls-3gw" firstAttribute="trailing" secondItem="vDJ-ez-is5" secondAttribute="trailing" id="ahw-eT-y0B"/>
+                            <constraint firstItem="utn-id-NSe" firstAttribute="trailing" secondItem="hCo-ls-3gw" secondAttribute="trailing" id="asS-vn-gCP"/>
+                            <constraint firstItem="su3-jA-EcJ" firstAttribute="top" secondItem="4PT-Cb-ss8" secondAttribute="top" id="bLJ-pn-wKO"/>
+                            <constraint firstItem="vDJ-ez-is5" firstAttribute="leading" secondItem="hCo-ls-3gw" secondAttribute="leading" id="dHJ-c9-a47"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageViewHeader" destination="utn-id-NSe" id="GS1-1k-pRL"/>
+                        <outlet property="scrollView" destination="vDJ-ez-is5" id="Fa2-Kh-YC8"/>
+                        <outlet property="viewGradient" destination="su3-jA-EcJ" id="Rif-Nb-AKE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3dj-eL-5iw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-309" y="161"/>
+            <point key="canvasLocation" x="-310.14492753623193" y="160.71428571428569"/>
         </scene>
     </scenes>
     <resources>
+        <image name="show_placeholder" width="400" height="600"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

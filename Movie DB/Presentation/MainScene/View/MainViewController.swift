@@ -90,6 +90,9 @@ extension MainViewController: UICollectionViewDataSource {
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
+        let detailsVC = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        detailsVC.showId = showViewModels[indexPath.row].id
+        self.navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
 
