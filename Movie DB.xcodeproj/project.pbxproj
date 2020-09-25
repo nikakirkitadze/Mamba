@@ -135,14 +135,12 @@
 		F21BB000251E10D300A64B34 /* Movie DB */ = {
 			isa = PBXGroup;
 			children = (
+				F21BB08D251E159C00A64B34 /* App */,
+				F21BB08E251E15AE00A64B34 /* Resources */,
 				F21BB039251E123100A64B34 /* Infrastructure */,
-				F21BB001251E10D300A64B34 /* AppDelegate.swift */,
-				F21BB003251E10D300A64B34 /* SceneDelegate.swift */,
+				F21BB08C251E159300A64B34 /* Supporting Files */,
 				F21BB005251E10D300A64B34 /* ViewController.swift */,
 				F21BB007251E10D300A64B34 /* Main.storyboard */,
-				F21BB00A251E10D500A64B34 /* Assets.xcassets */,
-				F21BB00C251E10D500A64B34 /* LaunchScreen.storyboard */,
-				F21BB00F251E10D500A64B34 /* Info.plist */,
 			);
 			path = "Movie DB";
 			sourceTree = "<group>";
@@ -212,6 +210,32 @@
 				F21BB060251E12E900A64B34 /* WebServiceOperation.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		F21BB08C251E159300A64B34 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F21BB00C251E10D500A64B34 /* LaunchScreen.storyboard */,
+				F21BB00F251E10D500A64B34 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F21BB08D251E159C00A64B34 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F21BB001251E10D300A64B34 /* AppDelegate.swift */,
+				F21BB003251E10D300A64B34 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F21BB08E251E15AE00A64B34 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F21BB00A251E10D500A64B34 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -542,7 +566,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62BA3UNA7M;
-				INFOPLIST_FILE = "Movie DB/Info.plist";
+				INFOPLIST_FILE = "Movie DB/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -562,7 +586,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62BA3UNA7M;
-				INFOPLIST_FILE = "Movie DB/Info.plist";
+				INFOPLIST_FILE = "Movie DB/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
