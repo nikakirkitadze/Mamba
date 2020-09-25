@@ -33,6 +33,9 @@
 		F21BB074251E12EA00A64B34 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB064251E12E900A64B34 /* AsyncOperation.swift */; };
 		F21BB075251E12EA00A64B34 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB065251E12EA00A64B34 /* ApiConfiguration.swift */; };
 		F21BB076251E12EA00A64B34 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB066251E12EA00A64B34 /* WebServiceManager.swift */; };
+		F2F95FC6251E1F9400A83700 /* FiraGO-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2F95FC3251E1F9400A83700 /* FiraGO-Light.otf */; };
+		F2F95FC7251E1F9400A83700 /* FiraGO-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2F95FC4251E1F9400A83700 /* FiraGO-Medium.otf */; };
+		F2F95FC8251E1F9400A83700 /* FiraGO-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2F95FC5251E1F9400A83700 /* FiraGO-Book.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		F21BB064251E12E900A64B34 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		F21BB065251E12EA00A64B34 /* ApiConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConfiguration.swift; sourceTree = "<group>"; };
 		F21BB066251E12EA00A64B34 /* WebServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
+		F2F95FC3251E1F9400A83700 /* FiraGO-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Light.otf"; sourceTree = "<group>"; };
+		F2F95FC4251E1F9400A83700 /* FiraGO-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Medium.otf"; sourceTree = "<group>"; };
+		F2F95FC5251E1F9400A83700 /* FiraGO-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Book.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,8 +240,19 @@
 			isa = PBXGroup;
 			children = (
 				F21BB00A251E10D500A64B34 /* Assets.xcassets */,
+				F2F95FBF251E1F6400A83700 /* Fonts */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F2F95FBF251E1F6400A83700 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F2F95FC5251E1F9400A83700 /* FiraGO-Book.otf */,
+				F2F95FC3251E1F9400A83700 /* FiraGO-Light.otf */,
+				F2F95FC4251E1F9400A83700 /* FiraGO-Medium.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,9 +358,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2F95FC8251E1F9400A83700 /* FiraGO-Book.otf in Resources */,
+				F2F95FC6251E1F9400A83700 /* FiraGO-Light.otf in Resources */,
 				F21BB00E251E10D500A64B34 /* LaunchScreen.storyboard in Resources */,
 				F21BB00B251E10D500A64B34 /* Assets.xcassets in Resources */,
 				F21BB009251E10D300A64B34 /* Main.storyboard in Resources */,
+				F2F95FC7251E1F9400A83700 /* FiraGO-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
