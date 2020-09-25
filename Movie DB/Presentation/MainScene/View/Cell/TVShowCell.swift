@@ -11,12 +11,44 @@ class TVShowCell: UICollectionViewCell {
     
     @IBOutlet private weak var imageViewPoster: UIImageView!
     @IBOutlet private weak var constraintMaxWidth: NSLayoutConstraint!
+    @IBOutlet private weak var constraintMaxHeight: NSLayoutConstraint!
+    
+    private var maxWidth: CGFloat? = nil {
+        didSet {
+            guard let maxWidth = maxWidth else {
+                return
+            }
+            constraintMaxWidth.isActive = true
+            constraintMaxWidth.constant = maxWidth
+        }
+    }
+    
+    private var maxHeight: CGFloat? = nil {
+        didSet {
+            guard let maxHeight = maxHeight else {
+                return
+            }
+            constraintMaxHeight.isActive = true
+            constraintMaxHeight.constant = maxHeight
+        }
+    }
+    
+    var size: CGSize = .zero {
+        didSet {
+            maxHeight = size.height
+            maxWidth = size.width
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
-        backgroundColor = .red
+        layer.cornerRadius = 5
+        setBottomShadow()
     }
     
     private func setBottomShadow() {

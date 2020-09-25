@@ -54,7 +54,7 @@ class WebServiceManager {
         }
     }
     
-    func get<T: Codable>(endpoint: String, params: [String:String] = ["api_key":ApiConfiguration.apiKey], completion: @escaping ResponseCompletionBlock<T>) {
+    func get<T: Codable>(endpoint: String, params: [String:String], completion: @escaping ResponseCompletionBlock<T>) {
         let getOperation = GetWebServiceOperation<T>()
         getOperation.queryParams = params
         getOperation.endPoint = endpoint

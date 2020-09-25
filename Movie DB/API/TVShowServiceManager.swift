@@ -8,8 +8,12 @@
 import Foundation
 
 class TVShowServiceManager {
-    static func load(completion: @escaping ([TVShow]) -> ()) {
-        WebServiceManager.shared.get(endpoint: "tv/popular") { (result: Result<TVShowsResponse?, NeoError>) in
+    static func load(page: Int = 1, completion: @escaping ([TVShow]) -> ()) {
+        let params: [String:String] = [
+            "api_key":ApiConfiguration.apiKey,
+            "page": "\(page)"
+        ]
+        WebServiceManager.shared.get(endpoint: "tv/popular", params: params) { (result: Result<TVShowsResponse?, NeoError>) in
             switch result {
             case .success(let response):
                 guard let response = response else {return}

@@ -34,6 +34,12 @@ class MainViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isBackgroundHidden = false
+    }
+    
     private func configureNavBar() {
         view.backgroundColor = UIColor(hex: "1C1C1C")
         navigationController?.navigationBar.isTranslucent = true
@@ -44,7 +50,7 @@ class MainViewController: UIViewController {
     private func configureCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.registerClass(class: TVShowCell.self)
+        collectionView.registerNib(class: TVShowCell.self)
     }
 
 }
@@ -57,6 +63,7 @@ extension MainViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.deque(TVShowCell.self, for: indexPath)
+        cell.size = itemSize(cv: collectionView)
         cell.configure(with: showViewModels[indexPath.row])
         return cell
     }
@@ -72,32 +79,15 @@ extension MainViewController: UICollectionViewDelegate {
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else { return .zero }
-        
-        let minItemSize = self.minItemSize()
-        
-        var width: CGFloat = 0
-        let sectionInset = CGFloat(30)
-        let spacing = flowLayout.scrollDirection == .horizontal ? flowLayout.minimumLineSpacing : flowLayout.minimumInteritemSpacing
-        
-        for items in (2...Int.max) {
-            let items = CGFloat(items)
-            let newWidth = (view.bounds.width/items) - (sectionInset/items) - (spacing * (items - 1)/items)
-            if newWidth < minItemSize.width && items > 2 // Minimum of 2 cells no matter the screen size
-            {
-                break
-            }
-            width = newWidth
-        }
-        
-        let ratio = width/minItemSize.width
-        let height = minItemSize.height * ratio
-        
-        return CGSize(width: width, height: height)
+        return itemSize(cv: collectionView)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -131,6 +121,31 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 //            load(page: currentPage)
             print("load more")
         }
+    }
+    
+    func itemSize(cv: UICollectionView) -> CGSize {
+        guard let flowLayout = cv.collectionViewLayout as? UICollectionViewFlowLayout else { return .zero }
+        
+        let minItemSize = self.minItemSize()
+        
+        var width: CGFloat = 0
+        let sectionInset = CGFloat(30)
+        let spacing = flowLayout.scrollDirection == .horizontal ? flowLayout.minimumLineSpacing : flowLayout.minimumInteritemSpacing
+        
+        for items in (2...Int.max) {
+            let items = CGFloat(items)
+            let newWidth = (view.bounds.width/items) - (sectionInset/items) - (spacing * (items - 1)/items)
+            if newWidth < minItemSize.width && items > 2 // Minimum of 2 cells no matter the screen size
+            {
+                break
+            }
+            width = newWidth
+        }
+        
+        let ratio = width/minItemSize.width
+        let height = minItemSize.height * ratio
+        
+        return CGSize(width: width, height: height)
     }
     
     func minItemSize() -> CGSize {
