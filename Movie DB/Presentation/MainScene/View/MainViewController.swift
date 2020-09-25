@@ -10,15 +10,36 @@ import UIKit
 class MainViewController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
+    
+    var isLoading = false
+    var hasNextPage = false
+    var paginated = false
+    var currentPage = 1
+    let paginationIndicatorInset: CGFloat = 25
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        configureNavBar()
+        configureCollectionView()
+        
+        TVShowServiceManager.load { (data) in
+            print(data)
+        }
+    }
+    
+    private func configureNavBar() {
+        view.backgroundColor = UIColor(hex: "1C1C1C")
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.backgroundColor = .clear
+//                navigationController?.navigationBar.barTintColor = UIColor(hex: "2C2C36")
     }
 
     private func configureCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.registerClass(class: TVShowCell.self)
     }
 
 }
@@ -30,14 +51,16 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "", for: indexPath) as! TVShowCell
+        let cell = collectionView.deque(TVShowCell.self, for: indexPath)
         return cell
     }
 }
 
 // MARK: UICollectionViewDelegate
 extension MainViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
 }
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {

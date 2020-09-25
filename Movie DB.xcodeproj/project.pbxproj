@@ -32,6 +32,11 @@
 		F21BB074251E12EA00A64B34 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB064251E12E900A64B34 /* AsyncOperation.swift */; };
 		F21BB075251E12EA00A64B34 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB065251E12EA00A64B34 /* ApiConfiguration.swift */; };
 		F21BB076251E12EA00A64B34 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB066251E12EA00A64B34 /* WebServiceManager.swift */; };
+		F24C1FD9251E22D300F582F0 /* TVShowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24C1FD8251E22D300F582F0 /* TVShowViewModel.swift */; };
+		F24C1FE2251E237000F582F0 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24C1FE1251E237000F582F0 /* GradientView.swift */; };
+		F24C1FEB251E2C8400F582F0 /* TVShowServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24C1FEA251E2C8400F582F0 /* TVShowServiceManager.swift */; };
+		F24C1FF1251E2DDA00F582F0 /* TVShowsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24C1FF0251E2DDA00F582F0 /* TVShowsResponse.swift */; };
+		F24C1FFC251E2EEB00F582F0 /* APP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24C1FFB251E2EEB00F582F0 /* APP.swift */; };
 		F282951D251E219300DA1140 /* TVShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F282951B251E219300DA1140 /* TVShowCell.xib */; };
 		F282951E251E219300DA1140 /* TVShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F282951C251E219300DA1140 /* TVShowCell.swift */; };
 		F2829526251E21BE00DA1140 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2829525251E21BE00DA1140 /* Main.storyboard */; };
@@ -91,6 +96,11 @@
 		F21BB064251E12E900A64B34 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		F21BB065251E12EA00A64B34 /* ApiConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConfiguration.swift; sourceTree = "<group>"; };
 		F21BB066251E12EA00A64B34 /* WebServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
+		F24C1FD8251E22D300F582F0 /* TVShowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowViewModel.swift; sourceTree = "<group>"; };
+		F24C1FE1251E237000F582F0 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		F24C1FEA251E2C8400F582F0 /* TVShowServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowServiceManager.swift; sourceTree = "<group>"; };
+		F24C1FF0251E2DDA00F582F0 /* TVShowsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsResponse.swift; sourceTree = "<group>"; };
+		F24C1FFB251E2EEB00F582F0 /* APP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APP.swift; sourceTree = "<group>"; };
 		F282951B251E219300DA1140 /* TVShowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TVShowCell.xib; sourceTree = "<group>"; };
 		F282951C251E219300DA1140 /* TVShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVShowCell.swift; sourceTree = "<group>"; };
 		F2829525251E21BE00DA1140 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -150,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				F21BB08D251E159C00A64B34 /* App */,
+				F24C1FE9251E2C6F00F582F0 /* API */,
+				F24C1FEF251E2CA400F582F0 /* Domain */,
 				F21BB08E251E15AE00A64B34 /* Resources */,
 				F21BB039251E123100A64B34 /* Infrastructure */,
 				F2F95FCD251E214400A83700 /* Presentation */,
@@ -237,6 +249,7 @@
 		F21BB08D251E159C00A64B34 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				F24C1FFB251E2EEB00F582F0 /* APP.swift */,
 				F21BB001251E10D300A64B34 /* AppDelegate.swift */,
 				F21BB003251E10D300A64B34 /* SceneDelegate.swift */,
 			);
@@ -252,6 +265,38 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F24C1FD7251E22CB00F582F0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F24C1FD8251E22D300F582F0 /* TVShowViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F24C1FE0251E236600F582F0 /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				F24C1FE1251E237000F582F0 /* GradientView.swift */,
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		F24C1FE9251E2C6F00F582F0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F24C1FEA251E2C8400F582F0 /* TVShowServiceManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F24C1FEF251E2CA400F582F0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F24C1FF0251E2DDA00F582F0 /* TVShowsResponse.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		F282951A251E218D00DA1140 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				F2F95FCE251E216600A83700 /* View */,
+				F24C1FD7251E22CB00F582F0 /* ViewModel */,
 			);
 			path = MainScene;
 			sourceTree = "<group>";
@@ -299,8 +345,9 @@
 		F2F95FCD251E214400A83700 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				F282952B251E21FB00DA1140 /* DetailsScene */,
+				F24C1FE0251E236600F582F0 /* Reusables */,
 				F282952A251E21C900DA1140 /* MainScene */,
+				F282952B251E21FB00DA1140 /* DetailsScene */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -454,6 +501,7 @@
 				F282952F251E221200DA1140 /* DetailsViewController.swift in Sources */,
 				F21BB073251E12EA00A64B34 /* DeleteWebServiceOperation.swift in Sources */,
 				F21BB040251E128C00A64B34 /* UICollectionView+Extension.swift in Sources */,
+				F24C1FF1251E2DDA00F582F0 /* TVShowsResponse.swift in Sources */,
 				F21BB075251E12EA00A64B34 /* ApiConfiguration.swift in Sources */,
 				F21BB06A251E12EA00A64B34 /* HTTPHeaders.swift in Sources */,
 				F21BB041251E128C00A64B34 /* UICollectionViewCell+Extension.swift in Sources */,
@@ -462,15 +510,19 @@
 				F21BB052251E12CC00A64B34 /* Constants.swift in Sources */,
 				F21BB06C251E12EA00A64B34 /* GetWebServiceOperation.swift in Sources */,
 				F21BB076251E12EA00A64B34 /* WebServiceManager.swift in Sources */,
+				F24C1FFC251E2EEB00F582F0 /* APP.swift in Sources */,
 				F21BB072251E12EA00A64B34 /* PostWebServiceOperation.swift in Sources */,
 				F282951E251E219300DA1140 /* TVShowCell.swift in Sources */,
 				F21BB03F251E128C00A64B34 /* UIColor+Extension.swift in Sources */,
+				F24C1FD9251E22D300F582F0 /* TVShowViewModel.swift in Sources */,
 				F21BB048251E12B500A64B34 /* Log.swift in Sources */,
 				F21BB042251E128C00A64B34 /* UIDevice+Extensions.swift in Sources */,
 				F21BB067251E12EA00A64B34 /* PutWebServiceOperation.swift in Sources */,
 				F21BB070251E12EA00A64B34 /* WebServiceOperation.swift in Sources */,
 				F21BB068251E12EA00A64B34 /* HeadWebServiceOperation.swift in Sources */,
 				F21BB04D251E12BB00A64B34 /* Taptic.swift in Sources */,
+				F24C1FEB251E2C8400F582F0 /* TVShowServiceManager.swift in Sources */,
+				F24C1FE2251E237000F582F0 /* GradientView.swift in Sources */,
 				F21BB074251E12EA00A64B34 /* AsyncOperation.swift in Sources */,
 				F21BB069251E12EA00A64B34 /* NeoError.swift in Sources */,
 			);

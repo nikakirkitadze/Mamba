@@ -16,4 +16,7 @@ class TVShowCell: UICollectionViewCell {
         backgroundColor = .red
     }
 
+    internal func configure(with viewModel: TVShowViewModel) {
+        
+    }
 }
