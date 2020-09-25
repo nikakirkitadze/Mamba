@@ -9,7 +9,7 @@ import UIKit
 
 class TVShowCell: UICollectionViewCell {
     
-    @IBOutlet private weak var imageViewPoster: UIImageView!
+    @IBOutlet private weak var imageViewPoster: NEOImageView!
     @IBOutlet private weak var constraintMaxWidth: NSLayoutConstraint!
     @IBOutlet private weak var constraintMaxHeight: NSLayoutConstraint!
     
@@ -48,12 +48,13 @@ class TVShowCell: UICollectionViewCell {
         super.layoutSubviews()
         
         layer.cornerRadius = 5
+        imageViewPoster.layer.cornerRadius = 5
         setBottomShadow()
     }
     
     private func setBottomShadow() {
         let shadowSize: CGFloat = 10
-        let shadowDistance: CGFloat = -12
+        let shadowDistance: CGFloat = -5
         let contactRect = CGRect(x: shadowSize, y: frame.height - (shadowSize * 0.4) + shadowDistance, width: frame.width - shadowSize * 2, height: shadowSize)
         layer.shadowColor = UIColor(hex: "E84367").cgColor
         layer.shadowPath = UIBezierPath(ovalIn: contactRect).cgPath
@@ -62,6 +63,6 @@ class TVShowCell: UICollectionViewCell {
     }
 
     internal func configure(with viewModel: TVShowViewModel) {
-        
+        imageViewPoster.loadImage(urlString: viewModel.posterUrlString)
     }
 }

@@ -10,6 +10,8 @@
 		B533B799251E59DB0030E640 /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B798251E59DB0030E640 /* UINavigationBar+Extensions.swift */; };
 		B533B7A1251E5A220030E640 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B7A0251E5A220030E640 /* Array+Extension.swift */; };
 		B533B7A6251E5A4F0030E640 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B7A5251E5A4F0030E640 /* UIView+Extension.swift */; };
+		B575D81F251E6D170015216C /* NEOImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575D81E251E6D170015216C /* NEOImageView.swift */; };
+		B575D824251E6D540015216C /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */; };
 		F21BB002251E10D300A64B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB001251E10D300A64B34 /* AppDelegate.swift */; };
 		F21BB004251E10D300A64B34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB003251E10D300A64B34 /* SceneDelegate.swift */; };
 		F21BB006251E10D300A64B34 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB005251E10D300A64B34 /* MainViewController.swift */; };
@@ -71,6 +73,8 @@
 		B533B798251E59DB0030E640 /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
 		B533B7A0251E5A220030E640 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		B533B7A5251E5A4F0030E640 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		B575D81E251E6D170015216C /* NEOImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEOImageView.swift; sourceTree = "<group>"; };
+		B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
 		F21BAFFE251E10D300A64B34 /* Movie DB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie DB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21BB001251E10D300A64B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F21BB003251E10D300A64B34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -286,6 +290,8 @@
 			isa = PBXGroup;
 			children = (
 				F24C1FE1251E237000F582F0 /* GradientView.swift */,
+				B575D81E251E6D170015216C /* NEOImageView.swift */,
+				B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -519,6 +525,7 @@
 				F21BB052251E12CC00A64B34 /* Constants.swift in Sources */,
 				F21BB06C251E12EA00A64B34 /* GetWebServiceOperation.swift in Sources */,
 				F21BB076251E12EA00A64B34 /* WebServiceManager.swift in Sources */,
+				B575D81F251E6D170015216C /* NEOImageView.swift in Sources */,
 				F24C1FFC251E2EEB00F582F0 /* APP.swift in Sources */,
 				F21BB072251E12EA00A64B34 /* PostWebServiceOperation.swift in Sources */,
 				F282951E251E219300DA1140 /* TVShowCell.swift in Sources */,
@@ -529,6 +536,7 @@
 				F21BB067251E12EA00A64B34 /* PutWebServiceOperation.swift in Sources */,
 				B533B7A1251E5A220030E640 /* Array+Extension.swift in Sources */,
 				F21BB070251E12EA00A64B34 /* WebServiceOperation.swift in Sources */,
+				B575D824251E6D540015216C /* DiscardableImageCacheItem.swift in Sources */,
 				F21BB068251E12EA00A64B34 /* HeadWebServiceOperation.swift in Sources */,
 				F21BB04D251E12BB00A64B34 /* Taptic.swift in Sources */,
 				F24C1FEB251E2C8400F582F0 /* TVShowServiceManager.swift in Sources */,

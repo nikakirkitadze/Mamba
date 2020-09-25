@@ -26,12 +26,7 @@ class MainViewController: UIViewController {
         configureNavBar()
         configureCollectionView()
         
-        TVShowServiceManager.load { (data) in
-            self.showViewModels = data.map({ TVShowViewModel(show: $0) })
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
+        load(page: 1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +48,28 @@ class MainViewController: UIViewController {
         collectionView.registerNib(class: TVShowCell.self)
     }
 
+    func load(page: Int) {
+        guard !isLoading else { return }
+        isLoading = true
+        hasNextPage = false
+        
+        TVShowServiceManager.fetchShows(page: page) { (data) in
+            self.isLoading = false
+            
+            let dataViewModels = data.map({ TVShowViewModel(show: $0) })
+            self.showViewModels.append(contentsOf: dataViewModels)
+            
+            if data.isEmpty {
+                self.collectionView.contentInset.bottom = 50
+            } else {
+                self.hasNextPage = true
+            }
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
 }
 
 // MARK: UICollectionViewDataSource
@@ -114,12 +131,12 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 print("Should reomve bottom spinner")
                 // then remove the spinner view controller
+                indicator.stopAnimating()
 //                background.removeFromSuperview()
             }
             
             currentPage += 1
-//            load(page: currentPage)
-            print("load more")
+            load(page: currentPage)
         }
     }
     

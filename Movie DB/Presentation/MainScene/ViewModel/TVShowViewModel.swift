@@ -15,8 +15,8 @@ struct TVShowViewModel {
     // MARK: Private properties
     private var posterPath: String
     
-    var imageUrl: URL? {
-        return URL(string: posterPath)
+    var posterUrlString: String {
+        return "https://image.tmdb.org/t/p/w300\(posterPath)"
     }
     
     init(show: TVShow) {
