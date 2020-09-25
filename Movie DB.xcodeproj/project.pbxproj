@@ -15,6 +15,24 @@
 		F21BB00E251E10D500A64B34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21BB00C251E10D500A64B34 /* LaunchScreen.storyboard */; };
 		F21BB019251E10D500A64B34 /* Movie_DBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB018251E10D500A64B34 /* Movie_DBTests.swift */; };
 		F21BB024251E10D500A64B34 /* Movie_DBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB023251E10D500A64B34 /* Movie_DBUITests.swift */; };
+		F21BB03F251E128C00A64B34 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB03B251E128C00A64B34 /* UIColor+Extension.swift */; };
+		F21BB040251E128C00A64B34 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB03C251E128C00A64B34 /* UICollectionView+Extension.swift */; };
+		F21BB041251E128C00A64B34 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB03D251E128C00A64B34 /* UICollectionViewCell+Extension.swift */; };
+		F21BB042251E128C00A64B34 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB03E251E128C00A64B34 /* UIDevice+Extensions.swift */; };
+		F21BB048251E12B500A64B34 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB047251E12B500A64B34 /* Log.swift */; };
+		F21BB04D251E12BB00A64B34 /* Taptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB04C251E12BB00A64B34 /* Taptic.swift */; };
+		F21BB052251E12CC00A64B34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB051251E12CC00A64B34 /* Constants.swift */; };
+		F21BB067251E12EA00A64B34 /* PutWebServiceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB057251E12E900A64B34 /* PutWebServiceOperation.swift */; };
+		F21BB068251E12EA00A64B34 /* HeadWebServiceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB058251E12E900A64B34 /* HeadWebServiceOperation.swift */; };
+		F21BB069251E12EA00A64B34 /* NeoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB059251E12E900A64B34 /* NeoError.swift */; };
+		F21BB06A251E12EA00A64B34 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB05A251E12E900A64B34 /* HTTPHeaders.swift */; };
+		F21BB06C251E12EA00A64B34 /* GetWebServiceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB05C251E12E900A64B34 /* GetWebServiceOperation.swift */; };
+		F21BB070251E12EA00A64B34 /* WebServiceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB060251E12E900A64B34 /* WebServiceOperation.swift */; };
+		F21BB072251E12EA00A64B34 /* PostWebServiceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB062251E12E900A64B34 /* PostWebServiceOperation.swift */; };
+		F21BB073251E12EA00A64B34 /* DeleteWebServiceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB063251E12E900A64B34 /* DeleteWebServiceOperation.swift */; };
+		F21BB074251E12EA00A64B34 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB064251E12E900A64B34 /* AsyncOperation.swift */; };
+		F21BB075251E12EA00A64B34 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB065251E12EA00A64B34 /* ApiConfiguration.swift */; };
+		F21BB076251E12EA00A64B34 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB066251E12EA00A64B34 /* WebServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +67,24 @@
 		F21BB01F251E10D500A64B34 /* Movie DBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Movie DBUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21BB023251E10D500A64B34 /* Movie_DBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie_DBUITests.swift; sourceTree = "<group>"; };
 		F21BB025251E10D500A64B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F21BB03B251E128C00A64B34 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		F21BB03C251E128C00A64B34 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		F21BB03D251E128C00A64B34 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		F21BB03E251E128C00A64B34 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
+		F21BB047251E12B500A64B34 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		F21BB04C251E12BB00A64B34 /* Taptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Taptic.swift; sourceTree = "<group>"; };
+		F21BB051251E12CC00A64B34 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F21BB057251E12E900A64B34 /* PutWebServiceOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PutWebServiceOperation.swift; sourceTree = "<group>"; };
+		F21BB058251E12E900A64B34 /* HeadWebServiceOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadWebServiceOperation.swift; sourceTree = "<group>"; };
+		F21BB059251E12E900A64B34 /* NeoError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeoError.swift; sourceTree = "<group>"; };
+		F21BB05A251E12E900A64B34 /* HTTPHeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHeaders.swift; sourceTree = "<group>"; };
+		F21BB05C251E12E900A64B34 /* GetWebServiceOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetWebServiceOperation.swift; sourceTree = "<group>"; };
+		F21BB060251E12E900A64B34 /* WebServiceOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceOperation.swift; sourceTree = "<group>"; };
+		F21BB062251E12E900A64B34 /* PostWebServiceOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostWebServiceOperation.swift; sourceTree = "<group>"; };
+		F21BB063251E12E900A64B34 /* DeleteWebServiceOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteWebServiceOperation.swift; sourceTree = "<group>"; };
+		F21BB064251E12E900A64B34 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		F21BB065251E12EA00A64B34 /* ApiConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConfiguration.swift; sourceTree = "<group>"; };
+		F21BB066251E12EA00A64B34 /* WebServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +135,7 @@
 		F21BB000251E10D300A64B34 /* Movie DB */ = {
 			isa = PBXGroup;
 			children = (
+				F21BB039251E123100A64B34 /* Infrastructure */,
 				F21BB001251E10D300A64B34 /* AppDelegate.swift */,
 				F21BB003251E10D300A64B34 /* SceneDelegate.swift */,
 				F21BB005251E10D300A64B34 /* ViewController.swift */,
@@ -126,6 +163,55 @@
 				F21BB025251E10D500A64B34 /* Info.plist */,
 			);
 			path = "Movie DBUITests";
+			sourceTree = "<group>";
+		};
+		F21BB039251E123100A64B34 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				F21BB056251E12DF00A64B34 /* Network */,
+				F21BB046251E12AF00A64B34 /* Utility */,
+				F21BB03A251E128500A64B34 /* Extensions */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		F21BB03A251E128500A64B34 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F21BB03C251E128C00A64B34 /* UICollectionView+Extension.swift */,
+				F21BB03D251E128C00A64B34 /* UICollectionViewCell+Extension.swift */,
+				F21BB03B251E128C00A64B34 /* UIColor+Extension.swift */,
+				F21BB03E251E128C00A64B34 /* UIDevice+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F21BB046251E12AF00A64B34 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F21BB04C251E12BB00A64B34 /* Taptic.swift */,
+				F21BB047251E12B500A64B34 /* Log.swift */,
+				F21BB051251E12CC00A64B34 /* Constants.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		F21BB056251E12DF00A64B34 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F21BB065251E12EA00A64B34 /* ApiConfiguration.swift */,
+				F21BB064251E12E900A64B34 /* AsyncOperation.swift */,
+				F21BB063251E12E900A64B34 /* DeleteWebServiceOperation.swift */,
+				F21BB05C251E12E900A64B34 /* GetWebServiceOperation.swift */,
+				F21BB058251E12E900A64B34 /* HeadWebServiceOperation.swift */,
+				F21BB05A251E12E900A64B34 /* HTTPHeaders.swift */,
+				F21BB059251E12E900A64B34 /* NeoError.swift */,
+				F21BB062251E12E900A64B34 /* PostWebServiceOperation.swift */,
+				F21BB057251E12E900A64B34 /* PutWebServiceOperation.swift */,
+				F21BB066251E12EA00A64B34 /* WebServiceManager.swift */,
+				F21BB060251E12E900A64B34 /* WebServiceOperation.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +345,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				F21BB006251E10D300A64B34 /* ViewController.swift in Sources */,
+				F21BB073251E12EA00A64B34 /* DeleteWebServiceOperation.swift in Sources */,
+				F21BB040251E128C00A64B34 /* UICollectionView+Extension.swift in Sources */,
+				F21BB075251E12EA00A64B34 /* ApiConfiguration.swift in Sources */,
+				F21BB06A251E12EA00A64B34 /* HTTPHeaders.swift in Sources */,
+				F21BB041251E128C00A64B34 /* UICollectionViewCell+Extension.swift in Sources */,
 				F21BB002251E10D300A64B34 /* AppDelegate.swift in Sources */,
 				F21BB004251E10D300A64B34 /* SceneDelegate.swift in Sources */,
+				F21BB052251E12CC00A64B34 /* Constants.swift in Sources */,
+				F21BB06C251E12EA00A64B34 /* GetWebServiceOperation.swift in Sources */,
+				F21BB076251E12EA00A64B34 /* WebServiceManager.swift in Sources */,
+				F21BB072251E12EA00A64B34 /* PostWebServiceOperation.swift in Sources */,
+				F21BB03F251E128C00A64B34 /* UIColor+Extension.swift in Sources */,
+				F21BB048251E12B500A64B34 /* Log.swift in Sources */,
+				F21BB042251E128C00A64B34 /* UIDevice+Extensions.swift in Sources */,
+				F21BB067251E12EA00A64B34 /* PutWebServiceOperation.swift in Sources */,
+				F21BB070251E12EA00A64B34 /* WebServiceOperation.swift in Sources */,
+				F21BB068251E12EA00A64B34 /* HeadWebServiceOperation.swift in Sources */,
+				F21BB04D251E12BB00A64B34 /* Taptic.swift in Sources */,
+				F21BB074251E12EA00A64B34 /* AsyncOperation.swift in Sources */,
+				F21BB069251E12EA00A64B34 /* NeoError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +543,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62BA3UNA7M;
 				INFOPLIST_FILE = "Movie DB/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +563,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62BA3UNA7M;
 				INFOPLIST_FILE = "Movie DB/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
