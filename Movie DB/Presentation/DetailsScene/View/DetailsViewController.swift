@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol DetailsViewControllerDelegate: class {
+    
+}
+
 class DetailsViewController: BaseViewController {
     
     @IBOutlet private weak var scrollView: UIScrollView!
@@ -14,6 +18,8 @@ class DetailsViewController: BaseViewController {
     @IBOutlet private weak var viewGradient: GradientView!
     
     private let headerHeight: CGFloat = 240
+    
+    weak var delegate: DetailsViewControllerDelegate?
     
     var showId: Int?
 

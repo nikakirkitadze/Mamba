@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol MainViewControllerDelegate: class {
+    func openDetails(showId: Int)
+}
+
 class MainViewController: BaseViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -19,6 +23,8 @@ class MainViewController: BaseViewController {
     var paginated = true
     var currentPage = 1
     let paginationIndicatorInset: CGFloat = 25
+    
+    weak var delegate: MainViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,10 +86,7 @@ extension MainViewController: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegate
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
-        let detailsVC = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-        detailsVC.showId = showViewModels[indexPath.row].id
-        self.navigationController?.pushViewController(detailsVC, animated: true)
+        delegate?.openDetails(showId: showViewModels[indexPath.row].id)
     }
 }
 

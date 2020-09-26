@@ -13,6 +13,11 @@
 		B575D81F251E6D170015216C /* NEOImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575D81E251E6D170015216C /* NEOImageView.swift */; };
 		B575D824251E6D540015216C /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */; };
 		B5E25141251F0F7D0033973D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25140251F0F7D0033973D /* BaseViewController.swift */; };
+		B5E2514D251F11CA0033973D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2514C251F11CA0033973D /* Coordinator.swift */; };
+		B5E25155251F12030033973D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25154251F12030033973D /* AppCoordinator.swift */; };
+		B5E2515A251F12AC0033973D /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25159251F12AC0033973D /* AppStoryboard.swift */; };
+		B5E2515F251F13150033973D /* Storyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2515E251F13150033973D /* Storyboard+Extension.swift */; };
+		B5E25164251F148B0033973D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25163251F148B0033973D /* UIViewController+Extension.swift */; };
 		F21BB002251E10D300A64B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB001251E10D300A64B34 /* AppDelegate.swift */; };
 		F21BB004251E10D300A64B34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB003251E10D300A64B34 /* SceneDelegate.swift */; };
 		F21BB006251E10D300A64B34 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB005251E10D300A64B34 /* MainViewController.swift */; };
@@ -77,6 +82,11 @@
 		B575D81E251E6D170015216C /* NEOImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEOImageView.swift; sourceTree = "<group>"; };
 		B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
 		B5E25140251F0F7D0033973D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B5E2514C251F11CA0033973D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B5E25154251F12030033973D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		B5E25159251F12AC0033973D /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
+		B5E2515E251F13150033973D /* Storyboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extension.swift"; sourceTree = "<group>"; };
+		B5E25163251F148B0033973D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		F21BAFFE251E10D300A64B34 /* Movie DB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie DB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21BB001251E10D300A64B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F21BB003251E10D300A64B34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +166,16 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		B5E2514B251F11BD0033973D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				B5E2514C251F11CA0033973D /* Coordinator.swift */,
+				B5E25154251F12030033973D /* AppCoordinator.swift */,
+				B5E25159251F12AC0033973D /* AppStoryboard.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		F21BAFF5251E10D300A64B34 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +199,7 @@
 		F21BB000251E10D300A64B34 /* Movie DB */ = {
 			isa = PBXGroup;
 			children = (
+				B5E2514B251F11BD0033973D /* Coordinator */,
 				F21BB08D251E159C00A64B34 /* App */,
 				F24C1FE9251E2C6F00F582F0 /* API */,
 				F24C1FEF251E2CA400F582F0 /* Domain */,
@@ -228,6 +249,8 @@
 				B533B798251E59DB0030E640 /* UINavigationBar+Extensions.swift */,
 				B533B7A0251E5A220030E640 /* Array+Extension.swift */,
 				B533B7A5251E5A4F0030E640 /* UIView+Extension.swift */,
+				B5E2515E251F13150033973D /* Storyboard+Extension.swift */,
+				B5E25163251F148B0033973D /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -537,6 +560,8 @@
 				F21BB06C251E12EA00A64B34 /* GetWebServiceOperation.swift in Sources */,
 				F21BB076251E12EA00A64B34 /* WebServiceManager.swift in Sources */,
 				B575D81F251E6D170015216C /* NEOImageView.swift in Sources */,
+				B5E2515F251F13150033973D /* Storyboard+Extension.swift in Sources */,
+				B5E2515A251F12AC0033973D /* AppStoryboard.swift in Sources */,
 				F24C1FFC251E2EEB00F582F0 /* APP.swift in Sources */,
 				F21BB072251E12EA00A64B34 /* PostWebServiceOperation.swift in Sources */,
 				F282951E251E219300DA1140 /* TVShowCell.swift in Sources */,
@@ -547,9 +572,12 @@
 				F21BB067251E12EA00A64B34 /* PutWebServiceOperation.swift in Sources */,
 				B533B7A1251E5A220030E640 /* Array+Extension.swift in Sources */,
 				F21BB070251E12EA00A64B34 /* WebServiceOperation.swift in Sources */,
+				B5E25155251F12030033973D /* AppCoordinator.swift in Sources */,
+				B5E25164251F148B0033973D /* UIViewController+Extension.swift in Sources */,
 				B5E25141251F0F7D0033973D /* BaseViewController.swift in Sources */,
 				B575D824251E6D540015216C /* DiscardableImageCacheItem.swift in Sources */,
 				F21BB068251E12EA00A64B34 /* HeadWebServiceOperation.swift in Sources */,
+				B5E2514D251F11CA0033973D /* Coordinator.swift in Sources */,
 				F21BB04D251E12BB00A64B34 /* Taptic.swift in Sources */,
 				F24C1FEB251E2C8400F582F0 /* TVShowServiceManager.swift in Sources */,
 				B533B7A6251E5A4F0030E640 /* UIView+Extension.swift in Sources */,
