@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="FiraGO-Book.otf">
+            <string>FiraGO-Book</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Details View Controller-->
         <scene sceneID="pap-AJ-BWC">
@@ -17,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="show_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="utn-id-NSe">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="show_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="utn-id-NSe" customClass="NEOImageView" customModule="Movie_DB" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="WNN-Hx-LkB"/>
@@ -25,34 +30,89 @@
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vDJ-ez-is5">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efh-yM-bUU">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azS-k2-BBy">
+                                                <rect key="frame" x="24" y="-130" width="125" height="185"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="show_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="lWl-UQ-9SL" customClass="NEOImageView" customModule="Movie_DB" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="185"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="lWl-UQ-9SL" firstAttribute="top" secondItem="azS-k2-BBy" secondAttribute="top" id="Aro-Du-hBG"/>
+                                                    <constraint firstAttribute="height" constant="185" id="Rhe-VQ-sYj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lWl-UQ-9SL" secondAttribute="trailing" id="Wml-sP-6kM"/>
+                                                    <constraint firstAttribute="width" constant="125" id="dXv-yv-yM9"/>
+                                                    <constraint firstItem="lWl-UQ-9SL" firstAttribute="leading" secondItem="azS-k2-BBy" secondAttribute="leading" id="j1P-wN-X5T"/>
+                                                    <constraint firstAttribute="bottom" secondItem="lWl-UQ-9SL" secondAttribute="bottom" id="qBU-Ob-yNy"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8d-EH-vwO">
+                                                <rect key="frame" x="164" y="10" width="226" height="21"/>
+                                                <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="17"/>
+                                                <color key="textColor" red="0.84705882349999995" green="0.85490196080000003" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="highlightedColor" red="0.0" green="0.0078431372549019607" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0078431372549019607" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="e8d-EH-vwO" firstAttribute="leading" secondItem="azS-k2-BBy" secondAttribute="trailing" constant="15" id="Fun-se-dOO"/>
+                                            <constraint firstItem="e8d-EH-vwO" firstAttribute="top" secondItem="efh-yM-bUU" secondAttribute="top" constant="10" id="HmI-YK-sEm"/>
+                                            <constraint firstAttribute="trailing" secondItem="e8d-EH-vwO" secondAttribute="trailing" constant="24" id="OfS-zF-7n8"/>
+                                            <constraint firstItem="azS-k2-BBy" firstAttribute="top" secondItem="efh-yM-bUU" secondAttribute="top" constant="-130" id="Zv4-Hj-JO0"/>
+                                            <constraint firstItem="azS-k2-BBy" firstAttribute="leading" secondItem="efh-yM-bUU" secondAttribute="leading" constant="24" id="qw2-GH-7eo"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="efh-yM-bUU" secondAttribute="bottom" id="IKz-le-1pG"/>
+                                    <constraint firstItem="efh-yM-bUU" firstAttribute="width" secondItem="vDJ-ez-is5" secondAttribute="width" id="N4X-6X-e1B"/>
+                                    <constraint firstItem="efh-yM-bUU" firstAttribute="height" secondItem="vDJ-ez-is5" secondAttribute="height" id="RdP-CT-iLL"/>
+                                    <constraint firstItem="efh-yM-bUU" firstAttribute="leading" secondItem="vDJ-ez-is5" secondAttribute="leading" id="aB7-Ai-Oyz"/>
+                                    <constraint firstAttribute="trailing" secondItem="efh-yM-bUU" secondAttribute="trailing" id="gxq-iG-To3"/>
+                                    <constraint firstItem="efh-yM-bUU" firstAttribute="top" secondItem="vDJ-ez-is5" secondAttribute="top" id="w3y-qw-ias"/>
+                                </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="su3-jA-EcJ" customClass="GradientView" customModule="Movie_DB" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="HcE-0t-QCa"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.0" green="0.0078431372549019607" blue="0.10196078431372549" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hCo-ls-3gw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="utn-id-NSe" firstAttribute="top" secondItem="4PT-Cb-ss8" secondAttribute="top" id="4z2-IV-Vqu"/>
-                            <constraint firstItem="hCo-ls-3gw" firstAttribute="trailing" secondItem="su3-jA-EcJ" secondAttribute="trailing" id="AgK-Uc-ciu"/>
-                            <constraint firstItem="hCo-ls-3gw" firstAttribute="bottom" secondItem="vDJ-ez-is5" secondAttribute="bottom" id="DcG-23-jJO"/>
-                            <constraint firstItem="utn-id-NSe" firstAttribute="leading" secondItem="hCo-ls-3gw" secondAttribute="leading" id="EIr-W5-IlY"/>
-                            <constraint firstItem="vDJ-ez-is5" firstAttribute="top" secondItem="4PT-Cb-ss8" secondAttribute="top" id="Pby-bj-hg4"/>
-                            <constraint firstItem="su3-jA-EcJ" firstAttribute="leading" secondItem="hCo-ls-3gw" secondAttribute="leading" id="XQ0-Fi-pGm"/>
-                            <constraint firstItem="hCo-ls-3gw" firstAttribute="trailing" secondItem="vDJ-ez-is5" secondAttribute="trailing" id="ahw-eT-y0B"/>
-                            <constraint firstItem="utn-id-NSe" firstAttribute="trailing" secondItem="hCo-ls-3gw" secondAttribute="trailing" id="asS-vn-gCP"/>
+                            <constraint firstAttribute="trailing" secondItem="su3-jA-EcJ" secondAttribute="trailing" id="AgK-Uc-ciu"/>
+                            <constraint firstItem="utn-id-NSe" firstAttribute="leading" secondItem="4PT-Cb-ss8" secondAttribute="leading" id="EIr-W5-IlY"/>
+                            <constraint firstItem="vDJ-ez-is5" firstAttribute="top" secondItem="4PT-Cb-ss8" secondAttribute="top" id="S1T-s0-k26"/>
+                            <constraint firstItem="vDJ-ez-is5" firstAttribute="leading" secondItem="hCo-ls-3gw" secondAttribute="leading" id="TS2-y6-sCQ"/>
+                            <constraint firstItem="su3-jA-EcJ" firstAttribute="leading" secondItem="4PT-Cb-ss8" secondAttribute="leading" id="XQ0-Fi-pGm"/>
+                            <constraint firstItem="utn-id-NSe" firstAttribute="trailing" secondItem="4PT-Cb-ss8" secondAttribute="trailing" id="asS-vn-gCP"/>
                             <constraint firstItem="su3-jA-EcJ" firstAttribute="top" secondItem="4PT-Cb-ss8" secondAttribute="top" id="bLJ-pn-wKO"/>
-                            <constraint firstItem="vDJ-ez-is5" firstAttribute="leading" secondItem="hCo-ls-3gw" secondAttribute="leading" id="dHJ-c9-a47"/>
+                            <constraint firstItem="vDJ-ez-is5" firstAttribute="trailing" secondItem="hCo-ls-3gw" secondAttribute="trailing" id="fth-A7-xEL"/>
+                            <constraint firstItem="vDJ-ez-is5" firstAttribute="bottom" secondItem="hCo-ls-3gw" secondAttribute="bottom" id="pB6-97-LFt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageViewHeader" destination="utn-id-NSe" id="GS1-1k-pRL"/>
+                        <outlet property="imageViewPoster" destination="lWl-UQ-9SL" id="mjZ-c1-iv2"/>
+                        <outlet property="labelShowTitle" destination="e8d-EH-vwO" id="hsZ-t8-AlQ"/>
                         <outlet property="scrollView" destination="vDJ-ez-is5" id="Fa2-Kh-YC8"/>
                         <outlet property="viewGradient" destination="su3-jA-EcJ" id="Rif-Nb-AKE"/>
+                        <outlet property="viewPosterOuterView" destination="azS-k2-BBy" id="hVp-Gi-p9I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3dj-eL-5iw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -27,13 +27,13 @@ class GradientView: UIView {
         }
     }
     
-    var topColor: UIColor = .clear {
+    @IBInspectable var topColor: UIColor = .clear {
         didSet {
             configureView()
         }
     }
     
-    var bottomColor: UIColor = .black {
+    @IBInspectable var bottomColor: UIColor = .black {
         didSet {
             configureView()
         }

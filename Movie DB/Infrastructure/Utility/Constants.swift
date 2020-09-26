@@ -16,5 +16,5 @@ struct StoryboardId {
 struct Colors {
     static let mainBG                   = UIColor(hex: "00021A")
     static let textMain                 = UIColor(hex: "D8DAF3")
-    static let cellShadowColor          = UIColor(hex: "D8DAF3")
+    static let shadowColor              = UIColor(hex: "D8DAF3")
 }

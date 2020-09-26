@@ -33,19 +33,19 @@ final class AppCoordinator: Coordinator {
         navController.setViewControllers([mainVC], animated: true)
     }
     
-    private func pushDetails(showId: Int) {
+    private func pushDetails(viewModel: TVShowViewModel) {
         let sb = AppStoryboard.details.instance
         let detailsVC = sb.instantiate(viewController: DetailsViewController.self)
         detailsVC.delegate = self
-        detailsVC.showId = showId
+        detailsVC.showViewModel = viewModel
         navController.pushViewController(detailsVC, animated: true)
     }
 }
 
 // MARK: - MainViewControllerDelegate
 extension AppCoordinator: MainViewControllerDelegate {
-    func openDetails(showId: Int) {
-        pushDetails(showId: showId)
+    func openDetails(pass viewModel: TVShowViewModel) {
+        pushDetails(viewModel: viewModel)
     }
 }
 

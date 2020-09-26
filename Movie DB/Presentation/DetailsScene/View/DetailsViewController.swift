@@ -13,20 +13,27 @@ protocol DetailsViewControllerDelegate: class {
 
 class DetailsViewController: BaseViewController {
     
-    @IBOutlet private weak var scrollView: UIScrollView!
-    @IBOutlet private weak var imageViewHeader: UIImageView!
+    // MARK: IBOutlets
     @IBOutlet private weak var viewGradient: GradientView!
+    @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var imageViewHeader: NEOImageView!
+    @IBOutlet private weak var imageViewPoster: NEOImageView!
+    @IBOutlet private weak var viewPosterOuterView: UIView!
+    @IBOutlet private weak var labelShowTitle: UILabel!
     
+    // MARK: Private properties
     private let headerHeight: CGFloat = 240
     
-    weak var delegate: DetailsViewControllerDelegate?
+    var showViewModel: TVShowViewModel?
     
-    var showId: Int?
+    weak var delegate: DetailsViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        scrollView.contentInset.top = headerHeight
+        
+        configureScrollView()
+        setShadowForPoster()
+        presentShowInfo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,12 +47,32 @@ class DetailsViewController: BaseViewController {
         
         navigationController?.navigationBar.isBackgroundHidden = false
     }
+    
+    private func configureScrollView() {
+        scrollView.delegate = self
+        scrollView.contentInset.top = headerHeight
+    }
+    
+    private func presentShowInfo() {
+        guard let viewModel = showViewModel else {return}
+        imageViewHeader.loadImage(urlString: viewModel.backdropUrlString)
+        imageViewPoster.loadImage(urlString: viewModel.posterUrlString)
+        labelShowTitle.text = viewModel.title
+    }
+    
+    private func setShadowForPoster() {
+        viewPosterOuterView.layer.shadowColor = Colors.shadowColor.cgColor
+        viewPosterOuterView.layer.shadowOpacity = 0.5
+        viewPosterOuterView.layer.shadowOffset = CGSize.zero
+        viewPosterOuterView.layer.shadowRadius = 10
+        viewPosterOuterView.layer.shadowPath = UIBezierPath(roundedRect: imageViewPoster.bounds, cornerRadius: 10).cgPath
+        
+        imageViewPoster.layer.cornerRadius = 10
+    }
 }
 
 extension DetailsViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        navigationController?.navigationBar.isBackgroundHidden = scrollView.contentOffset.y <= 190
-        navigationController?.navigationBar.tintColor = scrollView.contentOffset.y <= -44 ? .white : UIColor(hex: "E84367")
         setPageTitle()
         updateHeaderFrame()
     }
@@ -59,12 +86,11 @@ extension DetailsViewController: UIScrollViewDelegate {
     }
     
     func setPageTitle() {
-//        if let movie = currentItem, let movieTitle = movie.title {
-//            navigationItem.title = scrollView.contentOffset.y <= 190 ? "" : movieTitle
-//        }
-//
-//        if let movie = favouriteMovieItem, let movieTitle = movie.title {
-//            navigationItem.title = scrollView.contentOffset.y <= 190 ? "" : movieTitle
-//        }
+        navigationController?.navigationBar.isBackgroundHidden = scrollView.contentOffset.y <= -35
+        navigationController?.navigationBar.tintColor = scrollView.contentOffset.y <= -44 ? .white : UIColor(hex: "E84367")
+        
+        
+        guard let viewModel = showViewModel else{return}
+        navigationItem.title = scrollView.contentOffset.y <= -35 ? "" : viewModel.title
     }
 }

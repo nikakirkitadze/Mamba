@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainViewControllerDelegate: class {
-    func openDetails(showId: Int)
+    func openDetails(pass viewModel: TVShowViewModel)
 }
 
 class MainViewController: BaseViewController {
@@ -86,7 +86,7 @@ extension MainViewController: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegate
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.openDetails(showId: showViewModels[indexPath.row].id)
+        delegate?.openDetails(pass: showViewModels[indexPath.row])
     }
 }
 

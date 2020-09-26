@@ -15,9 +15,14 @@ struct TVShowViewModel {
     
     // MARK: Private properties
     private var posterPath: String
+    private var backdropPath: String
     
     var posterUrlString: String {
         return "https://image.tmdb.org/t/p/w300\(posterPath)"
+    }
+    
+    var backdropUrlString: String {
+        return "https://image.tmdb.org/t/p/w780\(backdropPath)"
     }
     
     init(show: TVShow) {
@@ -25,5 +30,6 @@ struct TVShowViewModel {
         title              = show.originalName ?? ""
         avgRaiting         = show.voteAverage ?? 0.0
         posterPath         = show.posterPath ?? ""
+        backdropPath       = show.backdropPath ?? ""
     }
 }

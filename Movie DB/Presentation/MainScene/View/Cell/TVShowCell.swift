@@ -56,7 +56,7 @@ class TVShowCell: UICollectionViewCell {
         let shadowSize: CGFloat = 10
         let shadowDistance: CGFloat = -5
         let contactRect = CGRect(x: shadowSize, y: frame.height - (shadowSize * 0.4) + shadowDistance, width: frame.width - shadowSize * 2, height: shadowSize)
-        layer.shadowColor = Colors.cellShadowColor.cgColor
+        layer.shadowColor = Colors.shadowColor.cgColor
         layer.shadowPath = UIBezierPath(ovalIn: contactRect).cgPath
         layer.shadowRadius = 3
         layer.shadowOpacity = 0.4
