@@ -9,9 +9,11 @@ import UIKit
 
 struct TVShowViewModel {
     
-    var id: Int
-    var title: String
-    var avgRaiting: Double
+    internal var id: Int
+    internal var title: String
+    internal var titleBig: String
+    internal var overview: String
+    internal var avgRaiting: Double
     
     // MARK: Private properties
     private var posterPath: String
@@ -52,10 +54,12 @@ struct TVShowViewModel {
     }
     
     init(show: TVShow) {
-        id                 = show.id ?? 0
-        title              = show.originalName ?? ""
-        avgRaiting         = show.voteAverage ?? 0.0
-        posterPath         = show.posterPath ?? ""
-        backdropPath       = show.backdropPath ?? ""
+        id                  = show.id ?? 0
+        title               = show.originalName ?? ""
+        titleBig            = "\(title) | \(show.firstAirDate ?? "")"
+        overview            = show.overview ?? ""
+        avgRaiting          = show.voteAverage ?? 0.0
+        posterPath          = show.posterPath ?? ""
+        backdropPath        = show.backdropPath ?? ""
     }
 }

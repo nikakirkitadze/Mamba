@@ -12,6 +12,9 @@
         <array key="FiraGO-Book.otf">
             <string>FiraGO-Book</string>
         </array>
+        <array key="FiraGO-Medium.otf">
+            <string>FiraGO-Medium</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Details View Controller-->
@@ -62,16 +65,34 @@
                                                 <color key="textColor" red="0.84705882349999995" green="0.85490196080000003" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="highlightedColor" red="0.0" green="0.0078431372549019607" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5B-ZC-azb">
+                                                <rect key="frame" x="24" y="90" width="366" height="32.5"/>
+                                                <fontDescription key="fontDescription" name="FiraGO-Medium" family="FiraGO" pointSize="27"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLz-Xh-XjO">
+                                                <rect key="frame" x="24" y="157.5" width="366" height="22"/>
+                                                <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="18"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.0" green="0.0078431372549019607" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="KLz-Xh-XjO" firstAttribute="top" secondItem="I5B-ZC-azb" secondAttribute="bottom" constant="35" id="5p9-9f-iPI"/>
+                                            <constraint firstAttribute="trailing" secondItem="I5B-ZC-azb" secondAttribute="trailing" constant="24" id="E7i-87-vv3"/>
                                             <constraint firstItem="e8d-EH-vwO" firstAttribute="leading" secondItem="azS-k2-BBy" secondAttribute="trailing" constant="15" id="Fun-se-dOO"/>
                                             <constraint firstItem="e8d-EH-vwO" firstAttribute="top" secondItem="efh-yM-bUU" secondAttribute="top" constant="10" id="HmI-YK-sEm"/>
+                                            <constraint firstItem="I5B-ZC-azb" firstAttribute="top" secondItem="azS-k2-BBy" secondAttribute="bottom" constant="35" id="J3D-Ou-AwX"/>
                                             <constraint firstAttribute="trailing" secondItem="e8d-EH-vwO" secondAttribute="trailing" constant="24" id="OfS-zF-7n8"/>
                                             <constraint firstItem="azS-k2-BBy" firstAttribute="top" secondItem="efh-yM-bUU" secondAttribute="top" constant="-130" id="Zv4-Hj-JO0"/>
                                             <constraint firstAttribute="trailing" secondItem="XQZ-Df-wcM" secondAttribute="trailing" constant="24" id="dec-XR-5Sl"/>
+                                            <constraint firstItem="KLz-Xh-XjO" firstAttribute="leading" secondItem="efh-yM-bUU" secondAttribute="leading" constant="24" id="f57-Kf-IBe"/>
                                             <constraint firstItem="XQZ-Df-wcM" firstAttribute="top" secondItem="e8d-EH-vwO" secondAttribute="bottom" constant="-95" id="f8E-3e-JzU"/>
+                                            <constraint firstAttribute="trailing" secondItem="KLz-Xh-XjO" secondAttribute="trailing" constant="24" id="iJR-Fh-aKR"/>
                                             <constraint firstItem="azS-k2-BBy" firstAttribute="leading" secondItem="efh-yM-bUU" secondAttribute="leading" constant="24" id="qw2-GH-7eo"/>
+                                            <constraint firstItem="I5B-ZC-azb" firstAttribute="leading" secondItem="efh-yM-bUU" secondAttribute="leading" constant="24" id="zhD-ld-q31"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -119,7 +140,9 @@
                         <outlet property="imageViewHeader" destination="utn-id-NSe" id="GS1-1k-pRL"/>
                         <outlet property="imageViewPoster" destination="lWl-UQ-9SL" id="mjZ-c1-iv2"/>
                         <outlet property="labelRating" destination="XQZ-Df-wcM" id="QAG-1u-nyr"/>
+                        <outlet property="labelShowOverview" destination="KLz-Xh-XjO" id="tKQ-CP-hSh"/>
                         <outlet property="labelShowTitle" destination="e8d-EH-vwO" id="hsZ-t8-AlQ"/>
+                        <outlet property="labelShowTitleBig" destination="I5B-ZC-azb" id="8Ph-cJ-b2x"/>
                         <outlet property="scrollView" destination="vDJ-ez-is5" id="Fa2-Kh-YC8"/>
                         <outlet property="viewGradient" destination="su3-jA-EcJ" id="Rif-Nb-AKE"/>
                         <outlet property="viewPosterOuterView" destination="azS-k2-BBy" id="hVp-Gi-p9I"/>

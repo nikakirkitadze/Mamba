@@ -21,6 +21,8 @@ class DetailsViewController: BaseViewController {
     @IBOutlet private weak var viewPosterOuterView: UIView!
     @IBOutlet private weak var labelRating: UILabel!
     @IBOutlet private weak var labelShowTitle: UILabel!
+    @IBOutlet private weak var labelShowTitleBig: UILabel!
+    @IBOutlet private weak var labelShowOverview: UILabel!
     
     @IBOutlet private weak var constraingHeaderHeight: NSLayoutConstraint!
     
@@ -62,6 +64,8 @@ class DetailsViewController: BaseViewController {
         imageViewPoster.loadImage(urlString: viewModel.posterUrlString)
         labelShowTitle.text = viewModel.title
         labelRating.attributedText = viewModel.attributedVoteAvarage
+        labelShowTitleBig.text = viewModel.titleBig
+        labelShowOverview.text = viewModel.overview
     }
     
     private func setShadowForPoster() {
