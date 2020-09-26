@@ -15,20 +15,21 @@ class MainViewController: BaseViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
+    private var viewModel = TVShowsViewModel()
     private var showViewModels = [TVShowViewModel]()
-    
-    var isLoading = false
-    var hasNextPage = false
-    var paginated = true
-    var currentPage = 1
-    let paginationIndicatorInset: CGFloat = 25
+    private var isLoading = false
+    private var hasNextPage = false
+    private var paginated = true
+    private var currentPage = 1
+    private let paginationIndicatorInset: CGFloat = 25
     
     weak var delegate: MainViewControllerDelegate?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureCollectionView()
+        configureViewModel()
         load(page: 1)
     }
     
@@ -37,33 +38,40 @@ class MainViewController: BaseViewController {
         
         navigationController?.navigationBar.isBackgroundHidden = false
     }
-
+    
     private func configureCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerNib(class: TVShowCell.self)
     }
-
+    
+    private func configureViewModel() {
+        viewModel.isRefreshing = { loading in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = loading
+        }
+    }
+    
     func load(page: Int) {
         guard !isLoading else { return }
         isLoading = true
         hasNextPage = false
         
-        TVShowServiceManager.fetchShows(page: page) { (data) in
-            self.isLoading = false
+        // calls api
+        viewModel.ready(for: page)
+        
+        // callbacks response
+        viewModel.didFetchShowsData = { [weak self] shows in
+            guard let strongSelf = self else { return }
+            strongSelf.isLoading = false
             
-            let dataViewModels = data.map({ TVShowViewModel(show: $0) })
-            self.showViewModels.append(contentsOf: dataViewModels)
-            
-            if data.isEmpty {
-                self.collectionView.contentInset.bottom = 50
+            if shows.isEmpty {
+                strongSelf.collectionView.contentInset.bottom = 50
             } else {
-                self.hasNextPage = true
+                strongSelf.hasNextPage = true
             }
             
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+            strongSelf.showViewModels.append(contentsOf: shows)
+            DispatchQueue.main.async { strongSelf.collectionView.reloadData() }
         }
     }
 }
@@ -71,7 +79,7 @@ class MainViewController: BaseViewController {
 // MARK: UICollectionViewDataSource
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return showViewModels.count
+        return viewModel.numberOfRows
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -85,6 +93,7 @@ extension MainViewController: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegate
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        Taptic.light()
         delegate?.openDetails(pass: showViewModels[indexPath.row])
     }
 }
@@ -128,7 +137,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
                 print("Should reomve bottom spinner")
                 // then remove the spinner view controller
                 indicator.stopAnimating()
-//                background.removeFromSuperview()
+                //                background.removeFromSuperview()
             }
             
             currentPage += 1

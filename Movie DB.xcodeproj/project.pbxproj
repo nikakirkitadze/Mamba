@@ -15,6 +15,7 @@
 		B5812485251F551E00778496 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812484251F551E00778496 /* UIFont+Extension.swift */; };
 		B581248F251F608A00778496 /* SimilarShows.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B581248E251F608A00778496 /* SimilarShows.storyboard */; };
 		B5812495251F617600778496 /* SimilarShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812494251F617600778496 /* SimilarShowsViewController.swift */; };
+		B58A3B90251F876F00AC6319 /* TVShowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A3B8F251F876F00AC6319 /* TVShowsViewModel.swift */; };
 		B5E25141251F0F7D0033973D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25140251F0F7D0033973D /* BaseViewController.swift */; };
 		B5E2514D251F11CA0033973D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2514C251F11CA0033973D /* Coordinator.swift */; };
 		B5E25155251F12030033973D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25154251F12030033973D /* AppCoordinator.swift */; };
@@ -87,6 +88,7 @@
 		B5812484251F551E00778496 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		B581248E251F608A00778496 /* SimilarShows.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimilarShows.storyboard; sourceTree = "<group>"; };
 		B5812494251F617600778496 /* SimilarShowsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarShowsViewController.swift; sourceTree = "<group>"; };
+		B58A3B8F251F876F00AC6319 /* TVShowsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsViewModel.swift; sourceTree = "<group>"; };
 		B5E25140251F0F7D0033973D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B5E2514C251F11CA0033973D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B5E25154251F12030033973D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -282,8 +284,8 @@
 		F21BB046251E12AF00A64B34 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				F21BB04C251E12BB00A64B34 /* Taptic.swift */,
 				F21BB047251E12B500A64B34 /* Log.swift */,
+				F21BB04C251E12BB00A64B34 /* Taptic.swift */,
 				F21BB051251E12CC00A64B34 /* Constants.swift */,
 			);
 			path = Utility;
@@ -339,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				F24C1FD8251E22D300F582F0 /* TVShowViewModel.swift */,
+				B58A3B8F251F876F00AC6319 /* TVShowsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				F24C1FD9251E22D300F582F0 /* TVShowViewModel.swift in Sources */,
 				F21BB048251E12B500A64B34 /* Log.swift in Sources */,
 				F21BB042251E128C00A64B34 /* UIDevice+Extensions.swift in Sources */,
+				B58A3B90251F876F00AC6319 /* TVShowsViewModel.swift in Sources */,
 				F21BB067251E12EA00A64B34 /* PutWebServiceOperation.swift in Sources */,
 				B533B7A1251E5A220030E640 /* Array+Extension.swift in Sources */,
 				F21BB070251E12EA00A64B34 /* WebServiceOperation.swift in Sources */,
