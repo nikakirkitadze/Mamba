@@ -19,6 +19,7 @@ class DetailsViewController: BaseViewController {
     @IBOutlet private weak var imageViewHeader: NEOImageView!
     @IBOutlet private weak var imageViewPoster: NEOImageView!
     @IBOutlet private weak var viewPosterOuterView: UIView!
+    @IBOutlet private weak var labelRating: UILabel!
     @IBOutlet private weak var labelShowTitle: UILabel!
     
     @IBOutlet private weak var constraingHeaderHeight: NSLayoutConstraint!
@@ -60,6 +61,7 @@ class DetailsViewController: BaseViewController {
         imageViewHeader.loadImage(urlString: viewModel.backdropUrlString)
         imageViewPoster.loadImage(urlString: viewModel.posterUrlString)
         labelShowTitle.text = viewModel.title
+        labelRating.attributedText = viewModel.attributedVoteAvarage
     }
     
     private func setShadowForPoster() {

@@ -5,7 +5,7 @@
 //  Created by Nika Kirkitadze on 9/25/20.
 //
 
-import Foundation
+import UIKit
 
 struct TVShowViewModel {
     
@@ -23,6 +23,32 @@ struct TVShowViewModel {
     
     var backdropUrlString: String {
         return "https://image.tmdb.org/t/p/w780\(backdropPath)"
+    }
+    
+    var attributedVoteAvarage: NSMutableAttributedString {
+        let shadow = NSShadow()
+        shadow.shadowOffset = .zero
+        shadow.shadowColor = Colors.shadowColor
+        shadow.shadowBlurRadius = 5
+        
+        var attributes = [
+            NSAttributedString.Key.font:UIFont.named(.firaGoBook, size: 44),
+            NSAttributedString.Key.foregroundColor:Colors.textMain,
+            NSAttributedString.Key.shadow: shadow
+        ]
+        
+        let body = NSMutableAttributedString()
+        // first part
+        let attributedStringFirst = NSAttributedString(string: "\(avgRaiting)", attributes: attributes)
+        // decrease font size
+        attributes[NSAttributedString.Key.font] = UIFont.named(.firaGoBook, size: 30)
+        let attributedStringSecond = NSAttributedString(string: "/10", attributes: attributes)
+        
+        // whole string
+        body.append(attributedStringFirst)
+        body.append(attributedStringSecond)
+        
+        return body
     }
     
     init(show: TVShow) {
