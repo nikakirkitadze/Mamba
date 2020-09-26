@@ -15,7 +15,6 @@ class MainViewController: BaseViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    private var shows = [TVShow]()
     private var showViewModels = [TVShowViewModel]()
     
     var isLoading = false

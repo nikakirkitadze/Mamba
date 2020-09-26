@@ -32,10 +32,10 @@
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vDJ-ez-is5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efh-yM-bUU">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azS-k2-BBy">
                                                 <rect key="frame" x="24" y="-130" width="125" height="185"/>
@@ -79,7 +79,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTJ-AR-SO4">
-                                                <rect key="frame" x="0.0" y="343" width="414" height="180"/>
+                                                <rect key="frame" x="0.0" y="342.5" width="414" height="180"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="180" id="nCf-Mi-vy8"/>
                                                 </constraints>
@@ -145,7 +145,7 @@
                             <constraint firstItem="utn-id-NSe" firstAttribute="trailing" secondItem="4PT-Cb-ss8" secondAttribute="trailing" id="asS-vn-gCP"/>
                             <constraint firstItem="su3-jA-EcJ" firstAttribute="top" secondItem="4PT-Cb-ss8" secondAttribute="top" id="bLJ-pn-wKO"/>
                             <constraint firstItem="vDJ-ez-is5" firstAttribute="trailing" secondItem="hCo-ls-3gw" secondAttribute="trailing" id="fth-A7-xEL"/>
-                            <constraint firstItem="vDJ-ez-is5" firstAttribute="bottom" secondItem="hCo-ls-3gw" secondAttribute="bottom" id="pB6-97-LFt"/>
+                            <constraint firstItem="vDJ-ez-is5" firstAttribute="bottom" secondItem="4PT-Cb-ss8" secondAttribute="bottom" id="pB6-97-LFt"/>
                         </constraints>
                     </view>
                     <connections>

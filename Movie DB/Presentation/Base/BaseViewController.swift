@@ -25,7 +25,7 @@ class BaseViewController: UIViewController {
 
 // MARK: CollectionView
 extension BaseViewController {
-    func itemSize(cv: UICollectionView) -> CGSize {
+    func itemSize(cv: UICollectionView, defaultSize: Bool = true) -> CGSize {
         guard let flowLayout = cv.collectionViewLayout as? UICollectionViewFlowLayout else { return .zero }
         
         let minItemSize = self.minItemSize()
@@ -46,6 +46,10 @@ extension BaseViewController {
         
         let ratio = width/minItemSize.width
         let height = minItemSize.height * ratio
+        
+        if UIDevice.isIpad && defaultSize {
+            return CGSize(width: width * 2, height: height * 2)
+        }
         
         return CGSize(width: width, height: height)
     }

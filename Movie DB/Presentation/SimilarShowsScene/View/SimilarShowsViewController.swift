@@ -48,7 +48,7 @@ extension SimilarShowsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.deque(TVShowCell.self, for: indexPath)
-        cell.size = itemSize(cv: collectionView)
+        cell.size = itemSize(cv: collectionView, defaultSize: false)
         cell.configure(with: showViewModels[indexPath.row])
         return cell
     }

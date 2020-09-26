@@ -64,7 +64,7 @@ class DetailsViewController: BaseViewController {
     
     private func configureScrollView() {
         scrollView.delegate = self
-        scrollView.contentInset.top = headerHeight
+        scrollView.contentInset.top = UIDevice.isIpad ? 2.5 * headerHeight : headerHeight
     }
     
     private func presentShowInfo() {

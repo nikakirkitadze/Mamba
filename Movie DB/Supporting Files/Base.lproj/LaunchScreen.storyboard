@@ -19,21 +19,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-launch-screen" translatesAutoresizingMaskIntoConstraints="NO" id="iEe-MI-Rgw">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TBC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cuy-kd-zto">
-                                <rect key="frame" x="190.5" y="841" width="33" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.73333333329999995" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="iEe-MI-Rgw" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="73M-wS-mXu"/>
-                            <constraint firstItem="Cuy-kd-zto" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8e3-kf-h7y"/>
                             <constraint firstAttribute="bottom" secondItem="iEe-MI-Rgw" secondAttribute="bottom" id="CqU-Me-Rzh"/>
                             <constraint firstItem="iEe-MI-Rgw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ky1-Bo-oSw"/>
-                            <constraint firstItem="Cuy-kd-zto" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="POd-vl-Toq"/>
                             <constraint firstItem="iEe-MI-Rgw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="apW-TR-wOW"/>
                         </constraints>
                     </view>
