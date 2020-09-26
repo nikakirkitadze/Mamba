@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: BaseViewController {
     
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var imageViewHeader: UIImageView!

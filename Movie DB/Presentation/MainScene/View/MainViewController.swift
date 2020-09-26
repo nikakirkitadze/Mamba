@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: BaseViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
@@ -23,9 +23,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureNavBar()
         configureCollectionView()
-        
         load(page: 1)
     }
     
@@ -33,13 +31,6 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.isBackgroundHidden = false
-    }
-    
-    private func configureNavBar() {
-        view.backgroundColor = UIColor(hex: "1C1C1C")
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.barStyle = .black
-        navigationController?.navigationBar.backgroundColor = .clear
     }
 
     private func configureCollectionView() {
