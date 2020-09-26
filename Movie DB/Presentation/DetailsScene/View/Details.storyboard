@@ -107,6 +107,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="constraingHeaderHeight" destination="WNN-Hx-LkB" id="wFR-7E-YmC"/>
                         <outlet property="imageViewHeader" destination="utn-id-NSe" id="GS1-1k-pRL"/>
                         <outlet property="imageViewPoster" destination="lWl-UQ-9SL" id="mjZ-c1-iv2"/>
                         <outlet property="labelShowTitle" destination="e8d-EH-vwO" id="hsZ-t8-AlQ"/>

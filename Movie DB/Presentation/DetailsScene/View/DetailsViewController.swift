@@ -21,6 +21,8 @@ class DetailsViewController: BaseViewController {
     @IBOutlet private weak var viewPosterOuterView: UIView!
     @IBOutlet private weak var labelShowTitle: UILabel!
     
+    @IBOutlet private weak var constraingHeaderHeight: NSLayoutConstraint!
+    
     // MARK: Private properties
     private let headerHeight: CGFloat = 240
     
@@ -82,7 +84,8 @@ extension DetailsViewController: UIScrollViewDelegate {
         if scrollView.contentOffset.y < 0 {
             headerRect.size.height = -scrollView.contentOffset.y + headerHeight
         }
-        imageViewHeader.frame = headerRect
+//        imageViewHeader.frame = headerRect
+        constraingHeaderHeight.constant = headerRect.height
     }
     
     func setPageTitle() {
