@@ -13,6 +13,8 @@
 		B575D81F251E6D170015216C /* NEOImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575D81E251E6D170015216C /* NEOImageView.swift */; };
 		B575D824251E6D540015216C /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */; };
 		B5812485251F551E00778496 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812484251F551E00778496 /* UIFont+Extension.swift */; };
+		B581248F251F608A00778496 /* SimilarShows.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B581248E251F608A00778496 /* SimilarShows.storyboard */; };
+		B5812495251F617600778496 /* SimilarShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812494251F617600778496 /* SimilarShowsViewController.swift */; };
 		B5E25141251F0F7D0033973D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25140251F0F7D0033973D /* BaseViewController.swift */; };
 		B5E2514D251F11CA0033973D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2514C251F11CA0033973D /* Coordinator.swift */; };
 		B5E25155251F12030033973D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25154251F12030033973D /* AppCoordinator.swift */; };
@@ -83,6 +85,8 @@
 		B575D81E251E6D170015216C /* NEOImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEOImageView.swift; sourceTree = "<group>"; };
 		B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
 		B5812484251F551E00778496 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		B581248E251F608A00778496 /* SimilarShows.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimilarShows.storyboard; sourceTree = "<group>"; };
+		B5812494251F617600778496 /* SimilarShowsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarShowsViewController.swift; sourceTree = "<group>"; };
 		B5E25140251F0F7D0033973D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B5E2514C251F11CA0033973D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B5E25154251F12030033973D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -160,6 +164,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B581248C251F607700778496 /* SimilarShowsScene */ = {
+			isa = PBXGroup;
+			children = (
+				B581248D251F608200778496 /* View */,
+			);
+			path = SimilarShowsScene;
+			sourceTree = "<group>";
+		};
+		B581248D251F608200778496 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B581248E251F608A00778496 /* SimilarShows.storyboard */,
+				B5812494251F617600778496 /* SimilarShowsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B5E2513F251F0F6C0033973D /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +421,7 @@
 				F24C1FE0251E236600F582F0 /* Reusables */,
 				F282952A251E21C900DA1140 /* MainScene */,
 				F282952B251E21FB00DA1140 /* DetailsScene */,
+				B581248C251F607700778496 /* SimilarShowsScene */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -525,6 +547,7 @@
 				F282951D251E219300DA1140 /* TVShowCell.xib in Resources */,
 				F2F95FC7251E1F9400A83700 /* FiraGO-Medium.otf in Resources */,
 				F2829530251E221200DA1140 /* Details.storyboard in Resources */,
+				B581248F251F608A00778496 /* SimilarShows.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +610,7 @@
 				B533B799251E59DB0030E640 /* UINavigationBar+Extensions.swift in Sources */,
 				F24C1FE2251E237000F582F0 /* GradientView.swift in Sources */,
 				F21BB074251E12EA00A64B34 /* AsyncOperation.swift in Sources */,
+				B5812495251F617600778496 /* SimilarShowsViewController.swift in Sources */,
 				B5812485251F551E00778496 /* UIFont+Extension.swift in Sources */,
 				F21BB069251E12EA00A64B34 /* NeoError.swift in Sources */,
 			);

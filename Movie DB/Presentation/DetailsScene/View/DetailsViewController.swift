@@ -53,6 +53,15 @@ class DetailsViewController: BaseViewController {
         navigationController?.navigationBar.isBackgroundHidden = false
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let showViewModel = showViewModel else {return}
+        
+        if segue.identifier == Segues.SimilarShows {
+            let destination = segue.destination as! SimilarShowsViewController
+            destination.showId = showViewModel.id
+        }
+    }
+    
     private func configureScrollView() {
         scrollView.delegate = self
         scrollView.contentInset.top = headerHeight

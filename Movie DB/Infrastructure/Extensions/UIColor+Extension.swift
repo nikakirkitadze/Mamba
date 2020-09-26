@@ -1,9 +1,8 @@
 //
 //  UIColor+Extension.swift
-//  @cash
+//  Movie DB
 //
 //  Created by Nika Kirkitadze on 8/17/20.
-//  Copyright © 2020 ACMG. All rights reserved.
 //
 
 import UIKit
