@@ -32,6 +32,14 @@ final class TVShowsViewModel {
         }
     }
     
+    func search(with query: String, and page: Int = 1) {
+        DispatchQueue.main.async {self.isRefreshing?(true)}
+        TVShowServiceManager.search(with: query, and: page) { [weak self] (data) in
+            guard let strongSelf  = self else { return }
+            strongSelf.finishShowsFetching(with: data)
+        }
+    }
+    
     private func finishShowsFetching(with shows: [TVShow]) {
         DispatchQueue.main.async {self.isRefreshing?(false)}
         self.tvShows = shows

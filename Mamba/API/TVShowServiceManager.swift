@@ -40,4 +40,22 @@ class TVShowServiceManager {
             }
         }
     }
+    
+    static func search(with query: String, and page: Int = 1, completion: @escaping ([TVShow]) -> ()) {
+        let params: [String:String] = [
+            "api_key":ApiConfiguration.apiKey,
+            "query": query,
+            "page": "\(page)"
+        ]
+        WebServiceManager.shared.get(endpoint: "search/tv", params: params) { (result: Result<TVShowsResponse?, NeoError>) in
+            switch result {
+            case .success(let response):
+                guard let response = response else {return}
+                guard let results = response.results else {return}
+                completion(results)
+            case .failure(let err):
+                Log.error(err)
+            }
+        }
+    }
 }

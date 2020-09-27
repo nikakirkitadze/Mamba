@@ -16,6 +16,7 @@ class MainViewController: BaseViewController {
     // MARK: IBOutlets
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var fieldSearch: MambaSearchField!
+    @IBOutlet private weak var spinner: UIActivityIndicatorView!
     @IBOutlet private weak var constraingCollectionViewTopMargin: NSLayoutConstraint!
     
     private var viewModel = TVShowsViewModel()
@@ -24,8 +25,10 @@ class MainViewController: BaseViewController {
     private var hasNextPage = false
     private var paginated = true
     private var currentPage = 1
-    private let paginationIndicatorInset: CGFloat = 25
+    private let paginationIndicatorInset: CGFloat = 35 //25
     private var isSearchOpen = false
+    private var searchText: String?
+    private var searchAfterDelay = 0.3
     
     weak var delegate: MainViewControllerDelegate?
     
@@ -36,7 +39,8 @@ class MainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupBarButtons()
+        addSearchBarButton()
+        configureFieldSearch()
         configureCollectionView()
         configureViewModel()
         load(page: 1)
@@ -44,7 +48,6 @@ class MainViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.navigationBar.isBackgroundHidden = false
     }
     
@@ -73,6 +76,8 @@ class MainViewController: BaseViewController {
             guard let strongSelf = self else { return }
             strongSelf.isLoading = false
             
+            strongSelf.spinner.stopAnimating()
+            
             if shows.isEmpty {
                 strongSelf.collectionView.contentInset.bottom = 50
             } else {
@@ -81,21 +86,6 @@ class MainViewController: BaseViewController {
             
             strongSelf.showViewModels.append(contentsOf: shows)
             DispatchQueue.main.async { strongSelf.collectionView.reloadData() }
-        }
-    }
-    
-    private func setupBarButtons() {
-        let barButtonSearch = UIBarButtonItem(image: UIImage(named: "ic-search"), style: .plain, target: self, action: #selector(onToggleSearch(_:)))
-        barButtonSearch.tintColor = .white
-        navigationItem.rightBarButtonItem = barButtonSearch
-    }
-    
-    @objc private func onToggleSearch(_ sender: UIBarButtonItem) {
-        constraingCollectionViewTopMargin.constant = isSearchOpen ? 0 : 54 + 5 + 5
-        _ = isSearchOpen ? fieldSearch.resignFirstResponder() : fieldSearch.becomeFirstResponder()
-        isSearchOpen.toggle()
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
         }
     }
 }
@@ -122,6 +112,7 @@ extension MainViewController: UICollectionViewDelegate {
     }
 }
 
+// MARK: UICollectionViewDelegateFlowLayout
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -165,7 +156,70 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
             }
             
             currentPage += 1
-            load(page: currentPage)
+            isSearchOpen ? loadSearch(page: currentPage) : load(page: currentPage)
+        }
+    }
+}
+
+// MARK: Search
+extension MainViewController {
+    private func addSearchBarButton() {
+        let barButtonSearch = UIBarButtonItem(image: UIImage(named: "ic-search"), style: .plain, target: self, action: #selector(onToggleSearch(_:)))
+        barButtonSearch.tintColor = .white
+        navigationItem.rightBarButtonItem = barButtonSearch
+    }
+    
+    @objc private func onToggleSearch(_ sender: UIBarButtonItem) {
+        constraingCollectionViewTopMargin.constant = isSearchOpen ? 0 : 54 + 5 + 5
+        _ = isSearchOpen ? fieldSearch.resignFirstResponder() : fieldSearch.becomeFirstResponder()
+        isSearchOpen.toggle()
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func configureFieldSearch() {
+        fieldSearch.mambaFieldEditingChanged = { [weak self] query in
+            guard let strongSelf = self else {return}
+            strongSelf.searchText = query
+            NSObject.cancelPreviousPerformRequests(withTarget: strongSelf, selector: #selector(strongSelf.search), object: nil)
+            strongSelf.perform(#selector(strongSelf.search), with: nil, afterDelay: strongSelf.searchAfterDelay)
+        }
+    }
+    
+    @objc private func search() {
+        // clear dataset
+        showViewModels.removeAll()
+        spinner.startAnimating()
+        
+        // search for page = 1
+        loadSearch()
+    }
+    
+     private func loadSearch(page: Int = 1) {
+        guard !isLoading else { return }
+        isLoading = true
+        hasNextPage = false
+        
+        // calls api
+        guard let query = searchText else {return}
+        viewModel.search(with: query, and: page)
+        
+        // callbacks response
+        viewModel.didFetchShowsData = { [weak self] shows in
+            guard let strongSelf = self else { return }
+            strongSelf.isLoading = false
+            
+            strongSelf.spinner.stopAnimating()
+            
+            if shows.isEmpty {
+                strongSelf.collectionView.contentInset.bottom = 50
+            } else {
+                strongSelf.hasNextPage = true
+            }
+            
+            strongSelf.showViewModels.append(contentsOf: shows)
+            DispatchQueue.main.async { strongSelf.collectionView.reloadData() }
         }
     }
 }

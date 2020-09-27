@@ -9,11 +9,13 @@ import UIKit
 
 enum AppStoryboard: String {
     
+    case splash             = "Splash"
     case main               = "Main"
     case details            = "Details"
     
     var name: String {
         switch self {
+        case .splash: return "Splash"
         case .main: return "Main"
         case .details: return "Details"
         }

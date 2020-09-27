@@ -27,6 +27,8 @@ class MambaSearchField: UITextField {
         }
     }
     
+    internal var mambaFieldEditingChanged: ((String)->())?
+    
     private var titleLabel: UILabel!
     private var isError: Bool = false
     private var fontSize = 12
@@ -99,6 +101,8 @@ class MambaSearchField: UITextField {
             }
             isError.toggle()
         }
+        
+        mambaFieldEditingChanged?(text ?? "")
     }
     
     private func setupFieldShadow() {

@@ -22,10 +22,18 @@ final class AppCoordinator: Coordinator {
     func start() {
         window.rootViewController = navController
         window.makeKeyAndVisible()
-        showMain()
+        showSplash()
     }
     
     // MARK: - Navigation
+    private func showSplash() {
+        let sb = AppStoryboard.splash.instance
+        let splashVC = sb.instantiate(viewController: SplashViewController.self)
+        splashVC.delegate = self
+        navController.navigationBar.isHidden = true
+        navController.setViewControllers([splashVC], animated: false)
+    }
+    
     private func showMain() {
         let sb = AppStoryboard.main.instance
         let mainVC = sb.instantiate(viewController: MainViewController.self)
@@ -42,6 +50,13 @@ final class AppCoordinator: Coordinator {
     }
 }
 
+// MARK: - SplashViewControllerDelegate
+extension AppCoordinator: SplashViewControllerDelegate {
+    func openMain() {
+        showMain()
+    }
+}
+
 // MARK: - MainViewControllerDelegate
 extension AppCoordinator: MainViewControllerDelegate {
     func openDetails(pass viewModel: TVShowViewModel) {
@@ -49,7 +64,7 @@ extension AppCoordinator: MainViewControllerDelegate {
     }
 }
 
-// MARK: DetailsViewControllerDelegate?'
+// MARK: - DetailsViewControllerDelegate?'
 extension AppCoordinator: DetailsViewControllerDelegate {
 
 }

@@ -12,6 +12,8 @@
 		B533B799251E59DB0030E640 /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B798251E59DB0030E640 /* UINavigationBar+Extensions.swift */; };
 		B533B7A1251E5A220030E640 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B7A0251E5A220030E640 /* Array+Extension.swift */; };
 		B533B7A6251E5A4F0030E640 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B7A5251E5A4F0030E640 /* UIView+Extension.swift */; };
+		B5474F3F2520D49700A5979B /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5474F3E2520D49700A5979B /* Splash.storyboard */; };
+		B5474F452520D4C900A5979B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5474F442520D4C900A5979B /* SplashViewController.swift */; };
 		B575D81F251E6D170015216C /* NEOImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575D81E251E6D170015216C /* NEOImageView.swift */; };
 		B575D824251E6D540015216C /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */; };
 		B57D3A15252086D600477166 /* FilterSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57D3A14252086D600477166 /* FilterSheet.xib */; };
@@ -89,6 +91,8 @@
 		B533B798251E59DB0030E640 /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
 		B533B7A0251E5A220030E640 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		B533B7A5251E5A4F0030E640 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		B5474F3E2520D49700A5979B /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		B5474F442520D4C900A5979B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		B575D81E251E6D170015216C /* NEOImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEOImageView.swift; sourceTree = "<group>"; };
 		B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
 		B57D3A14252086D600477166 /* FilterSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSheet.xib; sourceTree = "<group>"; };
@@ -180,6 +184,23 @@
 				B533916225208F38009C8500 /* RatingView.swift */,
 			);
 			path = RatingView;
+			sourceTree = "<group>";
+		};
+		B5474F3D2520D48A00A5979B /* SplashScene */ = {
+			isa = PBXGroup;
+			children = (
+				B5474F432520D4B900A5979B /* View */,
+				B5474F442520D4C900A5979B /* SplashViewController.swift */,
+			);
+			path = SplashScene;
+			sourceTree = "<group>";
+		};
+		B5474F432520D4B900A5979B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B5474F3E2520D49700A5979B /* Splash.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B57D3A13252086BD00477166 /* FilterSheet */ = {
@@ -448,6 +469,7 @@
 		F2F95FCD251E214400A83700 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B5474F3D2520D48A00A5979B /* SplashScene */,
 				B5E2513F251F0F6C0033973D /* Base */,
 				F24C1FE0251E236600F582F0 /* Reusables */,
 				F282952A251E21C900DA1140 /* MainScene */,
@@ -579,6 +601,7 @@
 				F282951D251E219300DA1140 /* TVShowCell.xib in Resources */,
 				F2F95FC7251E1F9400A83700 /* FiraGO-Medium.otf in Resources */,
 				F2829530251E221200DA1140 /* Details.storyboard in Resources */,
+				B5474F3F2520D49700A5979B /* Splash.storyboard in Resources */,
 				B581248F251F608A00778496 /* SimilarShows.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +632,7 @@
 				F21BB073251E12EA00A64B34 /* DeleteWebServiceOperation.swift in Sources */,
 				F21BB040251E128C00A64B34 /* UICollectionView+Extension.swift in Sources */,
 				F24C1FF1251E2DDA00F582F0 /* TVShowsResponse.swift in Sources */,
+				B5474F452520D4C900A5979B /* SplashViewController.swift in Sources */,
 				F21BB075251E12EA00A64B34 /* ApiConfiguration.swift in Sources */,
 				F21BB06A251E12EA00A64B34 /* HTTPHeaders.swift in Sources */,
 				F21BB041251E128C00A64B34 /* UICollectionViewCell+Extension.swift in Sources */,
