@@ -95,17 +95,17 @@
 		B5E25159251F12AC0033973D /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		B5E2515E251F13150033973D /* Storyboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extension.swift"; sourceTree = "<group>"; };
 		B5E25163251F148B0033973D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		F21BAFFE251E10D300A64B34 /* Movie DB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie DB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F21BAFFE251E10D300A64B34 /* Mamba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mamba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21BB001251E10D300A64B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F21BB003251E10D300A64B34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F21BB005251E10D300A64B34 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F21BB00A251E10D500A64B34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F21BB00D251E10D500A64B34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F21BB00F251E10D500A64B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F21BB014251E10D500A64B34 /* Movie DBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Movie DBTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F21BB014251E10D500A64B34 /* MambaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MambaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21BB018251E10D500A64B34 /* Movie_DBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie_DBTests.swift; sourceTree = "<group>"; };
 		F21BB01A251E10D500A64B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F21BB01F251E10D500A64B34 /* Movie DBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Movie DBUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F21BB01F251E10D500A64B34 /* MambaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MambaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21BB023251E10D500A64B34 /* Movie_DBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie_DBUITests.swift; sourceTree = "<group>"; };
 		F21BB025251E10D500A64B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F21BB03B251E128C00A64B34 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -204,9 +204,9 @@
 		F21BAFF5251E10D300A64B34 = {
 			isa = PBXGroup;
 			children = (
-				F21BB000251E10D300A64B34 /* Movie DB */,
-				F21BB017251E10D500A64B34 /* Movie DBTests */,
-				F21BB022251E10D500A64B34 /* Movie DBUITests */,
+				F21BB000251E10D300A64B34 /* Mamba */,
+				F21BB017251E10D500A64B34 /* MambaTests */,
+				F21BB022251E10D500A64B34 /* MambaUITests */,
 				F21BAFFF251E10D300A64B34 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -214,14 +214,14 @@
 		F21BAFFF251E10D300A64B34 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F21BAFFE251E10D300A64B34 /* Movie DB.app */,
-				F21BB014251E10D500A64B34 /* Movie DBTests.xctest */,
-				F21BB01F251E10D500A64B34 /* Movie DBUITests.xctest */,
+				F21BAFFE251E10D300A64B34 /* Mamba.app */,
+				F21BB014251E10D500A64B34 /* MambaTests.xctest */,
+				F21BB01F251E10D500A64B34 /* MambaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F21BB000251E10D300A64B34 /* Movie DB */ = {
+		F21BB000251E10D300A64B34 /* Mamba */ = {
 			isa = PBXGroup;
 			children = (
 				F21BB08D251E159C00A64B34 /* App */,
@@ -233,25 +233,25 @@
 				F2F95FCD251E214400A83700 /* Presentation */,
 				F21BB08C251E159300A64B34 /* Supporting Files */,
 			);
-			path = "Movie DB";
+			path = Mamba;
 			sourceTree = "<group>";
 		};
-		F21BB017251E10D500A64B34 /* Movie DBTests */ = {
+		F21BB017251E10D500A64B34 /* MambaTests */ = {
 			isa = PBXGroup;
 			children = (
 				F21BB018251E10D500A64B34 /* Movie_DBTests.swift */,
 				F21BB01A251E10D500A64B34 /* Info.plist */,
 			);
-			path = "Movie DBTests";
+			path = MambaTests;
 			sourceTree = "<group>";
 		};
-		F21BB022251E10D500A64B34 /* Movie DBUITests */ = {
+		F21BB022251E10D500A64B34 /* MambaUITests */ = {
 			isa = PBXGroup;
 			children = (
 				F21BB023251E10D500A64B34 /* Movie_DBUITests.swift */,
 				F21BB025251E10D500A64B34 /* Info.plist */,
 			);
-			path = "Movie DBUITests";
+			path = MambaUITests;
 			sourceTree = "<group>";
 		};
 		F21BB039251E123100A64B34 /* Infrastructure */ = {
@@ -442,9 +442,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F21BAFFD251E10D300A64B34 /* Movie DB */ = {
+		F21BAFFD251E10D300A64B34 /* Mamba */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F21BB028251E10D500A64B34 /* Build configuration list for PBXNativeTarget "Movie DB" */;
+			buildConfigurationList = F21BB028251E10D500A64B34 /* Build configuration list for PBXNativeTarget "Mamba" */;
 			buildPhases = (
 				F21BAFFA251E10D300A64B34 /* Sources */,
 				F21BAFFB251E10D300A64B34 /* Frameworks */,
@@ -454,14 +454,14 @@
 			);
 			dependencies = (
 			);
-			name = "Movie DB";
+			name = Mamba;
 			productName = "Movie DB";
-			productReference = F21BAFFE251E10D300A64B34 /* Movie DB.app */;
+			productReference = F21BAFFE251E10D300A64B34 /* Mamba.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F21BB013251E10D500A64B34 /* Movie DBTests */ = {
+		F21BB013251E10D500A64B34 /* MambaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F21BB02B251E10D500A64B34 /* Build configuration list for PBXNativeTarget "Movie DBTests" */;
+			buildConfigurationList = F21BB02B251E10D500A64B34 /* Build configuration list for PBXNativeTarget "MambaTests" */;
 			buildPhases = (
 				F21BB010251E10D500A64B34 /* Sources */,
 				F21BB011251E10D500A64B34 /* Frameworks */,
@@ -472,14 +472,14 @@
 			dependencies = (
 				F21BB016251E10D500A64B34 /* PBXTargetDependency */,
 			);
-			name = "Movie DBTests";
+			name = MambaTests;
 			productName = "Movie DBTests";
-			productReference = F21BB014251E10D500A64B34 /* Movie DBTests.xctest */;
+			productReference = F21BB014251E10D500A64B34 /* MambaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F21BB01E251E10D500A64B34 /* Movie DBUITests */ = {
+		F21BB01E251E10D500A64B34 /* MambaUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F21BB02E251E10D500A64B34 /* Build configuration list for PBXNativeTarget "Movie DBUITests" */;
+			buildConfigurationList = F21BB02E251E10D500A64B34 /* Build configuration list for PBXNativeTarget "MambaUITests" */;
 			buildPhases = (
 				F21BB01B251E10D500A64B34 /* Sources */,
 				F21BB01C251E10D500A64B34 /* Frameworks */,
@@ -490,9 +490,9 @@
 			dependencies = (
 				F21BB021251E10D500A64B34 /* PBXTargetDependency */,
 			);
-			name = "Movie DBUITests";
+			name = MambaUITests;
 			productName = "Movie DBUITests";
-			productReference = F21BB01F251E10D500A64B34 /* Movie DBUITests.xctest */;
+			productReference = F21BB01F251E10D500A64B34 /* MambaUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -517,7 +517,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F21BAFF9251E10D300A64B34 /* Build configuration list for PBXProject "Movie DB" */;
+			buildConfigurationList = F21BAFF9251E10D300A64B34 /* Build configuration list for PBXProject "Mamba" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -530,9 +530,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F21BAFFD251E10D300A64B34 /* Movie DB */,
-				F21BB013251E10D500A64B34 /* Movie DBTests */,
-				F21BB01E251E10D500A64B34 /* Movie DBUITests */,
+				F21BAFFD251E10D300A64B34 /* Mamba */,
+				F21BB013251E10D500A64B34 /* MambaTests */,
+				F21BB01E251E10D500A64B34 /* MambaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -641,12 +641,12 @@
 /* Begin PBXTargetDependency section */
 		F21BB016251E10D500A64B34 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F21BAFFD251E10D300A64B34 /* Movie DB */;
+			target = F21BAFFD251E10D300A64B34 /* Mamba */;
 			targetProxy = F21BB015251E10D500A64B34 /* PBXContainerItemProxy */;
 		};
 		F21BB021251E10D500A64B34 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F21BAFFD251E10D300A64B34 /* Movie DB */;
+			target = F21BAFFD251E10D300A64B34 /* Mamba */;
 			targetProxy = F21BB020251E10D500A64B34 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -786,13 +786,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62BA3UNA7M;
-				INFOPLIST_FILE = "Movie DB/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Mamba/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tech.coremotion.Movie-DB";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.coremotion.mamba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -806,13 +806,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62BA3UNA7M;
-				INFOPLIST_FILE = "Movie DB/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Mamba/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tech.coremotion.Movie-DB";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.coremotion.mamba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -837,7 +837,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Movie DB.app/Movie DB";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mamba.app/Mamba";
 			};
 			name = Debug;
 		};
@@ -859,7 +859,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Movie DB.app/Movie DB";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mamba.app/Mamba";
 			};
 			name = Release;
 		};
@@ -906,7 +906,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F21BAFF9251E10D300A64B34 /* Build configuration list for PBXProject "Movie DB" */ = {
+		F21BAFF9251E10D300A64B34 /* Build configuration list for PBXProject "Mamba" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F21BB026251E10D500A64B34 /* Debug */,
@@ -915,7 +915,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F21BB028251E10D500A64B34 /* Build configuration list for PBXNativeTarget "Movie DB" */ = {
+		F21BB028251E10D500A64B34 /* Build configuration list for PBXNativeTarget "Mamba" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F21BB029251E10D500A64B34 /* Debug */,
@@ -924,7 +924,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F21BB02B251E10D500A64B34 /* Build configuration list for PBXNativeTarget "Movie DBTests" */ = {
+		F21BB02B251E10D500A64B34 /* Build configuration list for PBXNativeTarget "MambaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F21BB02C251E10D500A64B34 /* Debug */,
@@ -933,7 +933,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F21BB02E251E10D500A64B34 /* Build configuration list for PBXNativeTarget "Movie DBUITests" */ = {
+		F21BB02E251E10D500A64B34 /* Build configuration list for PBXNativeTarget "MambaUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F21BB02F251E10D500A64B34 /* Debug */,

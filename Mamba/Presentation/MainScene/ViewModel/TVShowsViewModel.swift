@@ -34,7 +34,7 @@ final class TVShowsViewModel {
     
     private func finishShowsFetching(with shows: [TVShow]) {
         DispatchQueue.main.async {self.isRefreshing?(false)}
-        self.tvShows = shows
+        self.tvShows.append(contentsOf: shows)
     }
     
     func didSelectRow(at indexPath: IndexPath) {

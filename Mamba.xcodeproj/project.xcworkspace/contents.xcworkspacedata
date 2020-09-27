@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Users/neo/Documents/Movie-DB/Mamba.xcodeproj">
    </FileRef>
 </Workspace>

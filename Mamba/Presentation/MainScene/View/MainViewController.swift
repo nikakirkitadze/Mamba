@@ -13,6 +13,7 @@ protocol MainViewControllerDelegate: class {
 
 class MainViewController: BaseViewController {
     
+    // MARK: IBOutlets
     @IBOutlet private weak var collectionView: UICollectionView!
     
     private var viewModel = TVShowsViewModel()
