@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B533916325208F38009C8500 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533916225208F38009C8500 /* RatingView.swift */; };
+		B533916A2520A4F6009C8500 /* MambaSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53391692520A4F6009C8500 /* MambaSearchField.swift */; };
 		B533B799251E59DB0030E640 /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B798251E59DB0030E640 /* UINavigationBar+Extensions.swift */; };
 		B533B7A1251E5A220030E640 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B7A0251E5A220030E640 /* Array+Extension.swift */; };
 		B533B7A6251E5A4F0030E640 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B7A5251E5A4F0030E640 /* UIView+Extension.swift */; };
@@ -84,6 +85,7 @@
 
 /* Begin PBXFileReference section */
 		B533916225208F38009C8500 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		B53391692520A4F6009C8500 /* MambaSearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MambaSearchField.swift; sourceTree = "<group>"; };
 		B533B798251E59DB0030E640 /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
 		B533B7A0251E5A220030E640 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		B533B7A5251E5A4F0030E640 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				F24C1FE1251E237000F582F0 /* GradientView.swift */,
 				B575D81E251E6D170015216C /* NEOImageView.swift */,
 				B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */,
+				B53391692520A4F6009C8500 /* MambaSearchField.swift */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				F24C1FFC251E2EEB00F582F0 /* APP.swift in Sources */,
 				F21BB072251E12EA00A64B34 /* PostWebServiceOperation.swift in Sources */,
 				F282951E251E219300DA1140 /* TVShowCell.swift in Sources */,
+				B533916A2520A4F6009C8500 /* MambaSearchField.swift in Sources */,
 				F21BB03F251E128C00A64B34 /* UIColor+Extension.swift in Sources */,
 				F24C1FD9251E22D300F582F0 /* TVShowViewModel.swift in Sources */,
 				F21BB048251E12B500A64B34 /* Log.swift in Sources */,

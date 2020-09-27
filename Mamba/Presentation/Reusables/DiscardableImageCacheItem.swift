@@ -1,5 +1,5 @@
 //
-//  D.swift
+//  DiscardableImageCacheItem.swift
 //  Movie DB
 //
 //  Created by Nika Kirkitadze on 9/25/20.

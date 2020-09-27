@@ -15,6 +15,8 @@ class MainViewController: BaseViewController {
     
     // MARK: IBOutlets
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var fieldSearch: MambaSearchField!
+    @IBOutlet private weak var constraingCollectionViewTopMargin: NSLayoutConstraint!
     
     private var viewModel = TVShowsViewModel()
     private var showViewModels = [TVShowViewModel]()
@@ -23,12 +25,18 @@ class MainViewController: BaseViewController {
     private var paginated = true
     private var currentPage = 1
     private let paginationIndicatorInset: CGFloat = 25
+    private var isSearchOpen = false
     
     weak var delegate: MainViewControllerDelegate?
     
+    override func loadView() {
+        super.loadView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        setupBarButtons()
         configureCollectionView()
         configureViewModel()
         load(page: 1)
@@ -75,12 +83,27 @@ class MainViewController: BaseViewController {
             DispatchQueue.main.async { strongSelf.collectionView.reloadData() }
         }
     }
+    
+    private func setupBarButtons() {
+        let barButtonSearch = UIBarButtonItem(image: UIImage(named: "ic-search"), style: .plain, target: self, action: #selector(onToggleSearch(_:)))
+        barButtonSearch.tintColor = .white
+        navigationItem.rightBarButtonItem = barButtonSearch
+    }
+    
+    @objc private func onToggleSearch(_ sender: UIBarButtonItem) {
+        constraingCollectionViewTopMargin.constant = isSearchOpen ? 0 : 54 + 5 + 5
+        _ = isSearchOpen ? fieldSearch.resignFirstResponder() : fieldSearch.becomeFirstResponder()
+        isSearchOpen.toggle()
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
 }
 
 // MARK: UICollectionViewDataSource
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfRows
+        return showViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

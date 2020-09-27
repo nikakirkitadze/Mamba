@@ -1,6 +1,6 @@
 //
 //  TVShowsViewModel.swift
-//  Movie DB
+//  Mamba
 //
 //  Created by Nika Kirkitadze on 9/26/20.
 //
@@ -34,7 +34,7 @@ final class TVShowsViewModel {
     
     private func finishShowsFetching(with shows: [TVShow]) {
         DispatchQueue.main.async {self.isRefreshing?(false)}
-        self.tvShows.append(contentsOf: shows)
+        self.tvShows = shows
     }
     
     func didSelectRow(at indexPath: IndexPath) {
