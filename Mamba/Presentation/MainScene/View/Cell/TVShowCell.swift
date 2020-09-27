@@ -7,14 +7,21 @@
 
 import UIKit
 
+class BaseCollectionViewCell: UICollectionViewCell {
+    
+}
+
 class TVShowCell: UICollectionViewCell {
     
     @IBOutlet private weak var imageViewPoster: NEOImageView!
     @IBOutlet private weak var labelShowTitle: UILabel!
     @IBOutlet private weak var labelDate: UILabel!
     @IBOutlet private weak var viewRatingContainer: RatingView!
+    @IBOutlet private weak var viewHighlight: UIView!
     @IBOutlet private weak var constraintMaxWidth: NSLayoutConstraint!
     @IBOutlet private weak var constraintMaxHeight: NSLayoutConstraint!
+    
+    private var effectView: UIVisualEffectView?
     
     private var maxWidth: CGFloat? = nil {
         didSet {
@@ -36,8 +43,6 @@ class TVShowCell: UICollectionViewCell {
         }
     }
     
-    private var effectView: UIVisualEffectView?
-    
     var size: CGSize = .zero {
         didSet {
             maxHeight = size.height
@@ -54,6 +59,23 @@ class TVShowCell: UICollectionViewCell {
         
         layer.cornerRadius = 5
         imageViewPoster.layer.cornerRadius = 5
+    }
+    
+    override var isHighlighted: Bool {
+        didSet {
+            if isHighlighted {
+                viewHighlight?.isHidden = false
+                viewHighlight?.alpha = 1.0
+            } else {
+                UIView.animate(withDuration: 0.1,
+                               delay: 0.0, options: [.curveEaseOut, .allowUserInteraction],
+                               animations: { [unowned self] in
+                                self.viewHighlight?.alpha = 0.0
+                    }) { _ in
+                        self.viewHighlight?.isHidden = true
+                }
+            }
+        }
     }
     
     private func setBottomShadow() {

@@ -472,9 +472,9 @@
 		F2F95FCD251E214400A83700 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				B5474F3D2520D48A00A5979B /* SplashScene */,
 				B5E2513F251F0F6C0033973D /* Base */,
 				F24C1FE0251E236600F582F0 /* Reusables */,
+				B5474F3D2520D48A00A5979B /* SplashScene */,
 				F282952A251E21C900DA1140 /* MainScene */,
 				F282952B251E21FB00DA1140 /* DetailsScene */,
 				B581248C251F607700778496 /* SimilarShowsScene */,
