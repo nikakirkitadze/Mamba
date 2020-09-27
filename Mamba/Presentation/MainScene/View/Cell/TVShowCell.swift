@@ -10,6 +10,9 @@ import UIKit
 class TVShowCell: UICollectionViewCell {
     
     @IBOutlet private weak var imageViewPoster: NEOImageView!
+    @IBOutlet private weak var labelShowTitle: UILabel!
+    @IBOutlet private weak var labelDate: UILabel!
+    @IBOutlet private weak var viewRatingContainer: RatingView!
     @IBOutlet private weak var constraintMaxWidth: NSLayoutConstraint!
     @IBOutlet private weak var constraintMaxHeight: NSLayoutConstraint!
     
@@ -33,6 +36,8 @@ class TVShowCell: UICollectionViewCell {
         }
     }
     
+    private var effectView: UIVisualEffectView?
+    
     var size: CGSize = .zero {
         didSet {
             maxHeight = size.height
@@ -49,7 +54,6 @@ class TVShowCell: UICollectionViewCell {
         
         layer.cornerRadius = 5
         imageViewPoster.layer.cornerRadius = 5
-        setBottomShadow()
     }
     
     private func setBottomShadow() {
@@ -64,5 +68,8 @@ class TVShowCell: UICollectionViewCell {
 
     internal func configure(with viewModel: TVShowViewModel) {
         imageViewPoster.loadImage(urlString: viewModel.posterUrlString)
+        labelShowTitle.text = viewModel.title
+        labelDate.text = viewModel.date
+        viewRatingContainer.avgRaiting = viewModel.avgRaiting
     }
 }

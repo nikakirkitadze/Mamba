@@ -1,6 +1,6 @@
 //
-//  ViewController.swift
-//  Movie DB
+//  MainViewController.swift
+//  Mamba
 //
 //  Created by Nika Kirkitadze on 9/25/20.
 //
@@ -28,9 +28,7 @@ class MainViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Log.debug("INIT")
-        
+                
         configureCollectionView()
         configureViewModel()
         load(page: 1)

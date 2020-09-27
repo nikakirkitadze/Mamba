@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B533916325208F38009C8500 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533916225208F38009C8500 /* RatingView.swift */; };
 		B533B799251E59DB0030E640 /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B798251E59DB0030E640 /* UINavigationBar+Extensions.swift */; };
 		B533B7A1251E5A220030E640 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B7A0251E5A220030E640 /* Array+Extension.swift */; };
 		B533B7A6251E5A4F0030E640 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B7A5251E5A4F0030E640 /* UIView+Extension.swift */; };
 		B575D81F251E6D170015216C /* NEOImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575D81E251E6D170015216C /* NEOImageView.swift */; };
 		B575D824251E6D540015216C /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */; };
+		B57D3A15252086D600477166 /* FilterSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57D3A14252086D600477166 /* FilterSheet.xib */; };
+		B57D3A1A252086ED00477166 /* FilterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D3A19252086ED00477166 /* FilterSheet.swift */; };
 		B5812485251F551E00778496 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812484251F551E00778496 /* UIFont+Extension.swift */; };
 		B581248F251F608A00778496 /* SimilarShows.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B581248E251F608A00778496 /* SimilarShows.storyboard */; };
 		B5812495251F617600778496 /* SimilarShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812494251F617600778496 /* SimilarShowsViewController.swift */; };
@@ -80,11 +83,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B533916225208F38009C8500 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		B533B798251E59DB0030E640 /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
 		B533B7A0251E5A220030E640 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		B533B7A5251E5A4F0030E640 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B575D81E251E6D170015216C /* NEOImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEOImageView.swift; sourceTree = "<group>"; };
 		B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
+		B57D3A14252086D600477166 /* FilterSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSheet.xib; sourceTree = "<group>"; };
+		B57D3A19252086ED00477166 /* FilterSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSheet.swift; sourceTree = "<group>"; };
 		B5812484251F551E00778496 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		B581248E251F608A00778496 /* SimilarShows.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimilarShows.storyboard; sourceTree = "<group>"; };
 		B5812494251F617600778496 /* SimilarShowsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarShowsViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +172,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B533915925208F1C009C8500 /* RatingView */ = {
+			isa = PBXGroup;
+			children = (
+				B533916225208F38009C8500 /* RatingView.swift */,
+			);
+			path = RatingView;
+			sourceTree = "<group>";
+		};
+		B57D3A13252086BD00477166 /* FilterSheet */ = {
+			isa = PBXGroup;
+			children = (
+				B57D3A14252086D600477166 /* FilterSheet.xib */,
+				B57D3A19252086ED00477166 /* FilterSheet.swift */,
+			);
+			path = FilterSheet;
+			sourceTree = "<group>";
+		};
 		B581248C251F607700778496 /* SimilarShowsScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +372,8 @@
 		F24C1FE0251E236600F582F0 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				B533915925208F1C009C8500 /* RatingView */,
+				B57D3A13252086BD00477166 /* FilterSheet */,
 				F24C1FE1251E237000F582F0 /* GradientView.swift */,
 				B575D81E251E6D170015216C /* NEOImageView.swift */,
 				B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */,
@@ -545,6 +570,7 @@
 				F2829526251E21BE00DA1140 /* Main.storyboard in Resources */,
 				F2F95FC8251E1F9400A83700 /* FiraGO-Book.otf in Resources */,
 				F2F95FC6251E1F9400A83700 /* FiraGO-Light.otf in Resources */,
+				B57D3A15252086D600477166 /* FilterSheet.xib in Resources */,
 				F21BB00E251E10D500A64B34 /* LaunchScreen.storyboard in Resources */,
 				F21BB00B251E10D500A64B34 /* Assets.xcassets in Resources */,
 				F282951D251E219300DA1140 /* TVShowCell.xib in Resources */,
@@ -586,6 +612,7 @@
 				F21BB002251E10D300A64B34 /* AppDelegate.swift in Sources */,
 				F21BB004251E10D300A64B34 /* SceneDelegate.swift in Sources */,
 				F21BB052251E12CC00A64B34 /* Constants.swift in Sources */,
+				B533916325208F38009C8500 /* RatingView.swift in Sources */,
 				F21BB06C251E12EA00A64B34 /* GetWebServiceOperation.swift in Sources */,
 				F21BB076251E12EA00A64B34 /* WebServiceManager.swift in Sources */,
 				B575D81F251E6D170015216C /* NEOImageView.swift in Sources */,
@@ -605,6 +632,7 @@
 				B5E25155251F12030033973D /* AppCoordinator.swift in Sources */,
 				B5E25164251F148B0033973D /* UIViewController+Extension.swift in Sources */,
 				B5E25141251F0F7D0033973D /* BaseViewController.swift in Sources */,
+				B57D3A1A252086ED00477166 /* FilterSheet.swift in Sources */,
 				B575D824251E6D540015216C /* DiscardableImageCacheItem.swift in Sources */,
 				F21BB068251E12EA00A64B34 /* HeadWebServiceOperation.swift in Sources */,
 				B5E2514D251F11CA0033973D /* Coordinator.swift in Sources */,

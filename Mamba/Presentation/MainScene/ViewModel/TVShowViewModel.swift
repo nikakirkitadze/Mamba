@@ -14,6 +14,7 @@ struct TVShowViewModel {
     internal var titleBig: String
     internal var overview: String
     internal var avgRaiting: Double
+    internal var date: String
     
     // MARK: Private properties
     private var posterPath: String
@@ -33,9 +34,9 @@ struct TVShowViewModel {
         shadow.shadowColor = Colors.shadowColor
         shadow.shadowBlurRadius = 5
         
-        var attributes = [
+        var attributes: [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.font:UIFont.named(.firaGoBook, size: 44),
-            NSAttributedString.Key.foregroundColor:Colors.textMain,
+            NSAttributedString.Key.foregroundColor:Colors.textMain!,
             NSAttributedString.Key.shadow: shadow
         ]
         
@@ -61,5 +62,6 @@ struct TVShowViewModel {
         avgRaiting          = show.voteAverage ?? 0.0
         posterPath          = show.posterPath ?? ""
         backdropPath        = show.backdropPath ?? ""
+        date                = show.firstAirDate ?? ""
     }
 }
