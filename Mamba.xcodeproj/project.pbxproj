@@ -14,6 +14,7 @@
 		B533B7A6251E5A4F0030E640 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B7A5251E5A4F0030E640 /* UIView+Extension.swift */; };
 		B5474F3F2520D49700A5979B /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5474F3E2520D49700A5979B /* Splash.storyboard */; };
 		B5474F452520D4C900A5979B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5474F442520D4C900A5979B /* SplashViewController.swift */; };
+		B54A74192520E601005C0067 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54A74182520E601005C0067 /* UIStackView+Extensions.swift */; };
 		B575D81F251E6D170015216C /* NEOImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575D81E251E6D170015216C /* NEOImageView.swift */; };
 		B575D824251E6D540015216C /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */; };
 		B57D3A15252086D600477166 /* FilterSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57D3A14252086D600477166 /* FilterSheet.xib */; };
@@ -93,6 +94,7 @@
 		B533B7A5251E5A4F0030E640 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B5474F3E2520D49700A5979B /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		B5474F442520D4C900A5979B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		B54A74182520E601005C0067 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		B575D81E251E6D170015216C /* NEOImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEOImageView.swift; sourceTree = "<group>"; };
 		B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
 		B57D3A14252086D600477166 /* FilterSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSheet.xib; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				B5E2515E251F13150033973D /* Storyboard+Extension.swift */,
 				B5E25163251F148B0033973D /* UIViewController+Extension.swift */,
 				B5812484251F551E00778496 /* UIFont+Extension.swift */,
+				B54A74182520E601005C0067 /* UIStackView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				B5E2515A251F12AC0033973D /* AppStoryboard.swift in Sources */,
 				F24C1FFC251E2EEB00F582F0 /* APP.swift in Sources */,
 				F21BB072251E12EA00A64B34 /* PostWebServiceOperation.swift in Sources */,
+				B54A74192520E601005C0067 /* UIStackView+Extensions.swift in Sources */,
 				F282951E251E219300DA1140 /* TVShowCell.swift in Sources */,
 				B533916A2520A4F6009C8500 /* MambaSearchField.swift in Sources */,
 				F21BB03F251E128C00A64B34 /* UIColor+Extension.swift in Sources */,

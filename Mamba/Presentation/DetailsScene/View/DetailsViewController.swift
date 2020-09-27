@@ -23,7 +23,6 @@ class DetailsViewController: BaseViewController {
     @IBOutlet private weak var labelShowTitle: UILabel!
     @IBOutlet private weak var labelShowTitleBig: UILabel!
     @IBOutlet private weak var labelShowOverview: UILabel!
-    
     @IBOutlet private weak var constraingHeaderHeight: NSLayoutConstraint!
     
     // MARK: Private properties
@@ -64,7 +63,7 @@ class DetailsViewController: BaseViewController {
     
     private func configureScrollView() {
         scrollView.delegate = self
-        scrollView.contentInset.top = UIDevice.isIpad ? 2.5 * headerHeight : headerHeight
+//        scrollView.contentInset.top = UIDevice.isIpad ? 2.5 * headerHeight : headerHeight
     }
     
     private func presentShowInfo() {
