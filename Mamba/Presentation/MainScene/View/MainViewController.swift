@@ -29,6 +29,8 @@ class MainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Log.debug("INIT")
+        
         configureCollectionView()
         configureViewModel()
         load(page: 1)

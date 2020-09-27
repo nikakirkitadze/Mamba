@@ -22,7 +22,8 @@ struct Margins {
 }
 
 struct Colors {
-    static let mainBG                           = UIColor.black // UIColor(hex: "00021A")
-    static let textMain                         = UIColor(hex: "D8DAF3")
+    static let mainBG                           = UIColor(named: "background")
+    static let textMain                         = UIColor(named: "textColor")
+    static let textSecondary                    = UIColor(named: "textColorSecondary")
     static let shadowColor                      = UIColor(hex: "FFBB3B")
 }
