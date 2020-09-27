@@ -65,7 +65,7 @@ class RatingView: UIView {
     
     private func setupLayout() {
         layer.cornerRadius = bounds.width/2
-        backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        backgroundColor = UIColor.black.withAlphaComponent(0.8)
         
         createBlurEffectView()
         createLabel()
@@ -98,14 +98,14 @@ class RatingView: UIView {
         trackLayer.path = circularPath.cgPath
         
         trackLayer.strokeColor = UIColor.lightGray.cgColor
-        trackLayer.lineWidth = 1
+        trackLayer.lineWidth = 2
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = .round
         layer.addSublayer(trackLayer)
         
         shapeLayer.path = circularPath.cgPath
         shapeLayer.strokeColor = UIColor.red.cgColor
-        shapeLayer.lineWidth = 1
+        shapeLayer.lineWidth = 2
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineCap = .round
         shapeLayer.strokeEnd = 0

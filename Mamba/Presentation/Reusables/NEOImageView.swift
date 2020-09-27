@@ -47,7 +47,7 @@ class NEOImageView: UIImageView {
      - parameter urlString: The url location of your image, usually on a remote server somewhere.
      - parameter completion: Optionally execute some task after the image download completes
      */
-
+    
     func loadImage(urlString: String, completion: (() -> ())? = nil) {
         image = nil
         
@@ -68,6 +68,8 @@ class NEOImageView: UIImageView {
             return
         }
         URLSession.shared.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
+            guard let strongSelf = self else {return}
+            
             if error != nil {
                 return
             }
@@ -78,12 +80,16 @@ class NEOImageView: UIImageView {
                     NEOImageView.imageCache.setObject(cacheItem, forKey: urlKey)
                     
                     if urlString == self?.urlStringForChecking {
-                        self?.image = image
+                        UIView.transition(with: strongSelf,
+                                          duration: 0.75,
+                                          options: .transitionCrossDissolve,
+                                          animations: { strongSelf.image = image },
+                                          completion: nil)
                         completion?()
                     }
                 }
             }
             
-            }).resume()
+        }).resume()
     }
 }

@@ -30,7 +30,7 @@
                             <constraint firstAttribute="width" secondItem="P2k-mF-caz" secondAttribute="height" multiplier="2:3" id="unk-1Y-kfe"/>
                         </constraints>
                     </imageView>
-                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSf-ah-v7W" userLabel="Highlight View">
+                    <view hidden="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSf-ah-v7W" userLabel="Highlight View">
                         <rect key="frame" x="0.0" y="0.0" width="108" height="162"/>
                         <color key="backgroundColor" red="0.25098311899999998" green="0.25097686050000001" blue="0.25097808240000002" alpha="0.20339255136986301" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
@@ -52,24 +52,24 @@
                         </subviews>
                     </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cf7-1p-KuT" customClass="RatingView" customModule="Mamba" customModuleProvider="target">
-                        <rect key="frame" x="75" y="129" width="30" height="30"/>
+                        <rect key="frame" x="5" y="127" width="30" height="30"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="TiJ-HI-pIu"/>
-                            <constraint firstAttribute="width" constant="30" id="nRI-88-PPo"/>
+                            <constraint firstAttribute="width" constant="30" id="Mnj-Kj-vq0"/>
+                            <constraint firstAttribute="height" constant="30" id="ahL-c2-G7t"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="TSf-ah-v7W" firstAttribute="top" secondItem="P2k-mF-caz" secondAttribute="top" id="5yv-jD-H8H"/>
+                <constraint firstItem="Cf7-1p-KuT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="7nZ-88-P9S"/>
                 <constraint firstAttribute="bottom" secondItem="P2k-mF-caz" secondAttribute="bottom" constant="30" id="9AU-DR-Uog"/>
                 <constraint firstItem="P2k-mF-caz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9gk-Ze-jWf"/>
                 <constraint firstItem="TSf-ah-v7W" firstAttribute="bottom" secondItem="P2k-mF-caz" secondAttribute="bottom" id="BHH-Np-1iI"/>
                 <constraint firstItem="HdD-ft-Onx" firstAttribute="top" secondItem="P2k-mF-caz" secondAttribute="bottom" constant="2" id="Ebg-me-rRf"/>
-                <constraint firstAttribute="trailing" secondItem="Cf7-1p-KuT" secondAttribute="trailing" constant="3" id="IEn-in-koZ"/>
                 <constraint firstAttribute="trailing" secondItem="HdD-ft-Onx" secondAttribute="trailing" constant="5" id="JVA-lC-8dN"/>
-                <constraint firstItem="HdD-ft-Onx" firstAttribute="top" secondItem="Cf7-1p-KuT" secondAttribute="bottom" constant="5" id="PV4-0F-4oy"/>
+                <constraint firstItem="Cf7-1p-KuT" firstAttribute="bottom" secondItem="TSf-ah-v7W" secondAttribute="bottom" constant="-5" id="KrT-x1-w4i"/>
                 <constraint firstAttribute="bottom" secondItem="HdD-ft-Onx" secondAttribute="bottom" constant="2" id="QK7-Cb-uo7"/>
                 <constraint firstItem="TSf-ah-v7W" firstAttribute="trailing" secondItem="P2k-mF-caz" secondAttribute="trailing" id="WkV-bI-2Hz"/>
                 <constraint firstItem="HdD-ft-Onx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="d76-qi-cH4"/>
