@@ -38,7 +38,8 @@ final class AppCoordinator: Coordinator {
         let sb = AppStoryboard.main.instance
         let mainVC = sb.instantiate(viewController: MainViewController.self)
         mainVC.delegate = self
-        navController.setViewControllers([mainVC], animated: true)
+        navController.navigationBar.isHidden = false
+        navController.setViewControllers([mainVC], animated: false)
     }
     
     private func pushDetails(viewModel: TVShowViewModel) {

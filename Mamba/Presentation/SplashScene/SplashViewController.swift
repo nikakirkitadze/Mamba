@@ -19,19 +19,18 @@ class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+        logoAnimation()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func logoAnimation() {
+        let y = self.view.frame.height / 3.3
+        
+        UIView.animate(withDuration: 1.5, delay: 0, options: [.curveEaseInOut]) { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.imageViewLogo.transform = CGAffineTransform(translationX: 0, y: y).scaledBy(x: 1.3, y: 1.3)
+        } completion: { (finished) in
+            self.delegate?.openMain()
+        }
     }
-    */
-
 }

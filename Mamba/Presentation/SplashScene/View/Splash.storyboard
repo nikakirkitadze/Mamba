@@ -28,6 +28,9 @@
                             <constraint firstItem="ryH-Fp-mn4" firstAttribute="centerX" secondItem="yPj-dE-9Bu" secondAttribute="centerX" id="UB2-7M-twd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageViewLogo" destination="ryH-Fp-mn4" id="j7Y-W5-gtR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6H6-71-WM7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
