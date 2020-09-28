@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,7 +24,7 @@
                 <viewControllerPlaceholder storyboardName="SimilarShows" id="1s0-fx-bsI" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QuE-W1-v5M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1510" y="899"/>
+            <point key="canvasLocation" x="-1701" y="899"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="p9m-xK-vHH">
@@ -33,12 +34,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shows-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="u6P-g9-dkq" customClass="NEOImageView" customModule="Mamba" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9S-I1-PXF" customClass="DetailsHeaderView" customModule="Mamba" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="0MB-Yu-Wa6"/>
+                                    <constraint firstAttribute="height" constant="240" id="dYK-Wa-S5y"/>
                                 </constraints>
-                            </imageView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="imageHeader" value="shows-placeholder"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Xa-IO-xUe">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
@@ -165,28 +170,29 @@
                         <viewLayoutGuide key="safeArea" id="ySn-4l-9Fa"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
+                            <constraint firstItem="Y9S-I1-PXF" firstAttribute="leading" secondItem="ySn-4l-9Fa" secondAttribute="leading" id="0J4-1u-RXZ"/>
+                            <constraint firstItem="Y9S-I1-PXF" firstAttribute="top" secondItem="8pB-Oe-cKs" secondAttribute="top" id="D1G-We-h35"/>
                             <constraint firstItem="2Xa-IO-xUe" firstAttribute="top" secondItem="8pB-Oe-cKs" secondAttribute="top" id="Gle-0m-kkg"/>
                             <constraint firstItem="ufL-vR-M0D" firstAttribute="trailing" secondItem="ySn-4l-9Fa" secondAttribute="trailing" id="Sux-ez-1U3"/>
-                            <constraint firstItem="u6P-g9-dkq" firstAttribute="leading" secondItem="ySn-4l-9Fa" secondAttribute="leading" id="Xcw-c6-kyL"/>
-                            <constraint firstItem="u6P-g9-dkq" firstAttribute="top" secondItem="8pB-Oe-cKs" secondAttribute="top" id="XiT-fK-ND6"/>
                             <constraint firstItem="2Xa-IO-xUe" firstAttribute="leading" secondItem="ySn-4l-9Fa" secondAttribute="leading" id="mnZ-px-QPH"/>
                             <constraint firstItem="ufL-vR-M0D" firstAttribute="leading" secondItem="ySn-4l-9Fa" secondAttribute="leading" id="n45-K7-7xR"/>
                             <constraint firstItem="ufL-vR-M0D" firstAttribute="top" secondItem="8pB-Oe-cKs" secondAttribute="top" id="o5w-cg-xgp"/>
                             <constraint firstItem="ySn-4l-9Fa" firstAttribute="trailing" secondItem="2Xa-IO-xUe" secondAttribute="trailing" id="qHw-yK-9me"/>
+                            <constraint firstItem="ySn-4l-9Fa" firstAttribute="trailing" secondItem="Y9S-I1-PXF" secondAttribute="trailing" id="rHN-u2-C5B"/>
                             <constraint firstAttribute="bottom" secondItem="2Xa-IO-xUe" secondAttribute="bottom" id="reK-vD-mJm"/>
-                            <constraint firstItem="u6P-g9-dkq" firstAttribute="trailing" secondItem="ySn-4l-9Fa" secondAttribute="trailing" id="zUZ-85-azg"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="constraingHeaderHeight" destination="0MB-Yu-Wa6" id="lr3-Wl-WmH"/>
-                        <outlet property="imageViewHeader" destination="u6P-g9-dkq" id="hET-GL-i3M"/>
+                        <outlet property="constraingHeaderHeight" destination="dYK-Wa-S5y" id="cCF-JO-470"/>
                         <outlet property="imageViewPoster" destination="Bgb-85-DFD" id="9gO-1c-qi9"/>
                         <outlet property="labelRating" destination="qKD-10-8GT" id="XhW-5I-vmC"/>
                         <outlet property="labelShowOverview" destination="6O5-Cf-Bow" id="kkC-6C-l9D"/>
                         <outlet property="labelShowTitle" destination="uDV-mj-H3M" id="e2h-hq-soP"/>
                         <outlet property="labelShowTitleBig" destination="eca-4x-qT0" id="thB-g0-wrx"/>
                         <outlet property="scrollView" destination="2Xa-IO-xUe" id="gak-6a-eSL"/>
+                        <outlet property="viewContent" destination="H8v-Vk-ohC" id="Ney-UT-6lY"/>
                         <outlet property="viewGradient" destination="ufL-vR-M0D" id="oab-vd-nae"/>
+                        <outlet property="viewHeader" destination="Y9S-I1-PXF" id="IKz-t4-M89"/>
                         <outlet property="viewPosterOuterView" destination="bbY-ka-6D5" id="avM-u0-xEh"/>
                     </connections>
                 </viewController>
@@ -209,5 +215,8 @@
         <namedColor name="textColorSecondary">
             <color red="0.49399998784065247" green="0.49399998784065247" blue="0.49399998784065247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

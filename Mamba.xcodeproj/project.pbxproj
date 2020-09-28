@@ -64,6 +64,9 @@
 		F2829526251E21BE00DA1140 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2829525251E21BE00DA1140 /* Main.storyboard */; };
 		F282952F251E221200DA1140 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F282952D251E221200DA1140 /* DetailsViewController.swift */; };
 		F2829530251E221200DA1140 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F282952E251E221200DA1140 /* Details.storyboard */; };
+		F2E3CF5E252217A5002C13B1 /* DetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3CF5D252217A5002C13B1 /* DetailsHeaderView.swift */; };
+		F2E3CF6325221919002C13B1 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3CF6225221919002C13B1 /* UIView+Layout.swift */; };
+		F2E3CF6B2522194E002C13B1 /* AnchoredConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3CF6A2522194E002C13B1 /* AnchoredConstraints.swift */; };
 		F2F95FC6251E1F9400A83700 /* FiraGO-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2F95FC3251E1F9400A83700 /* FiraGO-Light.otf */; };
 		F2F95FC7251E1F9400A83700 /* FiraGO-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2F95FC4251E1F9400A83700 /* FiraGO-Medium.otf */; };
 		F2F95FC8251E1F9400A83700 /* FiraGO-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2F95FC5251E1F9400A83700 /* FiraGO-Book.otf */; };
@@ -150,6 +153,9 @@
 		F2829525251E21BE00DA1140 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F282952D251E221200DA1140 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F282952E251E221200DA1140 /* Details.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		F2E3CF5D252217A5002C13B1 /* DetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeaderView.swift; sourceTree = "<group>"; };
+		F2E3CF6225221919002C13B1 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		F2E3CF6A2522194E002C13B1 /* AnchoredConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchoredConstraints.swift; sourceTree = "<group>"; };
 		F2F95FC3251E1F9400A83700 /* FiraGO-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Light.otf"; sourceTree = "<group>"; };
 		F2F95FC4251E1F9400A83700 /* FiraGO-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Medium.otf"; sourceTree = "<group>"; };
 		F2F95FC5251E1F9400A83700 /* FiraGO-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Book.otf"; sourceTree = "<group>"; };
@@ -326,6 +332,7 @@
 				B5E25163251F148B0033973D /* UIViewController+Extension.swift */,
 				B5812484251F551E00778496 /* UIFont+Extension.swift */,
 				B54A74182520E601005C0067 /* UIStackView+Extensions.swift */,
+				F2E3CF6225221919002C13B1 /* UIView+Layout.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -336,6 +343,7 @@
 				F21BB047251E12B500A64B34 /* Log.swift */,
 				F21BB04C251E12BB00A64B34 /* Taptic.swift */,
 				F21BB051251E12CC00A64B34 /* Constants.swift */,
+				F2E3CF6A2522194E002C13B1 /* AnchoredConstraints.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -404,6 +412,7 @@
 				B575D81E251E6D170015216C /* NEOImageView.swift */,
 				B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */,
 				B53391692520A4F6009C8500 /* MambaSearchField.swift */,
+				F2E3CF5D252217A5002C13B1 /* DetailsHeaderView.swift */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -632,6 +641,7 @@
 			files = (
 				F21BB006251E10D300A64B34 /* MainViewController.swift in Sources */,
 				F282952F251E221200DA1140 /* DetailsViewController.swift in Sources */,
+				F2E3CF6B2522194E002C13B1 /* AnchoredConstraints.swift in Sources */,
 				F21BB073251E12EA00A64B34 /* DeleteWebServiceOperation.swift in Sources */,
 				F21BB040251E128C00A64B34 /* UICollectionView+Extension.swift in Sources */,
 				F24C1FF1251E2DDA00F582F0 /* TVShowsResponse.swift in Sources */,
@@ -642,6 +652,7 @@
 				F21BB002251E10D300A64B34 /* AppDelegate.swift in Sources */,
 				F21BB004251E10D300A64B34 /* SceneDelegate.swift in Sources */,
 				F21BB052251E12CC00A64B34 /* Constants.swift in Sources */,
+				F2E3CF5E252217A5002C13B1 /* DetailsHeaderView.swift in Sources */,
 				B533916325208F38009C8500 /* RatingView.swift in Sources */,
 				F21BB06C251E12EA00A64B34 /* GetWebServiceOperation.swift in Sources */,
 				F21BB076251E12EA00A64B34 /* WebServiceManager.swift in Sources */,
@@ -676,6 +687,7 @@
 				F21BB074251E12EA00A64B34 /* AsyncOperation.swift in Sources */,
 				B5812495251F617600778496 /* SimilarShowsViewController.swift in Sources */,
 				B5812485251F551E00778496 /* UIFont+Extension.swift in Sources */,
+				F2E3CF6325221919002C13B1 /* UIView+Layout.swift in Sources */,
 				F21BB069251E12EA00A64B34 /* NeoError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

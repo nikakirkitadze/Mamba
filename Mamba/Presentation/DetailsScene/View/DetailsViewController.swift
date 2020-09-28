@@ -16,9 +16,10 @@ class DetailsViewController: BaseViewController {
     // MARK: IBOutlets
     @IBOutlet private weak var viewGradient: GradientView!
     @IBOutlet private weak var scrollView: UIScrollView!
-    @IBOutlet private weak var imageViewHeader: NEOImageView!
+    @IBOutlet private weak var viewHeader: DetailsHeaderView!
     @IBOutlet private weak var imageViewPoster: NEOImageView!
     @IBOutlet private weak var viewPosterOuterView: UIView!
+    @IBOutlet private weak var viewContent: UIView!
     @IBOutlet private weak var labelRating: UILabel!
     @IBOutlet private weak var labelShowTitle: UILabel!
     @IBOutlet private weak var labelShowTitleBig: UILabel!
@@ -39,6 +40,20 @@ class DetailsViewController: BaseViewController {
         configureScrollView()
         setShadowForPoster()
         presentShowInfo()
+        
+//        let shapeLayer = CAShapeLayer()
+//        let path = UIBezierPath()
+//        path.move(to: CGPoint(x: 0, y: 25)) // start
+//        path.addLine(to: CGPoint(x: view.frame.maxX, y: 0))
+//        path.addLine(to: CGPoint(x: view.frame.maxX, y: view.frame.maxY))
+//        path.addLine(to: CGPoint(x: 0, y: view.frame.maxY))
+//        path.addLine(to: CGPoint(x: 0, y: 25)) // end
+//        path.close()
+//        shapeLayer.path = path.cgPath
+//
+//        viewContent.layer.addSublayer(shapeLayer)
+//        shapeLayer.frame = viewContent.bounds
+//        shapeLayer.fillColor = Colors.mainBG!.cgColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +66,12 @@ class DetailsViewController: BaseViewController {
         super.viewWillDisappear(animated)
         
         navigationController?.navigationBar.isBackgroundHidden = false
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -69,7 +90,7 @@ class DetailsViewController: BaseViewController {
     
     private func presentShowInfo() {
         guard let viewModel = showViewModel else {return}
-        imageViewHeader.loadImage(urlString: viewModel.backdropUrlString)
+        viewHeader.imageUrl = viewModel.backdropUrlString
         imageViewPoster.loadImage(urlString: viewModel.posterUrlString)
         labelShowTitle.text = viewModel.title
         labelRating.attributedText = viewModel.attributedVoteAvarage

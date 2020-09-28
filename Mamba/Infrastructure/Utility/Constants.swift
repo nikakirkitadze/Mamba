@@ -26,4 +26,5 @@ struct Colors {
     static let textMain                         = UIColor(named: "textColor")
     static let textSecondary                    = UIColor(named: "textColorSecondary")
     static let shadowColor                      = UIColor(hex: "FFBB3B")
+    static let ratingColor                      = UIColor(hex: "f4f6ff")
 }

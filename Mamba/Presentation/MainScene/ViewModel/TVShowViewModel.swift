@@ -31,12 +31,12 @@ struct TVShowViewModel {
     var attributedVoteAvarage: NSMutableAttributedString {
         let shadow = NSShadow()
         shadow.shadowOffset = .zero
-        shadow.shadowColor = Colors.shadowColor
+        shadow.shadowColor = Colors.ratingColor
         shadow.shadowBlurRadius = 5
         
         var attributes: [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.font:UIFont.named(.firaGoBook, size: 44),
-            NSAttributedString.Key.foregroundColor:Colors.textMain!,
+            NSAttributedString.Key.foregroundColor:Colors.ratingColor,
             NSAttributedString.Key.shadow: shadow
         ]
         
