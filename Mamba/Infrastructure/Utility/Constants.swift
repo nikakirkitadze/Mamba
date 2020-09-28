@@ -13,6 +13,7 @@ struct StoryboardId {
 }
 
 struct Segues {
+    static let CastSegue                        = "cast_segue"
     static let SimilarShows                     = "smilar_shows"
 }
 

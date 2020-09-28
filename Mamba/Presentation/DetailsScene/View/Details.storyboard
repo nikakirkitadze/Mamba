@@ -18,13 +18,21 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Cast-->
+        <scene sceneID="xBd-Bz-FVY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Cast" id="XBJ-zl-zZs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eVz-FR-T8q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1757" y="763"/>
+        </scene>
         <!--SimilarShows-->
         <scene sceneID="cWq-bb-AfS">
             <objects>
                 <viewControllerPlaceholder storyboardName="SimilarShows" id="1s0-fx-bsI" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QuE-W1-v5M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1701" y="899"/>
+            <point key="canvasLocation" x="-1716" y="1025"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="p9m-xK-vHH">
@@ -71,7 +79,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8v-Vk-ohC" userLabel="BodyView">
-                                        <rect key="frame" x="0.0" y="240" width="414" height="526.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="240.00000000000006" width="414" height="669.33333333333348"/>
                                         <color key="backgroundColor" name="background"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbY-ka-6D5">
@@ -113,17 +121,35 @@
                                         <color key="textColor" name="textColorSecondary"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Similar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DI7-az-kiA">
-                                        <rect key="frame" x="24" y="533.33333333333337" width="366" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Series Cast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5EV-Jx-dET">
+                                        <rect key="frame" x="24" y="503.33333333333326" width="366" height="18"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="18" id="mlI-i7-iXj"/>
+                                            <constraint firstAttribute="height" constant="18" id="hDt-RX-2gx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="15"/>
+                                        <color key="textColor" name="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FO0-YJ-wwO">
+                                        <rect key="frame" x="0.0" y="541.33333333333337" width="414" height="130"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="130" id="V7L-jr-Lf5"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="XBJ-zl-zZs" kind="embed" identifier="cast_segue" id="iqu-j4-BzL"/>
+                                        </connections>
+                                    </containerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Similar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DI7-az-kiA">
+                                        <rect key="frame" x="24" y="696.33333333333337" width="366" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="ZcH-Zw-JKT"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="15"/>
                                         <color key="textColor" name="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGF-cF-ZUu">
-                                        <rect key="frame" x="0.0" y="586.33333333333337" width="414" height="180"/>
+                                        <rect key="frame" x="0.0" y="729.33333333333337" width="414" height="180"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="180" id="lJ6-Mi-HYX"/>
                                         </constraints>
@@ -134,9 +160,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="DGF-cF-ZUu" firstAttribute="top" secondItem="DI7-az-kiA" secondAttribute="bottom" constant="15" id="1of-0d-TxP"/>
+                                    <constraint firstItem="DI7-az-kiA" firstAttribute="top" secondItem="FO0-YJ-wwO" secondAttribute="bottom" constant="25" id="5Db-f6-LfE"/>
+                                    <constraint firstItem="FO0-YJ-wwO" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" id="6Fd-Uh-aeh"/>
                                     <constraint firstAttribute="trailing" secondItem="eca-4x-qT0" secondAttribute="trailing" constant="24" id="7Fv-sg-gwo"/>
+                                    <constraint firstItem="FO0-YJ-wwO" firstAttribute="top" secondItem="5EV-Jx-dET" secondAttribute="bottom" constant="20" id="8Wg-8a-E9L"/>
+                                    <constraint firstAttribute="trailing" secondItem="FO0-YJ-wwO" secondAttribute="trailing" id="A8R-W3-VGw"/>
                                     <constraint firstItem="DGF-cF-ZUu" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" id="ASl-Dv-jfH"/>
-                                    <constraint firstItem="DI7-az-kiA" firstAttribute="top" secondItem="6O5-Cf-Bow" secondAttribute="bottom" constant="55" id="CMD-xP-bS8"/>
+                                    <constraint firstAttribute="trailing" secondItem="5EV-Jx-dET" secondAttribute="trailing" constant="24" id="AuE-7q-2EG"/>
+                                    <constraint firstItem="5EV-Jx-dET" firstAttribute="top" secondItem="6O5-Cf-Bow" secondAttribute="bottom" constant="25" id="D8l-wx-fzm"/>
                                     <constraint firstAttribute="trailing" secondItem="H8v-Vk-ohC" secondAttribute="trailing" id="Dp2-Jt-4ym"/>
                                     <constraint firstItem="uDV-mj-H3M" firstAttribute="leading" secondItem="bbY-ka-6D5" secondAttribute="trailing" constant="15" id="DtD-R2-IE2">
                                         <variation key="heightClass=regular-widthClass=regular" constant="25"/>
@@ -145,7 +177,7 @@
                                     <constraint firstItem="bbY-ka-6D5" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" constant="24" id="JbH-h9-U8k"/>
                                     <constraint firstItem="eca-4x-qT0" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" constant="24" id="Nqr-Ex-o6E"/>
                                     <constraint firstItem="EiV-yP-Aay" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" id="Nss-G3-XFG"/>
-                                    <constraint firstItem="DGF-cF-ZUu" firstAttribute="top" secondItem="DI7-az-kiA" secondAttribute="bottom" constant="35" id="Pnu-nh-X4N"/>
+                                    <constraint firstItem="DI7-az-kiA" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" constant="24" id="OA8-yI-Anl"/>
                                     <constraint firstItem="6O5-Cf-Bow" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" constant="24" id="Rbn-Mi-hSN"/>
                                     <constraint firstAttribute="bottom" secondItem="DGF-cF-ZUu" secondAttribute="bottom" constant="100" id="Rf7-Cl-Ef5"/>
                                     <constraint firstAttribute="trailing" secondItem="uDV-mj-H3M" secondAttribute="trailing" constant="24" id="XcQ-fB-t72"/>
@@ -155,15 +187,17 @@
                                         <variation key="heightClass=regular-widthClass=regular" constant="35"/>
                                     </constraint>
                                     <constraint firstItem="DGF-cF-ZUu" firstAttribute="trailing" secondItem="2Xa-IO-xUe" secondAttribute="trailing" id="aJc-8g-dY2"/>
-                                    <constraint firstItem="DI7-az-kiA" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" constant="24" id="aLT-vp-ugj"/>
                                     <constraint firstAttribute="trailing" secondItem="6O5-Cf-Bow" secondAttribute="trailing" constant="24" id="cTH-ph-bMY"/>
-                                    <constraint firstAttribute="trailing" secondItem="DI7-az-kiA" secondAttribute="trailing" constant="24" id="fM9-vh-O5t"/>
+                                    <constraint firstAttribute="trailing" secondItem="FO0-YJ-wwO" secondAttribute="trailing" id="cYY-eR-5Sn"/>
                                     <constraint firstItem="eca-4x-qT0" firstAttribute="top" secondItem="bbY-ka-6D5" secondAttribute="bottom" constant="20" id="fTw-NV-G8z"/>
+                                    <constraint firstItem="5EV-Jx-dET" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" constant="24" id="gXx-km-8bb"/>
                                     <constraint firstItem="bbY-ka-6D5" firstAttribute="bottom" secondItem="EiV-yP-Aay" secondAttribute="bottom" constant="45" id="gd9-4w-jbf">
                                         <variation key="heightClass=regular-widthClass=regular" constant="85"/>
                                     </constraint>
                                     <constraint firstItem="EiV-yP-Aay" firstAttribute="width" secondItem="2Xa-IO-xUe" secondAttribute="width" id="h21-F5-e4h"/>
                                     <constraint firstAttribute="trailing" secondItem="EiV-yP-Aay" secondAttribute="trailing" id="hZg-0k-fza"/>
+                                    <constraint firstAttribute="trailing" secondItem="DI7-az-kiA" secondAttribute="trailing" constant="24" id="l0k-fN-eGa"/>
+                                    <constraint firstItem="FO0-YJ-wwO" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" id="vJa-6J-SSl"/>
                                     <constraint firstItem="H8v-Vk-ohC" firstAttribute="top" secondItem="EiV-yP-Aay" secondAttribute="bottom" id="w8p-UR-S1M"/>
                                     <constraint firstItem="6O5-Cf-Bow" firstAttribute="top" secondItem="eca-4x-qT0" secondAttribute="bottom" constant="15.5" id="xAc-OF-RJ6"/>
                                 </constraints>
@@ -214,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SfO-VI-yLj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2288.0859375" y="898.68228404099557"/>
+            <point key="canvasLocation" x="-2288.4057971014495" y="898.66071428571422"/>
         </scene>
     </scenes>
     <resources>

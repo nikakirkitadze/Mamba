@@ -84,6 +84,11 @@ class DetailsViewController: BaseViewController {
             let destination = segue.destination as! SimilarShowsViewController
             destination.showId = showViewModel.id
         }
+        
+        if segue.identifier == Segues.CastSegue {
+            let destination = segue.destination as! CastViewController
+
+        }
     }
     
     private func configureScrollView() {
