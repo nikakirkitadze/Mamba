@@ -1,68 +1,52 @@
 //
-//  SimilarShowsViewController.swift
-//  Movie DB
+//  CastViewController.swift
+//  Mamba
 //
-//  Created by Nika Kirkitadze on 9/26/20.
+//  Created by Nika Kirkitadze on 9/28/20.
 //
 
 import UIKit
 
-class SimilarShowsViewController: BaseViewController {
+class CastViewController: BaseViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
-    
-    private var showViewModels = [TVShowViewModel]()
-    
-    var showId: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureCollectionView()
-        fetchSimilarShows()
     }
-    
+
     private func configureCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.registerNib(class: TVShowCell.self)
-    }
-
-    private func fetchSimilarShows() {
-        guard let showId = showId else {return}
-        TVShowServiceManager.fetchSimilarShows(id: showId) { (data) in
-            self.showViewModels = data.map({ TVShowViewModel(show: $0) })
-            
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
+        collectionView.registerNib(class: CastCell.self)
     }
 }
 
 // MARK: - UICollectionViewDataSource
-extension SimilarShowsViewController: UICollectionViewDataSource {
+extension CastViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return showViewModels.count
+        return 100
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.deque(TVShowCell.self, for: indexPath)
-        cell.size = itemSize(cv: collectionView, defaultSize: false)
-        cell.configure(with: showViewModels[indexPath.row])
+        let cell = collectionView.deque(CastCell.self, for: indexPath)
+//        cell.size = itemSize(cv: collectionView, defaultSize: false)
+//        cell.configure(with: showViewModels[indexPath.row])
         return cell
     }
 }
 
 // MARK: - UICollectionViewDelegate
-extension SimilarShowsViewController: UICollectionViewDelegate {
+extension CastViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension SimilarShowsViewController: UICollectionViewDelegateFlowLayout {
+extension CastViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }

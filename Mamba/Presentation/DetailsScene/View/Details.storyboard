@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -38,7 +38,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="dYK-Wa-S5y"/>
+                                    <constraint firstAttribute="height" constant="240" id="dYK-Wa-S5y">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="450"/>
+                                    </constraint>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="imageHeader" value="shows-placeholder"/>
@@ -51,7 +53,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKD-10-8GT">
-                                                <rect key="frame" x="346" y="195" width="44" height="21"/>
+                                                <rect key="frame" x="346" y="209" width="44" height="21"/>
                                                 <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="18"/>
                                                 <color key="textColor" name="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -59,45 +61,21 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="qKD-10-8GT" secondAttribute="bottom" constant="24" id="eFT-Op-DWv"/>
+                                            <constraint firstAttribute="bottom" secondItem="qKD-10-8GT" secondAttribute="bottom" constant="10" id="eFT-Op-DWv">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                            </constraint>
                                             <constraint firstAttribute="trailing" secondItem="qKD-10-8GT" secondAttribute="trailing" constant="24" id="jra-7y-cpL"/>
-                                            <constraint firstAttribute="height" constant="240" id="lSn-eb-VUb"/>
+                                            <constraint firstAttribute="height" constant="240" id="lSn-eb-VUb">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="450"/>
+                                            </constraint>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8v-Vk-ohC" userLabel="BodyView">
-                                        <rect key="frame" x="0.0" y="240" width="414" height="556"/>
+                                        <rect key="frame" x="0.0" y="240" width="414" height="526.33333333333337"/>
                                         <color key="backgroundColor" name="background"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6O5-Cf-Bow">
-                                        <rect key="frame" x="24" y="382" width="366" height="126"/>
-                                        <string key="text">Labe j daw dwa dwa dawd lLabe j daw dwa dwa dawd lLabe j daw dwa dwa dawd lLabe j daw dwa dwa dawd lLabe j daw dwa dwa dawd lLabe j daw dwa dwa dawd lLabe j daw dwa dwa dawd lLabe j daw dwa dwa dawd lLabe j daw dwa dwa dawd l</string>
-                                        <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="18"/>
-                                        <color key="textColor" name="textColorSecondary"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Similar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DI7-az-kiA">
-                                        <rect key="frame" x="24" y="563" width="366" height="18"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="18" id="mlI-i7-iXj"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="15"/>
-                                        <color key="textColor" name="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDV-mj-H3M">
-                                        <rect key="frame" x="157" y="248" width="233" height="20"/>
-                                        <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="17"/>
-                                        <color key="textColor" name="textColor"/>
-                                        <color key="highlightedColor" red="0.0" green="0.0078431372550000003" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eca-4x-qT0">
-                                        <rect key="frame" x="24" y="335" width="366" height="31.5"/>
-                                        <fontDescription key="fontDescription" name="FiraGO-Medium" family="FiraGO" pointSize="27"/>
-                                        <color key="textColor" name="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbY-ka-6D5">
-                                        <rect key="frame" x="24" y="130" width="125" height="185"/>
+                                        <rect key="frame" x="24" y="100" width="125" height="185"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shows-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Bgb-85-DFD" customClass="NEOImageView" customModule="Mamba" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="185"/>
@@ -105,15 +83,47 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Bgb-85-DFD" secondAttribute="trailing" id="F5i-qR-loh"/>
-                                            <constraint firstAttribute="width" constant="125" id="Vgv-Hl-sLb"/>
+                                            <constraint firstAttribute="width" constant="125" id="Vgv-Hl-sLb">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
                                             <constraint firstItem="Bgb-85-DFD" firstAttribute="leading" secondItem="bbY-ka-6D5" secondAttribute="leading" id="WdQ-VY-1Sf"/>
                                             <constraint firstItem="Bgb-85-DFD" firstAttribute="top" secondItem="bbY-ka-6D5" secondAttribute="top" id="fYx-QL-VWg"/>
                                             <constraint firstAttribute="bottom" secondItem="Bgb-85-DFD" secondAttribute="bottom" id="gh1-2F-l36"/>
-                                            <constraint firstAttribute="height" constant="185" id="grl-vA-Lx8"/>
+                                            <constraint firstAttribute="height" constant="185" id="grl-vA-Lx8">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="320"/>
+                                            </constraint>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDV-mj-H3M">
+                                        <rect key="frame" x="164" y="250" width="226" height="20"/>
+                                        <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="17"/>
+                                        <color key="textColor" name="textColor"/>
+                                        <color key="highlightedColor" red="0.0" green="0.0078431372550000003" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eca-4x-qT0">
+                                        <rect key="frame" x="24" y="305" width="366" height="31.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="FiraGO-Medium" family="FiraGO" pointSize="27"/>
+                                        <color key="textColor" name="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6O5-Cf-Bow">
+                                        <rect key="frame" x="24" y="352.33333333333331" width="366" height="126"/>
+                                        <string key="text">Labe j daw dwa dwa dawd lLabe j daw dwa dwa dawd lLabe j daw dwa dwa dawd lLabe j daw dwa dwa dawd lLabe j daw dwa dwa dawd lLabe j daw dwa dwa dawd lLabe j daw dwa dwa dawd lLabe j daw dwa dwa dawd lLabe j daw dwa dwa dawd l</string>
+                                        <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="18"/>
+                                        <color key="textColor" name="textColorSecondary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Similar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DI7-az-kiA">
+                                        <rect key="frame" x="24" y="533.33333333333337" width="366" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="mlI-i7-iXj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="15"/>
+                                        <color key="textColor" name="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGF-cF-ZUu">
-                                        <rect key="frame" x="0.0" y="616" width="414" height="180"/>
+                                        <rect key="frame" x="0.0" y="586.33333333333337" width="414" height="180"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="180" id="lJ6-Mi-HYX"/>
                                         </constraints>
@@ -128,28 +138,34 @@
                                     <constraint firstItem="DGF-cF-ZUu" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" id="ASl-Dv-jfH"/>
                                     <constraint firstItem="DI7-az-kiA" firstAttribute="top" secondItem="6O5-Cf-Bow" secondAttribute="bottom" constant="55" id="CMD-xP-bS8"/>
                                     <constraint firstAttribute="trailing" secondItem="H8v-Vk-ohC" secondAttribute="trailing" id="Dp2-Jt-4ym"/>
+                                    <constraint firstItem="uDV-mj-H3M" firstAttribute="leading" secondItem="bbY-ka-6D5" secondAttribute="trailing" constant="15" id="DtD-R2-IE2">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="25"/>
+                                    </constraint>
                                     <constraint firstItem="H8v-Vk-ohC" firstAttribute="bottom" secondItem="DGF-cF-ZUu" secondAttribute="bottom" id="FuM-ge-WF9"/>
                                     <constraint firstItem="bbY-ka-6D5" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" constant="24" id="JbH-h9-U8k"/>
-                                    <constraint firstItem="bbY-ka-6D5" firstAttribute="top" secondItem="2Xa-IO-xUe" secondAttribute="top" constant="130" id="NEy-wD-rEd"/>
-                                    <constraint firstItem="uDV-mj-H3M" firstAttribute="leading" secondItem="bbY-ka-6D5" secondAttribute="trailing" constant="8" symbolic="YES" id="Ng5-Lh-DyL"/>
                                     <constraint firstItem="eca-4x-qT0" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" constant="24" id="Nqr-Ex-o6E"/>
                                     <constraint firstItem="EiV-yP-Aay" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" id="Nss-G3-XFG"/>
                                     <constraint firstItem="DGF-cF-ZUu" firstAttribute="top" secondItem="DI7-az-kiA" secondAttribute="bottom" constant="35" id="Pnu-nh-X4N"/>
                                     <constraint firstItem="6O5-Cf-Bow" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" constant="24" id="Rbn-Mi-hSN"/>
                                     <constraint firstAttribute="bottom" secondItem="DGF-cF-ZUu" secondAttribute="bottom" constant="100" id="Rf7-Cl-Ef5"/>
+                                    <constraint firstAttribute="trailing" secondItem="uDV-mj-H3M" secondAttribute="trailing" constant="24" id="XcQ-fB-t72"/>
                                     <constraint firstItem="H8v-Vk-ohC" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" id="YZr-ue-4G0"/>
                                     <constraint firstItem="EiV-yP-Aay" firstAttribute="top" secondItem="2Xa-IO-xUe" secondAttribute="top" id="Zcp-p7-89p"/>
+                                    <constraint firstItem="uDV-mj-H3M" firstAttribute="top" secondItem="EiV-yP-Aay" secondAttribute="bottom" constant="10" id="aHV-ZU-6Ay">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="35"/>
+                                    </constraint>
                                     <constraint firstItem="DGF-cF-ZUu" firstAttribute="trailing" secondItem="2Xa-IO-xUe" secondAttribute="trailing" id="aJc-8g-dY2"/>
                                     <constraint firstItem="DI7-az-kiA" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" constant="24" id="aLT-vp-ugj"/>
-                                    <constraint firstItem="uDV-mj-H3M" firstAttribute="top" secondItem="EiV-yP-Aay" secondAttribute="bottom" constant="8" symbolic="YES" id="aNo-0J-peW"/>
                                     <constraint firstAttribute="trailing" secondItem="6O5-Cf-Bow" secondAttribute="trailing" constant="24" id="cTH-ph-bMY"/>
                                     <constraint firstAttribute="trailing" secondItem="DI7-az-kiA" secondAttribute="trailing" constant="24" id="fM9-vh-O5t"/>
                                     <constraint firstItem="eca-4x-qT0" firstAttribute="top" secondItem="bbY-ka-6D5" secondAttribute="bottom" constant="20" id="fTw-NV-G8z"/>
+                                    <constraint firstItem="bbY-ka-6D5" firstAttribute="bottom" secondItem="EiV-yP-Aay" secondAttribute="bottom" constant="45" id="gd9-4w-jbf">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="85"/>
+                                    </constraint>
                                     <constraint firstItem="EiV-yP-Aay" firstAttribute="width" secondItem="2Xa-IO-xUe" secondAttribute="width" id="h21-F5-e4h"/>
                                     <constraint firstAttribute="trailing" secondItem="EiV-yP-Aay" secondAttribute="trailing" id="hZg-0k-fza"/>
                                     <constraint firstItem="H8v-Vk-ohC" firstAttribute="top" secondItem="EiV-yP-Aay" secondAttribute="bottom" id="w8p-UR-S1M"/>
                                     <constraint firstItem="6O5-Cf-Bow" firstAttribute="top" secondItem="eca-4x-qT0" secondAttribute="bottom" constant="15.5" id="xAc-OF-RJ6"/>
-                                    <constraint firstAttribute="trailing" secondItem="uDV-mj-H3M" secondAttribute="trailing" constant="24" id="zcD-QF-DPL"/>
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufL-vR-M0D" customClass="GradientView" customModule="Mamba" customModuleProvider="target">
@@ -170,15 +186,15 @@
                         <viewLayoutGuide key="safeArea" id="ySn-4l-9Fa"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="Y9S-I1-PXF" firstAttribute="leading" secondItem="ySn-4l-9Fa" secondAttribute="leading" id="0J4-1u-RXZ"/>
+                            <constraint firstItem="Y9S-I1-PXF" firstAttribute="leading" secondItem="8pB-Oe-cKs" secondAttribute="leading" id="0J4-1u-RXZ"/>
                             <constraint firstItem="Y9S-I1-PXF" firstAttribute="top" secondItem="8pB-Oe-cKs" secondAttribute="top" id="D1G-We-h35"/>
                             <constraint firstItem="2Xa-IO-xUe" firstAttribute="top" secondItem="8pB-Oe-cKs" secondAttribute="top" id="Gle-0m-kkg"/>
-                            <constraint firstItem="ufL-vR-M0D" firstAttribute="trailing" secondItem="ySn-4l-9Fa" secondAttribute="trailing" id="Sux-ez-1U3"/>
+                            <constraint firstItem="ufL-vR-M0D" firstAttribute="trailing" secondItem="8pB-Oe-cKs" secondAttribute="trailing" id="Sux-ez-1U3"/>
                             <constraint firstItem="2Xa-IO-xUe" firstAttribute="leading" secondItem="ySn-4l-9Fa" secondAttribute="leading" id="mnZ-px-QPH"/>
-                            <constraint firstItem="ufL-vR-M0D" firstAttribute="leading" secondItem="ySn-4l-9Fa" secondAttribute="leading" id="n45-K7-7xR"/>
+                            <constraint firstItem="ufL-vR-M0D" firstAttribute="leading" secondItem="8pB-Oe-cKs" secondAttribute="leading" id="n45-K7-7xR"/>
                             <constraint firstItem="ufL-vR-M0D" firstAttribute="top" secondItem="8pB-Oe-cKs" secondAttribute="top" id="o5w-cg-xgp"/>
                             <constraint firstItem="ySn-4l-9Fa" firstAttribute="trailing" secondItem="2Xa-IO-xUe" secondAttribute="trailing" id="qHw-yK-9me"/>
-                            <constraint firstItem="ySn-4l-9Fa" firstAttribute="trailing" secondItem="Y9S-I1-PXF" secondAttribute="trailing" id="rHN-u2-C5B"/>
+                            <constraint firstAttribute="trailing" secondItem="Y9S-I1-PXF" secondAttribute="trailing" id="rHN-u2-C5B"/>
                             <constraint firstAttribute="bottom" secondItem="2Xa-IO-xUe" secondAttribute="bottom" id="reK-vD-mJm"/>
                         </constraints>
                     </view>
@@ -198,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SfO-VI-yLj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2288" y="899"/>
+            <point key="canvasLocation" x="-2288.0859375" y="898.68228404099557"/>
         </scene>
     </scenes>
     <resources>

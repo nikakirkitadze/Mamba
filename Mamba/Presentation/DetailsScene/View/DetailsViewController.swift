@@ -27,7 +27,9 @@ class DetailsViewController: BaseViewController {
     @IBOutlet private weak var constraingHeaderHeight: NSLayoutConstraint!
     
     // MARK: Private properties
-    private let headerHeight: CGFloat = 240
+    private var headerHeight: CGFloat {
+        return UIDevice.isIpad ? 450 : 240
+    }
     private let topBarShowPoint: CGFloat = 110
     
     var showViewModel: TVShowViewModel?
@@ -40,6 +42,13 @@ class DetailsViewController: BaseViewController {
         configureScrollView()
         setShadowForPoster()
         presentShowInfo()
+        
+        guard let viewModel = showViewModel else {
+            return
+        }
+        TVShowServiceManager.fetchCasts(showId: viewModel.id) { (data) in
+            print(data)
+        }
         
 //        let shapeLayer = CAShapeLayer()
 //        let path = UIBezierPath()
@@ -66,12 +75,6 @@ class DetailsViewController: BaseViewController {
         super.viewWillDisappear(animated)
         
         navigationController?.navigationBar.isBackgroundHidden = false
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
