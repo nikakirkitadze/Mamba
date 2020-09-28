@@ -73,7 +73,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Ti-vZ-8Bm" secondAttribute="trailing" id="v3t-Ph-For"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TV Shows" id="61Q-qG-Ivo"/>
+                    <navigationItem key="navigationItem" title="TV Shows" id="61Q-qG-Ivo">
+                        <barButtonItem key="backBarButtonItem" title=" " id="z6n-z1-Hpx"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="2Ti-vZ-8Bm" id="s9p-KM-2tb"/>
                         <outlet property="constraingCollectionViewTopMargin" destination="rSY-uk-bNv" id="aaa-TU-wV6"/>

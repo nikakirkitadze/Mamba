@@ -27,6 +27,7 @@ class DetailsViewController: BaseViewController {
     
     // MARK: Private properties
     private let headerHeight: CGFloat = 240
+    private let topBarShowPoint: CGFloat = 110
     
     var showViewModel: TVShowViewModel?
     
@@ -89,6 +90,7 @@ class DetailsViewController: BaseViewController {
 
 extension DetailsViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        Log.debug(scrollView.contentOffset.y)
         setPageTitle()
         updateHeaderFrame()
     }
@@ -103,11 +105,10 @@ extension DetailsViewController: UIScrollViewDelegate {
     }
     
     func setPageTitle() {
-        navigationController?.navigationBar.isBackgroundHidden = scrollView.contentOffset.y <= -35
-        navigationController?.navigationBar.tintColor = scrollView.contentOffset.y <= -44 ? .white : UIColor(hex: "E84367")
-        
+        navigationController?.navigationBar.isBackgroundHidden = scrollView.contentOffset.y <= topBarShowPoint
+//        navigationController?.navigationBar.tintColor = scrollView.contentOffset.y <= topBarShowPoint ? .white : Colors.textSecondary
         
         guard let viewModel = showViewModel else{return}
-        navigationItem.title = scrollView.contentOffset.y <= -35 ? "" : viewModel.title
+        navigationItem.title = scrollView.contentOffset.y <= topBarShowPoint ? "" : viewModel.title
     }
 }

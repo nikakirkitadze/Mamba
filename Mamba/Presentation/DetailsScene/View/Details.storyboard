@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -34,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="show_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="u6P-g9-dkq" customClass="NEOImageView" customModule="Mamba" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shows-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="u6P-g9-dkq" customClass="NEOImageView" customModule="Mamba" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="0MB-Yu-Wa6"/>
@@ -95,7 +94,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbY-ka-6D5">
                                         <rect key="frame" x="24" y="130" width="125" height="185"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="show_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Bgb-85-DFD" customClass="NEOImageView" customModule="Mamba" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shows-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Bgb-85-DFD" customClass="NEOImageView" customModule="Mamba" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="185"/>
                                             </imageView>
                                         </subviews>
@@ -118,6 +117,7 @@
                                         </connections>
                                     </containerView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="eca-4x-qT0" secondAttribute="trailing" constant="24" id="7Fv-sg-gwo"/>
                                     <constraint firstItem="DGF-cF-ZUu" firstAttribute="leading" secondItem="2Xa-IO-xUe" secondAttribute="leading" id="ASl-Dv-jfH"/>
@@ -163,7 +163,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ySn-4l-9Fa"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="2Xa-IO-xUe" firstAttribute="top" secondItem="8pB-Oe-cKs" secondAttribute="top" id="Gle-0m-kkg"/>
                             <constraint firstItem="ufL-vR-M0D" firstAttribute="trailing" secondItem="ySn-4l-9Fa" secondAttribute="trailing" id="Sux-ez-1U3"/>
@@ -196,7 +196,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="show_placeholder" width="400" height="600"/>
+        <image name="shows-placeholder" width="600" height="600"/>
+        <namedColor name="Background">
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="background">
             <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -206,8 +209,5 @@
         <namedColor name="textColorSecondary">
             <color red="0.49399998784065247" green="0.49399998784065247" blue="0.49399998784065247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
