@@ -10,11 +10,15 @@ import UIKit
 class CastViewController: BaseViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
-
+    
+    private var castViewModels = [CastViewModel]()
+    internal var showId: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureCollectionView()
+        fetchData()
     }
 
     private func configureCollectionView() {
@@ -22,18 +26,29 @@ class CastViewController: BaseViewController {
         collectionView.dataSource = self
         collectionView.registerNib(class: CastCell.self)
     }
+    
+    private func fetchData() {
+        guard let showId = showId else {return}
+        TVShowServiceManager.fetchCasts(showId: showId) { (data) in
+            self.castViewModels = data.map({ CastViewModel(cast: $0) })
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
 }
 
 // MARK: - UICollectionViewDataSource
 extension CastViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return castViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.deque(CastCell.self, for: indexPath)
 //        cell.size = itemSize(cv: collectionView, defaultSize: false)
-//        cell.configure(with: showViewModels[indexPath.row])
+        cell.configure(with: castViewModels[indexPath.row])
         return cell
     }
 }

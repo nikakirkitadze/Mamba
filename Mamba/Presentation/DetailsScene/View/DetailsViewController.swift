@@ -87,7 +87,7 @@ class DetailsViewController: BaseViewController {
         
         if segue.identifier == Segues.CastSegue {
             let destination = segue.destination as! CastViewController
-
+            destination.showId = showViewModel.id
         }
     }
     

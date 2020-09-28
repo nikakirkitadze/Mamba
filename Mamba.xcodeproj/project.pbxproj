@@ -28,6 +28,7 @@
 		B5993AFD252265B000E312A9 /* CastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5993AFC252265B000E312A9 /* CastViewController.swift */; };
 		B5993B042522662500E312A9 /* CastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5993B022522662500E312A9 /* CastCell.swift */; };
 		B5993B052522662500E312A9 /* CastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5993B032522662500E312A9 /* CastCell.xib */; };
+		B5993B1125226AC200E312A9 /* CastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5993B1025226AC200E312A9 /* CastViewModel.swift */; };
 		B5E25141251F0F7D0033973D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25140251F0F7D0033973D /* BaseViewController.swift */; };
 		B5E2514D251F11CA0033973D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2514C251F11CA0033973D /* Coordinator.swift */; };
 		B5E25155251F12030033973D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25154251F12030033973D /* AppCoordinator.swift */; };
@@ -116,6 +117,7 @@
 		B5993AFC252265B000E312A9 /* CastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastViewController.swift; sourceTree = "<group>"; };
 		B5993B022522662500E312A9 /* CastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCell.swift; sourceTree = "<group>"; };
 		B5993B032522662500E312A9 /* CastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCell.xib; sourceTree = "<group>"; };
+		B5993B1025226AC200E312A9 /* CastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastViewModel.swift; sourceTree = "<group>"; };
 		B5E25140251F0F7D0033973D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B5E2514C251F11CA0033973D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B5E25154251F12030033973D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				B5993AF62522658E00E312A9 /* View */,
+				B5993B0C25226A9000E312A9 /* ViewModel */,
 				B5993AFC252265B000E312A9 /* CastViewController.swift */,
 			);
 			path = CastScene;
@@ -272,6 +275,14 @@
 				B5993B032522662500E312A9 /* CastCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		B5993B0C25226A9000E312A9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B5993B1025226AC200E312A9 /* CastViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B5E2513F251F0F6C0033973D /* Base */ = {
@@ -681,6 +692,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5993AF1252262AA00E312A9 /* CastResponse.swift in Sources */,
+				B5993B1125226AC200E312A9 /* CastViewModel.swift in Sources */,
 				F21BB006251E10D300A64B34 /* MainViewController.swift in Sources */,
 				F282952F251E221200DA1140 /* DetailsViewController.swift in Sources */,
 				F2E3CF6B2522194E002C13B1 /* AnchoredConstraints.swift in Sources */,
