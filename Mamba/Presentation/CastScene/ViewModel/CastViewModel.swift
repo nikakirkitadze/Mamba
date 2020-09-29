@@ -9,6 +9,7 @@ import Foundation
 
 struct CastViewModel {
     
+    var id: Int
     var actorName: String
     
     // MARK: - Private properties
@@ -19,6 +20,7 @@ struct CastViewModel {
     }
     
     init(cast: Cast) {
+        id = cast.id ?? 0
         actorName = cast.name ?? ""
         profileUrl = cast.profilePath ?? ""
     }

@@ -54,6 +54,7 @@ final class AppCoordinator: Coordinator {
         let sb = AppStoryboard.person.instance
         let personVC = sb.instantiate(viewController: PersonViewController.self)
         personVC.delegate = self
+        personVC.personId = viewModel.id
         navController.pushViewController(personVC, animated: true)
     }
 }
