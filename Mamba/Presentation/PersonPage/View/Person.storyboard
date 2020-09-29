@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -27,10 +26,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="JnG-06-6mN">
-                                        <rect key="frame" x="24" y="45" width="366" height="185"/>
+                                        <rect key="frame" x="24" y="45" width="366" height="230"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBd-jW-HmG">
-                                                <rect key="frame" x="0.0" y="0.0" width="366" height="185"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="366" height="230"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Tz-7V-fT4">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="185"/>
@@ -52,76 +51,112 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNY-Tl-NES">
-                                                        <rect key="frame" x="140" y="53.5" width="226" height="20.5"/>
+                                                        <rect key="frame" x="140" y="53.5" width="226" height="20"/>
                                                         <string key="text">Personal Info
 </string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rTz-Vp-ExZ">
+                                                        <rect key="frame" x="140" y="81" width="226" height="41"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPC-Fi-jZl">
+                                                                <rect key="frame" x="0.0" y="0.0" width="226" height="17.5"/>
+                                                                <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="15"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXX-wh-8Bl">
+                                                                <rect key="frame" x="0.0" y="25.5" width="226" height="15.5"/>
+                                                                <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="13"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BHu-1u-Hcu">
+                                                        <rect key="frame" x="140" y="130" width="226" height="41"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHC-jJ-IkR">
+                                                                <rect key="frame" x="0.0" y="0.0" width="226" height="17.5"/>
+                                                                <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="15"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTD-9c-CRb">
+                                                                <rect key="frame" x="0.0" y="25.5" width="226" height="15.5"/>
+                                                                <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="13"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HCg-UD-WZQ">
+                                                        <rect key="frame" x="140" y="179" width="226" height="41"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOK-Ic-JZf">
+                                                                <rect key="frame" x="0.0" y="0.0" width="226" height="17.5"/>
+                                                                <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="15"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIp-oC-eHl">
+                                                                <rect key="frame" x="0.0" y="25.5" width="226" height="15.5"/>
+                                                                <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="13"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" name="background"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="185" id="E14-FZ-qc7"/>
+                                                    <constraint firstItem="rTz-Vp-ExZ" firstAttribute="top" secondItem="qNY-Tl-NES" secondAttribute="bottom" constant="7.5" id="0ke-dt-dUA"/>
+                                                    <constraint firstItem="HCg-UD-WZQ" firstAttribute="leading" secondItem="BHu-1u-Hcu" secondAttribute="leading" id="0y5-g9-d6q"/>
+                                                    <constraint firstItem="rTz-Vp-ExZ" firstAttribute="leading" secondItem="3Tz-7V-fT4" secondAttribute="trailing" constant="15" id="39C-ch-7qf"/>
+                                                    <constraint firstItem="BHu-1u-Hcu" firstAttribute="leading" secondItem="3Tz-7V-fT4" secondAttribute="trailing" constant="15" id="8RZ-7t-Ut8"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BHu-1u-Hcu" secondAttribute="trailing" id="B77-ez-kng"/>
+                                                    <constraint firstAttribute="height" constant="230" id="E14-FZ-qc7"/>
                                                     <constraint firstAttribute="trailing" secondItem="qNY-Tl-NES" secondAttribute="trailing" id="GPh-PA-bKL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rTz-Vp-ExZ" secondAttribute="trailing" id="Lru-f9-VrC"/>
                                                     <constraint firstItem="3Tz-7V-fT4" firstAttribute="leading" secondItem="FBd-jW-HmG" secondAttribute="leading" id="Pnn-CQ-FVm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="HCg-UD-WZQ" secondAttribute="trailing" id="QNm-vt-953"/>
                                                     <constraint firstItem="Wgm-dH-rME" firstAttribute="top" secondItem="FBd-jW-HmG" secondAttribute="top" id="WJy-dp-Jm0"/>
                                                     <constraint firstItem="Wgm-dH-rME" firstAttribute="leading" secondItem="3Tz-7V-fT4" secondAttribute="trailing" constant="15" id="ioj-vY-715"/>
                                                     <constraint firstItem="qNY-Tl-NES" firstAttribute="top" secondItem="Wgm-dH-rME" secondAttribute="bottom" constant="30" id="m09-IQ-bYh"/>
                                                     <constraint firstAttribute="trailing" secondItem="Wgm-dH-rME" secondAttribute="trailing" id="m5d-vy-G8u"/>
                                                     <constraint firstItem="3Tz-7V-fT4" firstAttribute="top" secondItem="FBd-jW-HmG" secondAttribute="top" id="qqh-f5-7Hu"/>
+                                                    <constraint firstItem="BHu-1u-Hcu" firstAttribute="top" secondItem="rTz-Vp-ExZ" secondAttribute="bottom" constant="8" symbolic="YES" id="wup-qR-2i9"/>
                                                     <constraint firstItem="qNY-Tl-NES" firstAttribute="leading" secondItem="3Tz-7V-fT4" secondAttribute="trailing" constant="15" id="yZ8-2d-0Ty"/>
+                                                    <constraint firstItem="HCg-UD-WZQ" firstAttribute="top" secondItem="BHu-1u-Hcu" secondAttribute="bottom" constant="8" symbolic="YES" id="yuo-Di-pZh"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yc-oK-A1z">
-                                        <rect key="frame" x="24" y="260" width="366" height="75"/>
+                                        <rect key="frame" x="24" y="305" width="366" height="75"/>
                                         <string key="text">Lindsey Marie Morgan (born February 27, 1990) is an American actress. She is best known for her role as mechanical engineer Raven Reyes on The CW sci-fi drama series The 100.</string>
                                         <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Known For" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfC-Dj-vhI">
-                                        <rect key="frame" x="24" y="363" width="366" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="m56-rs-U0u"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkT-Am-MEA">
-                                        <rect key="frame" x="0.0" y="409" width="414" height="130"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="130" id="l4a-1o-oZl"/>
-                                        </constraints>
-                                        <connections>
-                                            <segue destination="BI0-uq-owa" kind="embed" id="GxL-Zy-4lJ"/>
-                                        </connections>
-                                    </containerView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="JnG-06-6mN" firstAttribute="centerX" secondItem="2Yp-QM-Yo9" secondAttribute="centerX" id="2Jz-RV-aFG"/>
                                     <constraint firstItem="1yc-oK-A1z" firstAttribute="leading" secondItem="2Yp-QM-Yo9" secondAttribute="leading" constant="24" id="3So-1G-UGK"/>
-                                    <constraint firstAttribute="trailing" secondItem="bkT-Am-MEA" secondAttribute="trailing" id="BQW-ud-H80"/>
                                     <constraint firstItem="JnG-06-6mN" firstAttribute="leading" secondItem="2Yp-QM-Yo9" secondAttribute="leading" constant="24" id="CiH-dB-XtV"/>
-                                    <constraint firstAttribute="bottom" secondItem="bkT-Am-MEA" secondAttribute="bottom" constant="55" id="SQ5-E4-leT"/>
-                                    <constraint firstItem="UfC-Dj-vhI" firstAttribute="leading" secondItem="2Yp-QM-Yo9" secondAttribute="leading" constant="24" id="TNn-hD-5tY"/>
+                                    <constraint firstAttribute="bottom" secondItem="1yc-oK-A1z" secondAttribute="bottom" constant="45" id="QJ4-mg-XFG"/>
                                     <constraint firstItem="JnG-06-6mN" firstAttribute="top" secondItem="2Yp-QM-Yo9" secondAttribute="top" constant="45" id="aaa-r5-dgP"/>
-                                    <constraint firstItem="bkT-Am-MEA" firstAttribute="leading" secondItem="2Yp-QM-Yo9" secondAttribute="leading" id="bFW-mN-65z"/>
                                     <constraint firstAttribute="trailing" secondItem="1yc-oK-A1z" secondAttribute="trailing" constant="24" id="nSI-BF-Xt5"/>
                                     <constraint firstItem="1yc-oK-A1z" firstAttribute="top" secondItem="JnG-06-6mN" secondAttribute="bottom" constant="30" id="o5o-vD-2x6"/>
-                                    <constraint firstItem="bkT-Am-MEA" firstAttribute="top" secondItem="UfC-Dj-vhI" secondAttribute="bottom" constant="25" id="rM6-Az-U44"/>
                                     <constraint firstAttribute="trailing" secondItem="JnG-06-6mN" secondAttribute="trailing" constant="24" id="yFV-hK-W9A"/>
-                                    <constraint firstAttribute="trailing" secondItem="UfC-Dj-vhI" secondAttribute="trailing" constant="24" id="yLk-D9-WIf"/>
-                                    <constraint firstItem="UfC-Dj-vhI" firstAttribute="top" secondItem="1yc-oK-A1z" secondAttribute="bottom" constant="28" id="yfY-qf-3eN"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1e-vE-rjL" customClass="GradientView" customModule="Mamba" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saC-wh-ciO" customClass="GradientView" customModule="Mamba" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="pL6-JX-jgf"/>
+                                    <constraint firstAttribute="height" constant="70" id="Qf7-od-dSf"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="topColor">
@@ -136,41 +171,29 @@
                         <viewLayoutGuide key="safeArea" id="mf2-Lb-G3x"/>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
-                            <constraint firstItem="F1e-vE-rjL" firstAttribute="leading" secondItem="mf2-Lb-G3x" secondAttribute="leading" id="Hx6-bS-OqW"/>
+                            <constraint firstItem="saC-wh-ciO" firstAttribute="trailing" secondItem="znY-d1-Rsg" secondAttribute="trailing" id="B0r-bE-pAN"/>
+                            <constraint firstItem="saC-wh-ciO" firstAttribute="leading" secondItem="znY-d1-Rsg" secondAttribute="leading" id="EYo-zC-5qx"/>
                             <constraint firstAttribute="bottom" secondItem="2Yp-QM-Yo9" secondAttribute="bottom" id="LPV-f8-cGu"/>
                             <constraint firstItem="2Yp-QM-Yo9" firstAttribute="trailing" secondItem="mf2-Lb-G3x" secondAttribute="trailing" id="N2M-04-4aC"/>
-                            <constraint firstItem="F1e-vE-rjL" firstAttribute="top" secondItem="znY-d1-Rsg" secondAttribute="top" id="eIe-Dq-BnE"/>
+                            <constraint firstItem="saC-wh-ciO" firstAttribute="top" secondItem="znY-d1-Rsg" secondAttribute="top" id="VeL-Tl-6HU"/>
                             <constraint firstItem="2Yp-QM-Yo9" firstAttribute="top" secondItem="znY-d1-Rsg" secondAttribute="top" id="j5k-i2-FBS"/>
-                            <constraint firstItem="F1e-vE-rjL" firstAttribute="trailing" secondItem="mf2-Lb-G3x" secondAttribute="trailing" id="s2h-SO-nWI"/>
                             <constraint firstItem="2Yp-QM-Yo9" firstAttribute="leading" secondItem="mf2-Lb-G3x" secondAttribute="leading" id="tIe-u8-Kqn"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageViewPerson" destination="3ac-wP-i6K" id="KlS-a2-saJ"/>
+                        <outlet property="labelBirthday" destination="VTD-9c-CRb" id="Qj3-1x-D6M"/>
+                        <outlet property="labelGender" destination="gXX-wh-8Bl" id="9bk-g8-iit"/>
                         <outlet property="labelPersonBio" destination="1yc-oK-A1z" id="DZO-kq-vYX"/>
                         <outlet property="labelPersonName" destination="Wgm-dH-rME" id="TY3-5X-cRA"/>
+                        <outlet property="labelPlaceOfBirth" destination="wIp-oC-eHl" id="RnS-Nf-07K"/>
                         <outlet property="scrollView" destination="2Yp-QM-Yo9" id="0f2-YB-EfV"/>
-                        <outlet property="viewTopGradient" destination="F1e-vE-rjL" id="9ld-ws-A26"/>
+                        <outlet property="viewTopGradient" destination="saC-wh-ciO" id="8OJ-DC-rQK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5Y-8T-sVU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-210.1449275362319" y="156.69642857142856"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Sav-ok-xIM">
-            <objects>
-                <viewController id="BI0-uq-owa" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FSu-GD-SZU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="NNk-ef-UvU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UzI-h0-IO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="701" y="157"/>
         </scene>
     </scenes>
     <resources>
@@ -178,8 +201,5 @@
         <namedColor name="background">
             <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

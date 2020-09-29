@@ -103,7 +103,6 @@ class DetailsViewController: BaseViewController {
 // MARK: - UIScrollViewDelegate
 extension DetailsViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        Log.debug(scrollView.contentOffset.y)
         setPageTitle()
         updateHeaderFrame()
     }

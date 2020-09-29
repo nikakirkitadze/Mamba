@@ -8,8 +8,8 @@
 import Foundation
 
 enum Gender: Int {
-    case female = 0
-    case male
+    case female = 1
+    case male = 2
     
     var value: String {
         return self == .female ? "Female" : "Male"
@@ -22,6 +22,7 @@ struct PersonViewModel {
     var birthday: String
     var bio: String
     var gender: Gender
+    var placeOfBirth: String
     
     // MARK: - Private properties
     private var imageUrl: String
@@ -36,5 +37,6 @@ struct PersonViewModel {
         bio = person.biography ?? ""
         gender = Gender(rawValue: person.gender ?? 0) ?? .male
         imageUrl = person.profilePath ?? ""
+        placeOfBirth = person.placeOfBirth ?? ""
     }
 }
