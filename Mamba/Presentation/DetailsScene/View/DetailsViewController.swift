@@ -11,7 +11,7 @@ protocol DetailsViewControllerDelegate: class {
     func openPersonPage(with viewModel: CastViewModel)
 }
 
-class DetailsViewController: BaseViewController {
+class DetailsViewController: BaseViewController, DetailsStoryboardLodable {
     
     // MARK: - IBOutlets
     @IBOutlet private weak var scrollView: UIScrollView!
@@ -28,9 +28,8 @@ class DetailsViewController: BaseViewController {
     // MARK: Private properties
     private let topBarShowPoint: CGFloat = 110
     
-    
     var showViewModel: TVShowViewModel?
-    weak var delegate: DetailsViewControllerDelegate?
+    weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +66,6 @@ class DetailsViewController: BaseViewController {
     
     private func configureScrollView() {
         scrollView.delegate = self
-//        scrollView.contentInset.top = UIDevice.isIpad ? 2.5 * headerHeight : headerHeight
     }
     
     private func presentShowInfo() {
@@ -103,7 +101,6 @@ extension DetailsViewController: UIScrollViewDelegate {
         if scrollView.contentOffset.y < 0 {
             headerRect.size.height = -scrollView.contentOffset.y + Margins.headerHeight
         }
-//        imageViewHeader.frame = headerRect
         constraingHeaderHeight.constant = headerRect.height
     }
     
@@ -119,6 +116,7 @@ extension DetailsViewController: UIScrollViewDelegate {
 // MARK: - CastViewControllerDelegate
 extension DetailsViewController: CastViewControllerDelegate {
     func openPersonPage(viewModel: CastViewModel) {
-        delegate?.openPersonPage(with: viewModel)
+//        delegate?.openPersonPage(with: viewModel)
+        coordinator?.person(with: viewModel.id)
     }
 }

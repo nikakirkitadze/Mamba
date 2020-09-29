@@ -11,7 +11,7 @@ protocol MainViewControllerDelegate: class {
     func openDetails(pass viewModel: TVShowViewModel)
 }
 
-class MainViewController: BaseViewController {
+class MainViewController: BaseViewController, MainStoryboardLodable {
     
     // MARK: - IBOutlets
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -32,6 +32,7 @@ class MainViewController: BaseViewController {
     private var searchAfterDelay = 0.3
     
     weak var delegate: MainViewControllerDelegate?
+    weak var coordinator: MainCoordinator?
     
     override func loadView() {
         super.loadView()
@@ -109,7 +110,7 @@ extension MainViewController: UICollectionViewDataSource {
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         Taptic.light()
-        delegate?.openDetails(pass: showViewModels[indexPath.row])
+        coordinator?.details(with: showViewModels[indexPath.row])
     }
 }
 

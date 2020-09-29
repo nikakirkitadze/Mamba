@@ -11,11 +11,11 @@ protocol SplashViewControllerDelegate: class {
     func openMain()
 }
 
-class SplashViewController: UIViewController {
+class SplashViewController: UIViewController, SplashStoryboardLodable {
     
     @IBOutlet private weak var imageViewLogo: UIImageView!
     
-    weak var delegate: SplashViewControllerDelegate?
+    weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class SplashViewController: UIViewController {
             guard let strongSelf = self else {return}
             strongSelf.imageViewLogo.transform = CGAffineTransform(translationX: 0, y: y).scaledBy(x: 1.3, y: 1.3)
         } completion: { (finished) in
-            self.delegate?.openMain()
+            self.coordinator?.main()
         }
     }
 }

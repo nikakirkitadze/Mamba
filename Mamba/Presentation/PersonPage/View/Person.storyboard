@@ -45,13 +45,13 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgm-dH-rME">
-                                                        <rect key="frame" x="140" y="0.0" width="226" height="24"/>
+                                                        <rect key="frame" x="140" y="0.0" width="226" height="23.5"/>
                                                         <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNY-Tl-NES">
-                                                        <rect key="frame" x="140" y="54" width="226" height="20.5"/>
+                                                        <rect key="frame" x="140" y="53.5" width="226" height="20"/>
                                                         <string key="text">Personal Info
 </string>
                                                         <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="17"/>
@@ -59,16 +59,16 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rTz-Vp-ExZ">
-                                                        <rect key="frame" x="140" y="82" width="226" height="42"/>
+                                                        <rect key="frame" x="140" y="81" width="226" height="41"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPC-Fi-jZl">
-                                                                <rect key="frame" x="0.0" y="0.0" width="226" height="18"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="226" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXX-wh-8Bl">
-                                                                <rect key="frame" x="0.0" y="26" width="226" height="16"/>
+                                                                <rect key="frame" x="0.0" y="25.5" width="226" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -76,16 +76,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BHu-1u-Hcu">
-                                                        <rect key="frame" x="140" y="132" width="226" height="42"/>
+                                                        <rect key="frame" x="140" y="130" width="226" height="41"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHC-jJ-IkR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="226" height="18"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="226" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTD-9c-CRb">
-                                                                <rect key="frame" x="0.0" y="26" width="226" height="16"/>
+                                                                <rect key="frame" x="0.0" y="25.5" width="226" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -93,16 +93,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HCg-UD-WZQ">
-                                                        <rect key="frame" x="140" y="182" width="226" height="42"/>
+                                                        <rect key="frame" x="140" y="179" width="226" height="41"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOK-Ic-JZf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="226" height="18"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="226" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIp-oC-eHl">
-                                                                <rect key="frame" x="0.0" y="26" width="226" height="16"/>
+                                                                <rect key="frame" x="0.0" y="25.5" width="226" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>

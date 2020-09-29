@@ -11,7 +11,7 @@ protocol PersonViewControllerDelegate: class {
     
 }
 
-class PersonViewController: BaseViewController {
+class PersonViewController: BaseViewController, PersonStoryboardLodable {
     
     // MARK: - IBOutlets
     @IBOutlet private weak var scrollView: UIScrollView!
@@ -32,6 +32,7 @@ class PersonViewController: BaseViewController {
     }
     
     weak var delegate: PersonViewControllerDelegate?
+    weak var coordinator: MainCoordinator?
     var personId: Int?
 
     override func viewDidLoad() {

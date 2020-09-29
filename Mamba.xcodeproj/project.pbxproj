@@ -24,6 +24,8 @@
 		B581248F251F608A00778496 /* SimilarShows.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B581248E251F608A00778496 /* SimilarShows.storyboard */; };
 		B5812495251F617600778496 /* SimilarShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812494251F617600778496 /* SimilarShowsViewController.swift */; };
 		B58A3B90251F876F00AC6319 /* TVShowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A3B8F251F876F00AC6319 /* TVShowsViewModel.swift */; };
+		B58A4D3F2523CC8E0058C7D7 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A4D3E2523CC8E0058C7D7 /* Storyboarded.swift */; };
+		B58A4D442523CD6E0058C7D7 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A4D432523CD6E0058C7D7 /* MainCoordinator.swift */; };
 		B594202325239B1600358C20 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594202225239B1600358C20 /* Person.swift */; };
 		B594202825239B6700358C20 /* PersonServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594202725239B6700358C20 /* PersonServiceManager.swift */; };
 		B594202D25239DBC00358C20 /* PersonPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594202C25239DBC00358C20 /* PersonPageViewModel.swift */; };
@@ -35,7 +37,6 @@
 		B5993B1125226AC200E312A9 /* CastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5993B1025226AC200E312A9 /* CastViewModel.swift */; };
 		B5E25141251F0F7D0033973D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25140251F0F7D0033973D /* BaseViewController.swift */; };
 		B5E2514D251F11CA0033973D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2514C251F11CA0033973D /* Coordinator.swift */; };
-		B5E25155251F12030033973D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25154251F12030033973D /* AppCoordinator.swift */; };
 		B5E2515A251F12AC0033973D /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25159251F12AC0033973D /* AppStoryboard.swift */; };
 		B5E2515F251F13150033973D /* Storyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2515E251F13150033973D /* Storyboard+Extension.swift */; };
 		B5E25164251F148B0033973D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25163251F148B0033973D /* UIViewController+Extension.swift */; };
@@ -120,6 +121,8 @@
 		B581248E251F608A00778496 /* SimilarShows.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimilarShows.storyboard; sourceTree = "<group>"; };
 		B5812494251F617600778496 /* SimilarShowsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarShowsViewController.swift; sourceTree = "<group>"; };
 		B58A3B8F251F876F00AC6319 /* TVShowsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsViewModel.swift; sourceTree = "<group>"; };
+		B58A4D3E2523CC8E0058C7D7 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		B58A4D432523CD6E0058C7D7 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		B594202225239B1600358C20 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		B594202725239B6700358C20 /* PersonServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonServiceManager.swift; sourceTree = "<group>"; };
 		B594202C25239DBC00358C20 /* PersonPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonPageViewModel.swift; sourceTree = "<group>"; };
@@ -131,7 +134,6 @@
 		B5993B1025226AC200E312A9 /* CastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastViewModel.swift; sourceTree = "<group>"; };
 		B5E25140251F0F7D0033973D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B5E2514C251F11CA0033973D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		B5E25154251F12030033973D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		B5E25159251F12AC0033973D /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		B5E2515E251F13150033973D /* Storyboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extension.swift"; sourceTree = "<group>"; };
 		B5E25163251F148B0033973D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -326,9 +328,10 @@
 		B5E2514B251F11BD0033973D /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				B5E2514C251F11CA0033973D /* Coordinator.swift */,
-				B5E25154251F12030033973D /* AppCoordinator.swift */,
 				B5E25159251F12AC0033973D /* AppStoryboard.swift */,
+				B5E2514C251F11CA0033973D /* Coordinator.swift */,
+				B58A4D3E2523CC8E0058C7D7 /* Storyboarded.swift */,
+				B58A4D432523CD6E0058C7D7 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -544,8 +547,8 @@
 		F282952B251E21FB00DA1140 /* DetailsScene */ = {
 			isa = PBXGroup;
 			children = (
-				B51B8D772523B545002442F2 /* ViewModel */,
 				F282952C251E220000DA1140 /* View */,
+				B51B8D772523B545002442F2 /* ViewModel */,
 			);
 			path = DetailsScene;
 			sourceTree = "<group>";
@@ -774,6 +777,7 @@
 				F21BB06A251E12EA00A64B34 /* HTTPHeaders.swift in Sources */,
 				F21BB041251E128C00A64B34 /* UICollectionViewCell+Extension.swift in Sources */,
 				B5993B042522662500E312A9 /* CastCell.swift in Sources */,
+				B58A4D3F2523CC8E0058C7D7 /* Storyboarded.swift in Sources */,
 				F21BB002251E10D300A64B34 /* AppDelegate.swift in Sources */,
 				F21BB004251E10D300A64B34 /* SceneDelegate.swift in Sources */,
 				F21BB052251E12CC00A64B34 /* Constants.swift in Sources */,
@@ -802,7 +806,6 @@
 				B594202D25239DBC00358C20 /* PersonPageViewModel.swift in Sources */,
 				B5993AFD252265B000E312A9 /* CastViewController.swift in Sources */,
 				F21BB070251E12EA00A64B34 /* WebServiceOperation.swift in Sources */,
-				B5E25155251F12030033973D /* AppCoordinator.swift in Sources */,
 				B5E25164251F148B0033973D /* UIViewController+Extension.swift in Sources */,
 				B5E25141251F0F7D0033973D /* BaseViewController.swift in Sources */,
 				F2A74C9D2523501C0076B94A /* PersonViewController.swift in Sources */,
@@ -818,6 +821,7 @@
 				F24C1FE2251E237000F582F0 /* GradientView.swift in Sources */,
 				F21BB074251E12EA00A64B34 /* AsyncOperation.swift in Sources */,
 				B5812495251F617600778496 /* SimilarShowsViewController.swift in Sources */,
+				B58A4D442523CD6E0058C7D7 /* MainCoordinator.swift in Sources */,
 				B5812485251F551E00778496 /* UIFont+Extension.swift in Sources */,
 				F2E3CF6325221919002C13B1 /* UIView+Layout.swift in Sources */,
 				F21BB069251E12EA00A64B34 /* NeoError.swift in Sources */,
