@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol CastViewControllerDelegate: class {
+    func openPersonPage(viewModel: CastViewModel)
+}
+
 class CastViewController: BaseViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
     private var castViewModels = [CastViewModel]()
     internal var showId: Int?
+    
+    weak var delegate: CastViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +62,7 @@ extension CastViewController: UICollectionViewDataSource {
 extension CastViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
+        delegate?.openPersonPage(viewModel: castViewModels[indexPath.row])
     }
 }
 

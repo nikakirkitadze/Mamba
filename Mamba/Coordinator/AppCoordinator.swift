@@ -49,6 +49,13 @@ final class AppCoordinator: Coordinator {
         detailsVC.showViewModel = viewModel
         navController.pushViewController(detailsVC, animated: true)
     }
+    
+    private func pushPerson(with viewModel: CastViewModel) {
+        let sb = AppStoryboard.person.instance
+        let personVC = sb.instantiate(viewController: PersonViewController.self)
+        personVC.delegate = self
+        navController.pushViewController(personVC, animated: true)
+    }
 }
 
 // MARK: - SplashViewControllerDelegate
@@ -67,5 +74,12 @@ extension AppCoordinator: MainViewControllerDelegate {
 
 // MARK: - DetailsViewControllerDelegate?'
 extension AppCoordinator: DetailsViewControllerDelegate {
+    func openPersonPage(with viewModel: CastViewModel) {
+        pushPerson(with: viewModel)
+    }
+}
 
+// MARK: - PersonViewControllerDelegate
+extension AppCoordinator: PersonViewControllerDelegate {
+    
 }

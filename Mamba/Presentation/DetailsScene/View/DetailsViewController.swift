@@ -8,13 +8,12 @@
 import UIKit
 
 protocol DetailsViewControllerDelegate: class {
-    
+    func openPersonPage(with viewModel: CastViewModel)
 }
 
 class DetailsViewController: BaseViewController {
     
-    // MARK: IBOutlets
-    @IBOutlet private weak var viewGradient: GradientView!
+    // MARK: - IBOutlets
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var viewHeader: DetailsHeaderView!
     @IBOutlet private weak var imageViewPoster: NEOImageView!
@@ -27,13 +26,12 @@ class DetailsViewController: BaseViewController {
     @IBOutlet private weak var constraingHeaderHeight: NSLayoutConstraint!
     
     // MARK: Private properties
+    private let topBarShowPoint: CGFloat = 110
     private var headerHeight: CGFloat {
         return UIDevice.isIpad ? 450 : 240
     }
-    private let topBarShowPoint: CGFloat = 110
     
     var showViewModel: TVShowViewModel?
-    
     weak var delegate: DetailsViewControllerDelegate?
 
     override func viewDidLoad() {
@@ -49,31 +47,15 @@ class DetailsViewController: BaseViewController {
         TVShowServiceManager.fetchCasts(showId: viewModel.id) { (data) in
             print(data)
         }
-        
-//        let shapeLayer = CAShapeLayer()
-//        let path = UIBezierPath()
-//        path.move(to: CGPoint(x: 0, y: 25)) // start
-//        path.addLine(to: CGPoint(x: view.frame.maxX, y: 0))
-//        path.addLine(to: CGPoint(x: view.frame.maxX, y: view.frame.maxY))
-//        path.addLine(to: CGPoint(x: 0, y: view.frame.maxY))
-//        path.addLine(to: CGPoint(x: 0, y: 25)) // end
-//        path.close()
-//        shapeLayer.path = path.cgPath
-//
-//        viewContent.layer.addSublayer(shapeLayer)
-//        shapeLayer.frame = viewContent.bounds
-//        shapeLayer.fillColor = Colors.mainBG!.cgColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.navigationBar.isBackgroundHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         navigationController?.navigationBar.isBackgroundHidden = false
     }
     
@@ -87,6 +69,7 @@ class DetailsViewController: BaseViewController {
         
         if segue.identifier == Segues.CastSegue {
             let destination = segue.destination as! CastViewController
+            destination.delegate = self
             destination.showId = showViewModel.id
         }
     }
@@ -117,6 +100,7 @@ class DetailsViewController: BaseViewController {
     }
 }
 
+// MARK: - UIScrollViewDelegate
 extension DetailsViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         Log.debug(scrollView.contentOffset.y)
@@ -139,5 +123,12 @@ extension DetailsViewController: UIScrollViewDelegate {
         
         guard let viewModel = showViewModel else{return}
         navigationItem.title = scrollView.contentOffset.y <= topBarShowPoint ? "" : viewModel.title
+    }
+}
+
+// MARK: - CastViewControllerDelegate
+extension DetailsViewController: CastViewControllerDelegate {
+    func openPersonPage(viewModel: CastViewModel) {
+        delegate?.openPersonPage(with: viewModel)
     }
 }

@@ -35,6 +35,7 @@
 		B5E2515A251F12AC0033973D /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25159251F12AC0033973D /* AppStoryboard.swift */; };
 		B5E2515F251F13150033973D /* Storyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2515E251F13150033973D /* Storyboard+Extension.swift */; };
 		B5E25164251F148B0033973D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25163251F148B0033973D /* UIViewController+Extension.swift */; };
+		F21120B22523638600FDE779 /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21120B12523638600FDE779 /* PersonViewModel.swift */; };
 		F21BB002251E10D300A64B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB001251E10D300A64B34 /* AppDelegate.swift */; };
 		F21BB004251E10D300A64B34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB003251E10D300A64B34 /* SceneDelegate.swift */; };
 		F21BB006251E10D300A64B34 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21BB005251E10D300A64B34 /* MainViewController.swift */; };
@@ -70,6 +71,8 @@
 		F2829526251E21BE00DA1140 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2829525251E21BE00DA1140 /* Main.storyboard */; };
 		F282952F251E221200DA1140 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F282952D251E221200DA1140 /* DetailsViewController.swift */; };
 		F2829530251E221200DA1140 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F282952E251E221200DA1140 /* Details.storyboard */; };
+		F2A74C9825234FFA0076B94A /* Person.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2A74C9725234FFA0076B94A /* Person.storyboard */; };
+		F2A74C9D2523501C0076B94A /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A74C9C2523501C0076B94A /* PersonViewController.swift */; };
 		F2E3CF5E252217A5002C13B1 /* DetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3CF5D252217A5002C13B1 /* DetailsHeaderView.swift */; };
 		F2E3CF6325221919002C13B1 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3CF6225221919002C13B1 /* UIView+Layout.swift */; };
 		F2E3CF6B2522194E002C13B1 /* AnchoredConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3CF6A2522194E002C13B1 /* AnchoredConstraints.swift */; };
@@ -124,6 +127,7 @@
 		B5E25159251F12AC0033973D /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		B5E2515E251F13150033973D /* Storyboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extension.swift"; sourceTree = "<group>"; };
 		B5E25163251F148B0033973D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		F21120B12523638600FDE779 /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
 		F21BAFFE251E10D300A64B34 /* Mamba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mamba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21BB001251E10D300A64B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F21BB003251E10D300A64B34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 		F2829525251E21BE00DA1140 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F282952D251E221200DA1140 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F282952E251E221200DA1140 /* Details.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		F2A74C9725234FFA0076B94A /* Person.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Person.storyboard; sourceTree = "<group>"; };
+		F2A74C9C2523501C0076B94A /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		F2E3CF5D252217A5002C13B1 /* DetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeaderView.swift; sourceTree = "<group>"; };
 		F2E3CF6225221919002C13B1 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		F2E3CF6A2522194E002C13B1 /* AnchoredConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchoredConstraints.swift; sourceTree = "<group>"; };
@@ -301,6 +307,14 @@
 				B5E25159251F12AC0033973D /* AppStoryboard.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F21120B02523637F00FDE779 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F21120B12523638600FDE779 /* PersonViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F21BAFF5251E10D300A64B34 = {
@@ -517,6 +531,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F2A74C9525234FE30076B94A /* PersonPage */ = {
+			isa = PBXGroup;
+			children = (
+				F2A74C9625234FF40076B94A /* View */,
+				F21120B02523637F00FDE779 /* ViewModel */,
+				F2A74CA1252350230076B94A /* Controller */,
+			);
+			path = PersonPage;
+			sourceTree = "<group>";
+		};
+		F2A74C9625234FF40076B94A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2A74C9725234FFA0076B94A /* Person.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2A74CA1252350230076B94A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F2A74C9C2523501C0076B94A /* PersonViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F2F95FBF251E1F6400A83700 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +577,7 @@
 				F282952B251E21FB00DA1140 /* DetailsScene */,
 				B5993AF52522658600E312A9 /* CastScene */,
 				B581248C251F607700778496 /* SimilarShowsScene */,
+				F2A74C9525234FE30076B94A /* PersonPage */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -657,6 +698,7 @@
 				F2829526251E21BE00DA1140 /* Main.storyboard in Resources */,
 				F2F95FC8251E1F9400A83700 /* FiraGO-Book.otf in Resources */,
 				F2F95FC6251E1F9400A83700 /* FiraGO-Light.otf in Resources */,
+				F2A74C9825234FFA0076B94A /* Person.storyboard in Resources */,
 				B57D3A15252086D600477166 /* FilterSheet.xib in Resources */,
 				F21BB00E251E10D500A64B34 /* LaunchScreen.storyboard in Resources */,
 				F21BB00B251E10D500A64B34 /* Assets.xcassets in Resources */,
@@ -718,6 +760,7 @@
 				F21BB072251E12EA00A64B34 /* PostWebServiceOperation.swift in Sources */,
 				B54A74192520E601005C0067 /* UIStackView+Extensions.swift in Sources */,
 				F282951E251E219300DA1140 /* TVShowCell.swift in Sources */,
+				F21120B22523638600FDE779 /* PersonViewModel.swift in Sources */,
 				B533916A2520A4F6009C8500 /* MambaSearchField.swift in Sources */,
 				F21BB03F251E128C00A64B34 /* UIColor+Extension.swift in Sources */,
 				F24C1FD9251E22D300F582F0 /* TVShowViewModel.swift in Sources */,
@@ -731,6 +774,7 @@
 				B5E25155251F12030033973D /* AppCoordinator.swift in Sources */,
 				B5E25164251F148B0033973D /* UIViewController+Extension.swift in Sources */,
 				B5E25141251F0F7D0033973D /* BaseViewController.swift in Sources */,
+				F2A74C9D2523501C0076B94A /* PersonViewController.swift in Sources */,
 				B57D3A1A252086ED00477166 /* FilterSheet.swift in Sources */,
 				B575D824251E6D540015216C /* DiscardableImageCacheItem.swift in Sources */,
 				F21BB068251E12EA00A64B34 /* HeadWebServiceOperation.swift in Sources */,
