@@ -4,9 +4,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="FiraGO-Book.otf">
+            <string>FiraGO-Book</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -18,16 +24,19 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Thh-2Y-1s0" customClass="NEOImageView" customModule="Mamba" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <rect key="frame" x="12.5" y="0.0" width="75" height="75"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="AmL-gK-imc"/>
-                            <constraint firstAttribute="height" constant="100" id="bOq-Ur-A2s"/>
+                            <constraint firstAttribute="width" constant="75" id="AmL-gK-imc"/>
+                            <constraint firstAttribute="height" constant="75" id="bOq-Ur-A2s"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dadadaddadadaddadadaddadadad" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpV-gI-NkT">
-                        <rect key="frame" x="-84" y="115" width="268" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="12.5" y="85" width="75" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="VV6-yx-XDd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="15"/>
+                        <color key="textColor" name="textColorSecondary"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -35,7 +44,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="tpV-gI-NkT" firstAttribute="top" secondItem="Thh-2Y-1s0" secondAttribute="bottom" constant="15" id="OqG-ft-yFZ"/>
+                <constraint firstItem="tpV-gI-NkT" firstAttribute="top" secondItem="Thh-2Y-1s0" secondAttribute="bottom" constant="10" id="OqG-ft-yFZ"/>
                 <constraint firstItem="Thh-2Y-1s0" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="bQd-q6-bKc"/>
                 <constraint firstItem="tpV-gI-NkT" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="lPk-sm-8BQ"/>
                 <constraint firstItem="Thh-2Y-1s0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="rSy-E0-ADA"/>
@@ -48,4 +57,9 @@
             <point key="canvasLocation" x="129.71014492753625" y="107.47767857142857"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="textColorSecondary">
+            <color red="0.49399998784065247" green="0.49399998784065247" blue="0.49399998784065247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

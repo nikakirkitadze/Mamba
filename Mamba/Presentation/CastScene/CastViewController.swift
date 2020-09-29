@@ -47,7 +47,6 @@ extension CastViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.deque(CastCell.self, for: indexPath)
-//        cell.size = itemSize(cv: collectionView, defaultSize: false)
         cell.configure(with: castViewModels[indexPath.row])
         return cell
     }
@@ -71,6 +70,6 @@ extension CastViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 100, height: 180)
+        return .init(width: 100, height: 170)
     }
 }
