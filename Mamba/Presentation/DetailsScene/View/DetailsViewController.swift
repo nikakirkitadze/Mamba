@@ -27,9 +27,7 @@ class DetailsViewController: BaseViewController {
     
     // MARK: Private properties
     private let topBarShowPoint: CGFloat = 110
-    private var headerHeight: CGFloat {
-        return UIDevice.isIpad ? 450 : 240
-    }
+    
     
     var showViewModel: TVShowViewModel?
     weak var delegate: DetailsViewControllerDelegate?
@@ -40,13 +38,6 @@ class DetailsViewController: BaseViewController {
         configureScrollView()
         setShadowForPoster()
         presentShowInfo()
-        
-        guard let viewModel = showViewModel else {
-            return
-        }
-        TVShowServiceManager.fetchCasts(showId: viewModel.id) { (data) in
-            print(data)
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,9 +99,9 @@ extension DetailsViewController: UIScrollViewDelegate {
     }
     
     func updateHeaderFrame() {
-        var headerRect = CGRect(x: 0, y: 0, width: scrollView.bounds.width, height: headerHeight)
+        var headerRect = CGRect(x: 0, y: 0, width: scrollView.bounds.width, height: Margins.headerHeight)
         if scrollView.contentOffset.y < 0 {
-            headerRect.size.height = -scrollView.contentOffset.y + headerHeight
+            headerRect.size.height = -scrollView.contentOffset.y + Margins.headerHeight
         }
 //        imageViewHeader.frame = headerRect
         constraingHeaderHeight.constant = headerRect.height

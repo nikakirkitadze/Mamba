@@ -20,6 +20,10 @@ struct Segues {
 struct Margins {
     static let leading: CGFloat                 = 24
     static let trailing: CGFloat                = 24
+    
+    static var headerHeight: CGFloat {
+        return UIDevice.isIpad ? 450 : 240
+    }
 }
 
 struct Colors {

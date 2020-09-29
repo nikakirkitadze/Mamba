@@ -1,6 +1,6 @@
 //
 //  TVShowViewModel.swift
-//  Movie DB
+//  Mamba
 //
 //  Created by Nika Kirkitadze on 9/25/20.
 //
