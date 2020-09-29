@@ -96,7 +96,7 @@ extension PersonViewController: UIScrollViewDelegate {
     
     func setPageTitle() {
         navigationController?.navigationBar.isBackgroundHidden = scrollView.contentOffset.y <= topBarShowPoint
-        navigationController?.navigationBar.tintColor = scrollView.contentOffset.y <= topBarShowPoint ? .black : .white
+        navigationController?.navigationBar.tintColor = scrollView.contentOffset.y <= topBarShowPoint ? Colors.barTintColorHide : Colors.barTintColorShow
         guard let name = personName else{return}
         navigationItem.title = scrollView.contentOffset.y <= topBarShowPoint ? "" : name
     }
