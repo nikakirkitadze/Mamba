@@ -11,14 +11,15 @@ protocol MainViewControllerDelegate: class {
     func openDetails(pass viewModel: TVShowViewModel)
 }
 
-class MainViewController: BaseViewController {
+class MainViewController: BaseViewController, MainStoryboardLodable {
     
-    // MARK: IBOutlets
+    // MARK: - IBOutlets
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var fieldSearch: MambaSearchField!
     @IBOutlet private weak var spinner: UIActivityIndicatorView!
     @IBOutlet private weak var constraingCollectionViewTopMargin: NSLayoutConstraint!
     
+    // MARK: - Private properties
     private var viewModel = TVShowsViewModel()
     private var showViewModels = [TVShowViewModel]()
     private var isLoading = false
@@ -31,6 +32,7 @@ class MainViewController: BaseViewController {
     private var searchAfterDelay = 0.3
     
     weak var delegate: MainViewControllerDelegate?
+    weak var coordinator: MainCoordinator?
     
     override func loadView() {
         super.loadView()
@@ -76,6 +78,7 @@ class MainViewController: BaseViewController {
             guard let strongSelf = self else { return }
             strongSelf.isLoading = false
             
+            MambaProgressView.dismiss(delay: 1)
             strongSelf.spinner.stopAnimating()
             
             if shows.isEmpty {
@@ -108,7 +111,7 @@ extension MainViewController: UICollectionViewDataSource {
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         Taptic.light()
-        delegate?.openDetails(pass: showViewModels[indexPath.row])
+        coordinator?.details(with: showViewModels[indexPath.row])
     }
 }
 
@@ -116,7 +119,12 @@ extension MainViewController: UICollectionViewDelegate {
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        let isIpad = UIDevice.isIpad
+        return isIpad ? UIEdgeInsets(top: 60, left: 90, bottom: 60, right: 90) : UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 14
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -129,12 +137,12 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard paginated else { return }
+        
         let y = scrollView.contentOffset.y + scrollView.bounds.size.height - scrollView.contentInset.bottom
         let height = scrollView.contentSize.height
         let reloadDistance: CGFloat = 10
         if y > height + reloadDistance && !isLoading && hasNextPage {
-            let inset = tabBarController?.tabBar.frame.height ?? 0
-            collectionView.contentInset.bottom = inset + paginationIndicatorInset
+            collectionView.contentInset.bottom = paginationIndicatorInset
             
             let background = UIView(frame: collectionView.bounds)
             let indicator = UIActivityIndicatorView(style: .white)
@@ -143,7 +151,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
             background.addSubview(indicator)
             
             indicator.center = background.center
-            indicator.frame.origin.y = background.frame.height - indicator.frame.height - (inset + 20)
+            indicator.frame.origin.y = background.frame.height - indicator.frame.height - 20
             
             collectionView.backgroundView = background
             
@@ -154,6 +162,9 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
                 indicator.stopAnimating()
                 //                background.removeFromSuperview()
             }
+            
+            // start glitch animation
+            MambaProgressView.show()
             
             currentPage += 1
             isSearchOpen ? loadSearch(page: currentPage) : load(page: currentPage)

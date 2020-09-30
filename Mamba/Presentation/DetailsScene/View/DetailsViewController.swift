@@ -1,24 +1,21 @@
 //
 //  DetailsViewController.swift
-//  Movie DB
+//  Mamba
 //
 //  Created by Nika Kirkitadze on 9/25/20.
 //
 
 import UIKit
 
-protocol DetailsViewControllerDelegate: class {
+class DetailsViewController: BaseViewController, DetailsStoryboardLodable {
     
-}
-
-class DetailsViewController: BaseViewController {
-    
-    // MARK: IBOutlets
-    @IBOutlet private weak var viewGradient: GradientView!
+    // MARK: - IBOutlets
     @IBOutlet private weak var scrollView: UIScrollView!
-    @IBOutlet private weak var imageViewHeader: NEOImageView!
+    @IBOutlet private weak var viewHeader: DetailsHeaderView!
+    @IBOutlet private weak var imageViewGlitchTransition: UIImageView!
     @IBOutlet private weak var imageViewPoster: NEOImageView!
     @IBOutlet private weak var viewPosterOuterView: UIView!
+    @IBOutlet private weak var viewContent: UIView!
     @IBOutlet private weak var labelRating: UILabel!
     @IBOutlet private weak var labelShowTitle: UILabel!
     @IBOutlet private weak var labelShowTitleBig: UILabel!
@@ -26,11 +23,10 @@ class DetailsViewController: BaseViewController {
     @IBOutlet private weak var constraingHeaderHeight: NSLayoutConstraint!
     
     // MARK: Private properties
-    private let headerHeight: CGFloat = 240
+    private let topBarShowPoint: CGFloat = 110
     
     var showViewModel: TVShowViewModel?
-    
-    weak var delegate: DetailsViewControllerDelegate?
+    weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,17 +34,16 @@ class DetailsViewController: BaseViewController {
         configureScrollView()
         setShadowForPoster()
         presentShowInfo()
+        removeSelfIfNeeded()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.navigationBar.isBackgroundHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         navigationController?.navigationBar.isBackgroundHidden = false
     }
     
@@ -57,18 +52,24 @@ class DetailsViewController: BaseViewController {
         
         if segue.identifier == Segues.SimilarShows {
             let destination = segue.destination as! SimilarShowsViewController
+            destination.delegate = self
+            destination.showId = showViewModel.id
+        }
+        
+        if segue.identifier == Segues.CastSegue {
+            let destination = segue.destination as! CastViewController
+            destination.delegate = self
             destination.showId = showViewModel.id
         }
     }
     
     private func configureScrollView() {
         scrollView.delegate = self
-//        scrollView.contentInset.top = UIDevice.isIpad ? 2.5 * headerHeight : headerHeight
     }
     
     private func presentShowInfo() {
         guard let viewModel = showViewModel else {return}
-        imageViewHeader.loadImage(urlString: viewModel.backdropUrlString)
+        viewHeader.imageUrl = viewModel.backdropUrlString
         imageViewPoster.loadImage(urlString: viewModel.posterUrlString)
         labelShowTitle.text = viewModel.title
         labelRating.attributedText = viewModel.attributedVoteAvarage
@@ -87,6 +88,7 @@ class DetailsViewController: BaseViewController {
     }
 }
 
+// MARK: - UIScrollViewDelegate
 extension DetailsViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         setPageTitle()
@@ -94,20 +96,31 @@ extension DetailsViewController: UIScrollViewDelegate {
     }
     
     func updateHeaderFrame() {
-        var headerRect = CGRect(x: 0, y: 0, width: scrollView.bounds.width, height: headerHeight)
+        var headerRect = CGRect(x: 0, y: 0, width: scrollView.bounds.width, height: Margins.headerHeight)
         if scrollView.contentOffset.y < 0 {
-            headerRect.size.height = -scrollView.contentOffset.y + headerHeight
+            headerRect.size.height = -scrollView.contentOffset.y + Margins.headerHeight
         }
-//        imageViewHeader.frame = headerRect
         constraingHeaderHeight.constant = headerRect.height
     }
     
     func setPageTitle() {
-        navigationController?.navigationBar.isBackgroundHidden = scrollView.contentOffset.y <= -35
-        navigationController?.navigationBar.tintColor = scrollView.contentOffset.y <= -44 ? .white : UIColor(hex: "E84367")
-        
+        navigationController?.navigationBar.isBackgroundHidden = scrollView.contentOffset.y <= topBarShowPoint
+//        navigationController?.navigationBar.tintColor = scrollView.contentOffset.y <= topBarShowPoint ? .white : Colors.textSecondary
         
         guard let viewModel = showViewModel else{return}
-        navigationItem.title = scrollView.contentOffset.y <= -35 ? "" : viewModel.title
+        navigationItem.title = scrollView.contentOffset.y <= topBarShowPoint ? "" : viewModel.title
+    }
+}
+
+// MARK: - CastViewControllerDelegate
+extension DetailsViewController: CastViewControllerDelegate {
+    func openPersonPage(viewModel: CastViewModel) {
+        coordinator?.person(with: viewModel.id)
+    }
+}
+
+extension DetailsViewController: SimilarShowsViewControllerDelegate {
+    func openDetail(with viewModel: TVShowViewModel) {
+        coordinator?.details(with: viewModel)
     }
 }

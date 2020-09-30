@@ -12,12 +12,14 @@ enum AppStoryboard: String {
     case splash             = "Splash"
     case main               = "Main"
     case details            = "Details"
+    case person             = "Person"
     
     var name: String {
         switch self {
         case .splash: return "Splash"
         case .main: return "Main"
         case .details: return "Details"
+        case .person: return "Person"
         }
     }
     

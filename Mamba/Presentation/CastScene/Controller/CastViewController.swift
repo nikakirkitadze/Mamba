@@ -1,43 +1,42 @@
 //
-//  SimilarShowsViewController.swift
+//  CastViewController.swift
 //  Mamba
 //
-//  Created by Nika Kirkitadze on 9/26/20.
+//  Created by Nika Kirkitadze on 9/28/20.
 //
 
 import UIKit
 
-protocol SimilarShowsViewControllerDelegate: class {
-    func openDetail(with viewModel: TVShowViewModel)
+protocol CastViewControllerDelegate: class {
+    func openPersonPage(viewModel: CastViewModel)
 }
 
-class SimilarShowsViewController: BaseViewController {
+class CastViewController: BaseViewController {
     
-    // MARK: - IBOutlets
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    private var showViewModels = [TVShowViewModel]()
+    private var castViewModels = [CastViewModel]()
+    internal var showId: Int?
     
-    weak var delegate: SimilarShowsViewControllerDelegate?
-    var showId: Int?
-
+    weak var delegate: CastViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureCollectionView()
-        fetchSimilarShows()
+        fetchData()
     }
-    
+
     private func configureCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.registerNib(class: TVShowCell.self)
+        collectionView.registerNib(class: CastCell.self)
     }
-
-    private func fetchSimilarShows() {
+    
+    private func fetchData() {
         guard let showId = showId else {return}
-        TVShowServiceManager.fetchSimilarShows(id: showId) { (data) in
-            self.showViewModels = data.map({ TVShowViewModel(show: $0) })
+        TVShowServiceManager.fetchCasts(showId: showId) { (data) in
+            self.castViewModels = data.map({ CastViewModel(cast: $0) })
             
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -47,28 +46,28 @@ class SimilarShowsViewController: BaseViewController {
 }
 
 // MARK: - UICollectionViewDataSource
-extension SimilarShowsViewController: UICollectionViewDataSource {
+extension CastViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return showViewModels.count
+        return castViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.deque(TVShowCell.self, for: indexPath)
-        cell.size = itemSize(cv: collectionView, defaultSize: false)
-        cell.configure(with: showViewModels[indexPath.row])
+        let cell = collectionView.deque(CastCell.self, for: indexPath)
+        cell.configure(with: castViewModels[indexPath.row])
         return cell
     }
 }
 
 // MARK: - UICollectionViewDelegate
-extension SimilarShowsViewController: UICollectionViewDelegate {
+extension CastViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.openDetail(with: showViewModels[indexPath.row])
+        print(indexPath.row)
+        delegate?.openPersonPage(viewModel: castViewModels[indexPath.row])
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension SimilarShowsViewController: UICollectionViewDelegateFlowLayout {
+extension CastViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
@@ -78,6 +77,6 @@ extension SimilarShowsViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 100, height: 180)
+        return .init(width: 100, height: 170)
     }
 }

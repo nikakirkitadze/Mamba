@@ -58,4 +58,21 @@ class TVShowServiceManager {
             }
         }
     }
+    
+    static func fetchCasts(showId: Int, completion: @escaping ([Cast]) -> ()) {
+        let params: [String:String] = [
+            "api_key":ApiConfiguration.apiKey,
+            "tv_id": "\(showId)"
+        ]
+        WebServiceManager.shared.get(endpoint: "/tv/\(showId)/credits", params: params) { (result: Result<CastResponse?, NeoError>) in
+            switch result {
+            case .success(let response):
+                guard let response = response else {return}
+                guard let results = response.cast else {return}
+                completion(results)
+            case .failure(let err):
+                Log.error(err)
+            }
+        }
+    }
 }

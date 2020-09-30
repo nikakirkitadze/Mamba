@@ -65,7 +65,7 @@ class RatingView: UIView {
     
     private func setupLayout() {
         layer.cornerRadius = bounds.width/2
-        backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        backgroundColor = UIColor.black.withAlphaComponent(0.8)
         
         createBlurEffectView()
         createLabel()
@@ -94,27 +94,28 @@ class RatingView: UIView {
     private func setupAnimationLayer() {
         // create my track layer
         let arcCenter = CGPoint(x: bounds.midX, y: bounds.midY)
-        let circularPath = UIBezierPath(arcCenter: arcCenter, radius: bounds.width/2, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: arcCenter, radius: bounds.width/2, startAngle: -.pi / 2, endAngle: 3 * .pi / 2, clockwise: true)
         trackLayer.path = circularPath.cgPath
         
         trackLayer.strokeColor = UIColor.lightGray.cgColor
-        trackLayer.lineWidth = 1
+        trackLayer.lineWidth = 2
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = .round
         layer.addSublayer(trackLayer)
         
         shapeLayer.path = circularPath.cgPath
         shapeLayer.strokeColor = UIColor.red.cgColor
-        shapeLayer.lineWidth = 1
+        shapeLayer.lineWidth = 2
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineCap = .round
         shapeLayer.strokeEnd = 0
         layer.addSublayer(shapeLayer)
     }
     
-    private func startAnimation() {
+    private func startAnimation(toValue: Double) {
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        basicAnimation.toValue = 1
+        basicAnimation.fromValue = 0
+        basicAnimation.toValue = toValue / 100
         basicAnimation.duration = 2
         basicAnimation.fillMode = .forwards
         basicAnimation.isRemovedOnCompletion = false
@@ -137,6 +138,6 @@ class RatingView: UIView {
         }
         
         shapeLayer.strokeColor = color.cgColor
-        startAnimation()
+        startAnimation(toValue: percent)
     }
 }

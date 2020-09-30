@@ -32,6 +32,7 @@ extension BaseViewController {
         
         var width: CGFloat = 0
         let sectionInset = CGFloat(30)
+//        let sectionInset = flowLayout.sectionInset.left + flowLayout.sectionInset.right
         let spacing = flowLayout.scrollDirection == .horizontal ? flowLayout.minimumLineSpacing : flowLayout.minimumInteritemSpacing
         
         for items in (2...Int.max) {
