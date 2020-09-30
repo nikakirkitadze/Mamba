@@ -15,6 +15,7 @@ class DetailsViewController: BaseViewController, DetailsStoryboardLodable {
     @IBOutlet private weak var imageViewGlitchTransition: UIImageView!
     @IBOutlet private weak var imageViewPoster: NEOImageView!
     @IBOutlet private weak var viewPosterOuterView: UIView!
+    @IBOutlet private weak var imageViewPlay: UIImageView!
     @IBOutlet private weak var viewContent: UIView!
     @IBOutlet private weak var labelRating: UILabel!
     @IBOutlet private weak var labelShowTitle: UILabel!
@@ -24,6 +25,7 @@ class DetailsViewController: BaseViewController, DetailsStoryboardLodable {
     
     // MARK: Private properties
     private let topBarShowPoint: CGFloat = 110
+    private var videos = [Video]()
     
     var showViewModel: TVShowViewModel?
     weak var coordinator: MainCoordinator?
@@ -31,9 +33,11 @@ class DetailsViewController: BaseViewController, DetailsStoryboardLodable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchTrailers()
         configureScrollView()
         setShadowForPoster()
         presentShowInfo()
+        setupPosterGesture()
         removeSelfIfNeeded()
     }
     
@@ -85,6 +89,39 @@ class DetailsViewController: BaseViewController, DetailsStoryboardLodable {
         viewPosterOuterView.layer.shadowPath = UIBezierPath(roundedRect: imageViewPoster.bounds, cornerRadius: 10).cgPath
         
         imageViewPoster.layer.cornerRadius = 10
+    }
+    
+    private func fetchTrailers() {
+        if let vm = showViewModel {
+            TVShowServiceManager.fetchTrailers(showId: vm.id) { (videos) in
+                self.videos.append(contentsOf: videos)
+                Log.debug(videos)
+            }
+        }
+    }
+    
+    private func setupPosterGesture() {
+        imageViewPoster.isUserInteractionEnabled = true
+        imageViewPoster.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handlePosterGesture)))
+        
+        UIView.animate(withDuration: 0.4, delay: 1) {
+            self.imageViewPlay.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        } completion: { (finished) in
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 20, initialSpringVelocity: 8, options: .curveEaseIn) {
+                self.imageViewPlay.transform = .identity
+            } completion: { (finished) in
+                
+            }
+        }
+    }
+    
+    @objc func handlePosterGesture(_ gesture: UITapGestureRecognizer) {
+        guard let first = videos.first, let key = first.key else {return}
+        guard let url = URL(string: "youtube://\(key)") else {return}
+        
+        UIApplication.shared.open(url, options: [:]) { (finished) in
+            Log.info("Finished")
+        }
     }
 }
 

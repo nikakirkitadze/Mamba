@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B51B8D792523B551002442F2 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51B8D782523B551002442F2 /* DetailsViewModel.swift */; };
+		B5308A2625250E2800561975 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5308A2525250E2800561975 /* Video.swift */; };
+		B5308A2B25250FB200561975 /* VideoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5308A2A25250FB200561975 /* VideoResponse.swift */; };
 		B533916325208F38009C8500 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533916225208F38009C8500 /* RatingView.swift */; };
 		B533916A2520A4F6009C8500 /* MambaSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53391692520A4F6009C8500 /* MambaSearchField.swift */; };
 		B533B799251E59DB0030E640 /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B798251E59DB0030E640 /* UINavigationBar+Extensions.swift */; };
@@ -108,6 +110,8 @@
 
 /* Begin PBXFileReference section */
 		B51B8D782523B551002442F2 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		B5308A2525250E2800561975 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		B5308A2A25250FB200561975 /* VideoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoResponse.swift; sourceTree = "<group>"; };
 		B533916225208F38009C8500 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		B53391692520A4F6009C8500 /* MambaSearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MambaSearchField.swift; sourceTree = "<group>"; };
 		B533B798251E59DB0030E640 /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
@@ -539,6 +543,8 @@
 				F24C1FF0251E2DDA00F582F0 /* TVShowsResponse.swift */,
 				B5993AF0252262AA00E312A9 /* CastResponse.swift */,
 				B594202225239B1600358C20 /* Person.swift */,
+				B5308A2525250E2800561975 /* Video.swift */,
+				B5308A2A25250FB200561975 /* VideoResponse.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -811,6 +817,7 @@
 				F21BB072251E12EA00A64B34 /* PostWebServiceOperation.swift in Sources */,
 				B54A74192520E601005C0067 /* UIStackView+Extensions.swift in Sources */,
 				F282951E251E219300DA1140 /* TVShowCell.swift in Sources */,
+				B5308A2625250E2800561975 /* Video.swift in Sources */,
 				F21120B22523638600FDE779 /* PersonViewModel.swift in Sources */,
 				B594202825239B6700358C20 /* PersonServiceManager.swift in Sources */,
 				B59C3ED425246EC8000C9B08 /* UIImageView+UIImage.swift in Sources */,
@@ -831,6 +838,7 @@
 				F2A74C9D2523501C0076B94A /* PersonViewController.swift in Sources */,
 				B57D3A1A252086ED00477166 /* FilterSheet.swift in Sources */,
 				B575D824251E6D540015216C /* DiscardableImageCacheItem.swift in Sources */,
+				B5308A2B25250FB200561975 /* VideoResponse.swift in Sources */,
 				B51B8D792523B551002442F2 /* DetailsViewModel.swift in Sources */,
 				F21BB068251E12EA00A64B34 /* HeadWebServiceOperation.swift in Sources */,
 				B5E2514D251F11CA0033973D /* Coordinator.swift in Sources */,

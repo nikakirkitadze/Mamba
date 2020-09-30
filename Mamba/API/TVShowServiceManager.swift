@@ -75,4 +75,17 @@ class TVShowServiceManager {
             }
         }
     }
+    
+    static func fetchTrailers(showId: Int, completion: @escaping ([Video]) -> ()) {
+//        https://www.youtube.com/watch?v=
+        WebServiceManager.shared.get(endpoint: "/tv/\(showId)/videos") { (result: Result<VideoResponse?, NeoError>) in
+            switch result {
+            case .success(let response):
+                guard let response = response else {return}
+                completion(response.videos ?? [])
+            case .failure(let err):
+                Log.error(err)
+            }
+        }
+    }
 }
