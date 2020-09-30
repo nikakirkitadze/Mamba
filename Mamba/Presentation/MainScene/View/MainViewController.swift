@@ -193,8 +193,14 @@ extension MainViewController {
         fieldSearch.mambaFieldEditingChanged = { [weak self] query in
             guard let strongSelf = self else {return}
             strongSelf.searchText = query
-            NSObject.cancelPreviousPerformRequests(withTarget: strongSelf, selector: #selector(strongSelf.search), object: nil)
-            strongSelf.perform(#selector(strongSelf.search), with: nil, afterDelay: strongSelf.searchAfterDelay)
+            
+            if query.isEmpty {
+                strongSelf.showViewModels.removeAll()
+                strongSelf.load(page: strongSelf.currentPage)
+            } else {
+                NSObject.cancelPreviousPerformRequests(withTarget: strongSelf, selector: #selector(strongSelf.search), object: nil)
+                strongSelf.perform(#selector(strongSelf.search), with: nil, afterDelay: strongSelf.searchAfterDelay)
+            }
         }
     }
     
@@ -229,6 +235,7 @@ extension MainViewController {
                 strongSelf.hasNextPage = true
             }
             
+            strongSelf.showViewModels.removeAll()
             strongSelf.showViewModels.append(contentsOf: shows)
             DispatchQueue.main.async { strongSelf.collectionView.reloadData() }
         }

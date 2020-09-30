@@ -33,6 +33,10 @@ class MambaSearchField: UITextField {
     private var isError: Bool = false
     private var fontSize = 12
     
+    private var isDarkMode: Bool {
+        return traitCollection.userInterfaceStyle == .dark
+    }
+    
     /// A Boolean value that determines whether the textfield is being edited or is selected.
     open var editingOrSelected: Bool {
         return super.isEditing || isSelected
@@ -81,6 +85,10 @@ class MambaSearchField: UITextField {
         setupLeftView()
         addEditingChangedObserver()
         
+        delegate = self
+        clearButtonMode = .always
+        backgroundColor = Colors.mainBG
+        
         let titleLabelHeight = calculateLabelHeigt()
         let y = (bounds.height - titleLabelHeight) / 2
         let x = leftView?.frame.width ?? 0.0
@@ -95,23 +103,23 @@ class MambaSearchField: UITextField {
      Invoked when the editing state of the textfield changes. Override to respond to this change.
      */
     @objc open func editingChanged() {
-        if isError {
-            UIView.animate(withDuration: 0.3) {
-                self.setupFieldShadow()
-            }
-            isError.toggle()
-        }
-        
         mambaFieldEditingChanged?(text ?? "")
     }
     
     private func setupFieldShadow() {
-//        layer.shadowColor = UIColor(hex: "2D1F50").withAlphaComponent(0.05).cgColor
-//        layer.shadowOpacity = 0.3
-//        layer.shadowRadius = 8
-//        layer.shadowOffset = CGSize(width: 0, height: 2)
-//
-        addShadow(color: UIColor(hex: "2D1F50").withAlphaComponent(0.2), offset: .zero, opacity: 0.5, radius: 14)
+        let color: UIColor = isDarkMode ? .white : .black
+        let radius: CGFloat = isDarkMode ? 8 : 15
+        addShadow(color: color, offset: .zero, opacity: 0.4, radius: radius)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        guard UIApplication.shared.applicationState == .inactive else {
+            return
+        }
+        
+        setupFieldShadow()
     }
     
     private func createTitleLabel() {
@@ -142,5 +150,11 @@ class MambaSearchField: UITextField {
         }
         
         return 0
+    }
+}
+
+extension MambaSearchField: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return endEditing(true)
     }
 }

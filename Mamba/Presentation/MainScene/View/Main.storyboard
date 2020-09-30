@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ctK-Qn-t9b" customClass="MambaSearchField" customModule="Mamba" customModuleProvider="target">
-                                <rect key="frame" x="24" y="49" width="366" height="54"/>
+                                <rect key="frame" x="15" y="59" width="384" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="wDu-oU-SmL"/>
                                 </constraints>
@@ -35,7 +35,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Ti-vZ-8Bm">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="768"/>
                                 <color key="backgroundColor" name="background"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3aR-ud-Efl">
                                     <size key="itemSize" width="128" height="128"/>
@@ -64,12 +64,12 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="2Ti-vZ-8Bm" secondAttribute="bottom" id="4Yo-b0-XpG"/>
                             <constraint firstItem="g61-CW-ft0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BbK-oE-NDA"/>
-                            <constraint firstItem="ctK-Qn-t9b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="JOj-Ss-jkF"/>
-                            <constraint firstItem="ctK-Qn-t9b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="KKC-ZU-95X"/>
+                            <constraint firstItem="ctK-Qn-t9b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="JOj-Ss-jkF"/>
+                            <constraint firstItem="ctK-Qn-t9b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="KKC-ZU-95X"/>
                             <constraint firstItem="g61-CW-ft0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TfM-fr-jUB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ctK-Qn-t9b" secondAttribute="trailing" constant="24" id="bzZ-nj-HkK"/>
+                            <constraint firstItem="2Ti-vZ-8Bm" firstAttribute="top" secondItem="ctK-Qn-t9b" secondAttribute="bottom" constant="15" id="VEG-O5-GYi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ctK-Qn-t9b" secondAttribute="trailing" constant="15" id="bzZ-nj-HkK"/>
                             <constraint firstItem="2Ti-vZ-8Bm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kAk-aj-V2J"/>
-                            <constraint firstItem="2Ti-vZ-8Bm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rSY-uk-bNv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Ti-vZ-8Bm" secondAttribute="trailing" id="v3t-Ph-For"/>
                         </constraints>
                     </view>
@@ -78,7 +78,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="2Ti-vZ-8Bm" id="s9p-KM-2tb"/>
-                        <outlet property="constraingCollectionViewTopMargin" destination="rSY-uk-bNv" id="aaa-TU-wV6"/>
                         <outlet property="fieldSearch" destination="ctK-Qn-t9b" id="d7T-66-7A6"/>
                         <outlet property="spinner" destination="g61-CW-ft0" id="7DV-Wa-cZ0"/>
                     </connections>
