@@ -78,6 +78,7 @@ class MainViewController: BaseViewController, MainStoryboardLodable {
             guard let strongSelf = self else { return }
             strongSelf.isLoading = false
             
+            MambaProgressView.dismiss(delay: 1)
             strongSelf.spinner.stopAnimating()
             
             if shows.isEmpty {
@@ -161,6 +162,9 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
                 indicator.stopAnimating()
                 //                background.removeFromSuperview()
             }
+            
+            // start glitch animation
+            MambaProgressView.show()
             
             currentPage += 1
             isSearchOpen ? loadSearch(page: currentPage) : load(page: currentPage)

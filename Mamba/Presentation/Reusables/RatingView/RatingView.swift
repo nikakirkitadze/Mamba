@@ -138,6 +138,6 @@ class RatingView: UIView {
         }
         
         shapeLayer.strokeColor = color.cgColor
-        startAnimation(toValue: rating)
+        startAnimation(toValue: percent)
     }
 }

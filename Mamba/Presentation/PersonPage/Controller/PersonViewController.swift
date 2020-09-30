@@ -7,9 +7,6 @@
 
 import UIKit
 
-protocol PersonViewControllerDelegate: class {
-    
-}
 
 class PersonViewController: BaseViewController, PersonStoryboardLodable {
     
@@ -31,7 +28,6 @@ class PersonViewController: BaseViewController, PersonStoryboardLodable {
         return UIDevice.isIpad ? 450 : 240
     }
     
-    weak var delegate: PersonViewControllerDelegate?
     weak var coordinator: MainCoordinator?
     var personId: Int?
 
