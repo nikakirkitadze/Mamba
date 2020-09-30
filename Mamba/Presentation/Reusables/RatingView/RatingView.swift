@@ -94,7 +94,7 @@ class RatingView: UIView {
     private func setupAnimationLayer() {
         // create my track layer
         let arcCenter = CGPoint(x: bounds.midX, y: bounds.midY)
-        let circularPath = UIBezierPath(arcCenter: arcCenter, radius: bounds.width/2, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: arcCenter, radius: bounds.width/2, startAngle: -.pi / 2, endAngle: 3 * .pi / 2, clockwise: true)
         trackLayer.path = circularPath.cgPath
         
         trackLayer.strokeColor = UIColor.lightGray.cgColor
@@ -112,9 +112,10 @@ class RatingView: UIView {
         layer.addSublayer(shapeLayer)
     }
     
-    private func startAnimation() {
+    private func startAnimation(toValue: Double) {
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        basicAnimation.toValue = 1
+        basicAnimation.fromValue = 0
+        basicAnimation.toValue = toValue / 100
         basicAnimation.duration = 2
         basicAnimation.fillMode = .forwards
         basicAnimation.isRemovedOnCompletion = false
@@ -137,6 +138,6 @@ class RatingView: UIView {
         }
         
         shapeLayer.strokeColor = color.cgColor
-        startAnimation()
+        startAnimation(toValue: rating)
     }
 }

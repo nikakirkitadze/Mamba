@@ -201,9 +201,11 @@
                                     <constraint firstItem="6O5-Cf-Bow" firstAttribute="top" secondItem="eca-4x-qT0" secondAttribute="bottom" constant="15.5" id="xAc-OF-RJ6"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ufL-vR-M0D" customClass="GradientView" customModule="Mamba" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufL-vR-M0D" customClass="GradientView" customModule="Mamba" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="WWD-Uu-Jwd"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="topColor">
                                         <color key="value" red="0.0" green="0.0078431372550000003" blue="0.1019607843" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -220,10 +222,13 @@
                             <constraint firstItem="Y9S-I1-PXF" firstAttribute="leading" secondItem="8pB-Oe-cKs" secondAttribute="leading" id="0J4-1u-RXZ"/>
                             <constraint firstItem="Y9S-I1-PXF" firstAttribute="top" secondItem="8pB-Oe-cKs" secondAttribute="top" id="D1G-We-h35"/>
                             <constraint firstItem="2Xa-IO-xUe" firstAttribute="top" secondItem="8pB-Oe-cKs" secondAttribute="top" id="Gle-0m-kkg"/>
+                            <constraint firstAttribute="trailing" secondItem="ufL-vR-M0D" secondAttribute="trailing" id="Uw9-4g-gBG"/>
                             <constraint firstItem="2Xa-IO-xUe" firstAttribute="leading" secondItem="ySn-4l-9Fa" secondAttribute="leading" id="mnZ-px-QPH"/>
                             <constraint firstItem="ySn-4l-9Fa" firstAttribute="trailing" secondItem="2Xa-IO-xUe" secondAttribute="trailing" id="qHw-yK-9me"/>
                             <constraint firstAttribute="trailing" secondItem="Y9S-I1-PXF" secondAttribute="trailing" id="rHN-u2-C5B"/>
                             <constraint firstAttribute="bottom" secondItem="2Xa-IO-xUe" secondAttribute="bottom" id="reK-vD-mJm"/>
+                            <constraint firstItem="ufL-vR-M0D" firstAttribute="top" secondItem="8pB-Oe-cKs" secondAttribute="top" id="vUN-oi-OcY"/>
+                            <constraint firstItem="ufL-vR-M0D" firstAttribute="leading" secondItem="8pB-Oe-cKs" secondAttribute="leading" id="wgl-Ri-KGL"/>
                         </constraints>
                     </view>
                     <connections>

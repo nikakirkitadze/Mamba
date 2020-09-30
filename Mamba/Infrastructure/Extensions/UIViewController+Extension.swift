@@ -31,4 +31,10 @@ extension UIViewController {
             present(viewController, animated: animated, completion: nil)
         }
     }
+    
+    public func removeSelfIfNeeded(with range: Range<Int> = Range(3...4)) {
+        guard let nc = self.navigationController else {return}
+        guard nc.viewControllers.count > 4 else {return}
+        for vc in nc.viewControllers[range] { vc.removeFromParent() }
+    }
 }

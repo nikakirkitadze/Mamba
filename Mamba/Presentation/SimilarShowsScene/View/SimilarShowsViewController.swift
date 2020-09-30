@@ -1,18 +1,24 @@
 //
 //  SimilarShowsViewController.swift
-//  Movie DB
+//  Mamba
 //
 //  Created by Nika Kirkitadze on 9/26/20.
 //
 
 import UIKit
 
+protocol SimilarShowsViewControllerDelegate: class {
+    func openDetail(with viewModel: TVShowViewModel)
+}
+
 class SimilarShowsViewController: BaseViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet private weak var collectionView: UICollectionView!
     
     private var showViewModels = [TVShowViewModel]()
     
+    weak var delegate: SimilarShowsViewControllerDelegate?
     var showId: Int?
 
     override func viewDidLoad() {
@@ -57,7 +63,7 @@ extension SimilarShowsViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 extension SimilarShowsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        delegate?.openDetail(with: showViewModels[indexPath.row])
     }
 }
 

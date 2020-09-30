@@ -1,15 +1,11 @@
 //
 //  DetailsViewController.swift
-//  Movie DB
+//  Mamba
 //
 //  Created by Nika Kirkitadze on 9/25/20.
 //
 
 import UIKit
-
-protocol DetailsViewControllerDelegate: class {
-    func openPersonPage(with viewModel: CastViewModel)
-}
 
 class DetailsViewController: BaseViewController, DetailsStoryboardLodable {
     
@@ -37,6 +33,7 @@ class DetailsViewController: BaseViewController, DetailsStoryboardLodable {
         configureScrollView()
         setShadowForPoster()
         presentShowInfo()
+        removeSelfIfNeeded()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +51,7 @@ class DetailsViewController: BaseViewController, DetailsStoryboardLodable {
         
         if segue.identifier == Segues.SimilarShows {
             let destination = segue.destination as! SimilarShowsViewController
+            destination.delegate = self
             destination.showId = showViewModel.id
         }
         
@@ -116,7 +114,12 @@ extension DetailsViewController: UIScrollViewDelegate {
 // MARK: - CastViewControllerDelegate
 extension DetailsViewController: CastViewControllerDelegate {
     func openPersonPage(viewModel: CastViewModel) {
-//        delegate?.openPersonPage(with: viewModel)
         coordinator?.person(with: viewModel.id)
+    }
+}
+
+extension DetailsViewController: SimilarShowsViewControllerDelegate {
+    func openDetail(with viewModel: TVShowViewModel) {
+        coordinator?.details(with: viewModel)
     }
 }

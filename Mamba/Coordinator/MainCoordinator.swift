@@ -14,6 +14,7 @@ class MainCoordinator: Coordinator {
     var window: UIWindow?
     
     init(window: UIWindow? = nil, navigationController: UINavigationController) {
+        self.window = window
         self.navigationController = navigationController
     }
     
