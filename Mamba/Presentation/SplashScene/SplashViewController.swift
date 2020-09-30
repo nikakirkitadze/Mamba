@@ -14,12 +14,14 @@ protocol SplashViewControllerDelegate: class {
 class SplashViewController: UIViewController, SplashStoryboardLodable {
     
     @IBOutlet private weak var imageViewLogo: UIImageView!
+    @IBOutlet private weak var imageViewGlitchTransition: UIImageView!
     
     weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        glitch()
         logoAnimation()
     }
     
@@ -31,6 +33,27 @@ class SplashViewController: UIViewController, SplashStoryboardLodable {
             strongSelf.imageViewLogo.transform = CGAffineTransform(translationX: 0, y: y).scaledBy(x: 1.3, y: 1.3)
         } completion: { (finished) in
             self.coordinator?.main()
+        }
+    }
+    
+    private func glitch() {
+        imageViewGlitchTransition.isHidden = true
+        imageViewGlitchTransition.alpha = 0.4
+        imageViewGlitchTransition.loadGif(name: "gif-glitch-transition")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.imageViewGlitchTransition.isHidden = false
+            self.imageViewLogo.isHidden = true
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.imageViewGlitchTransition.isHidden = true
+                self.imageViewLogo.isHidden = false
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    self.imageViewGlitchTransition.isHidden = false
+                    self.imageViewLogo.isHidden = true
+                }
+            }
         }
     }
 }

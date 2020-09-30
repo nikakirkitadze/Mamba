@@ -35,6 +35,8 @@
 		B5993B042522662500E312A9 /* CastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5993B022522662500E312A9 /* CastCell.swift */; };
 		B5993B052522662500E312A9 /* CastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5993B032522662500E312A9 /* CastCell.xib */; };
 		B5993B1125226AC200E312A9 /* CastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5993B1025226AC200E312A9 /* CastViewModel.swift */; };
+		B59C3ED425246EC8000C9B08 /* UIImageView+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59C3ED325246EC8000C9B08 /* UIImageView+UIImage.swift */; };
+		B59C3EDA25246F33000C9B08 /* gif-glitch-transition.gif in Resources */ = {isa = PBXBuildFile; fileRef = B59C3ED925246F33000C9B08 /* gif-glitch-transition.gif */; };
 		B5E25141251F0F7D0033973D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25140251F0F7D0033973D /* BaseViewController.swift */; };
 		B5E2514D251F11CA0033973D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2514C251F11CA0033973D /* Coordinator.swift */; };
 		B5E2515A251F12AC0033973D /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E25159251F12AC0033973D /* AppStoryboard.swift */; };
@@ -132,6 +134,8 @@
 		B5993B022522662500E312A9 /* CastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCell.swift; sourceTree = "<group>"; };
 		B5993B032522662500E312A9 /* CastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCell.xib; sourceTree = "<group>"; };
 		B5993B1025226AC200E312A9 /* CastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastViewModel.swift; sourceTree = "<group>"; };
+		B59C3ED325246EC8000C9B08 /* UIImageView+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+UIImage.swift"; sourceTree = "<group>"; };
+		B59C3ED925246F33000C9B08 /* gif-glitch-transition.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "gif-glitch-transition.gif"; sourceTree = "<group>"; };
 		B5E25140251F0F7D0033973D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B5E2514C251F11CA0033973D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B5E25159251F12AC0033973D /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
@@ -317,6 +321,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		B59C3ED825246F2C000C9B08 /* GIF */ = {
+			isa = PBXGroup;
+			children = (
+				B59C3ED925246F33000C9B08 /* gif-glitch-transition.gif */,
+			);
+			path = GIF;
+			sourceTree = "<group>";
+		};
 		B5E2513F251F0F6C0033973D /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,6 +435,7 @@
 				B5812484251F551E00778496 /* UIFont+Extension.swift */,
 				B54A74182520E601005C0067 /* UIStackView+Extensions.swift */,
 				F2E3CF6225221919002C13B1 /* UIView+Layout.swift */,
+				B59C3ED325246EC8000C9B08 /* UIImageView+UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -479,6 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				F21BB00A251E10D500A64B34 /* Assets.xcassets */,
+				B59C3ED825246F2C000C9B08 /* GIF */,
 				F2F95FBF251E1F6400A83700 /* Fonts */,
 			);
 			path = Resources;
@@ -729,6 +743,7 @@
 				F2829526251E21BE00DA1140 /* Main.storyboard in Resources */,
 				F2F95FC8251E1F9400A83700 /* FiraGO-Book.otf in Resources */,
 				F2F95FC6251E1F9400A83700 /* FiraGO-Light.otf in Resources */,
+				B59C3EDA25246F33000C9B08 /* gif-glitch-transition.gif in Resources */,
 				F2A74C9825234FFA0076B94A /* Person.storyboard in Resources */,
 				B57D3A15252086D600477166 /* FilterSheet.xib in Resources */,
 				F21BB00E251E10D500A64B34 /* LaunchScreen.storyboard in Resources */,
@@ -794,6 +809,7 @@
 				F282951E251E219300DA1140 /* TVShowCell.swift in Sources */,
 				F21120B22523638600FDE779 /* PersonViewModel.swift in Sources */,
 				B594202825239B6700358C20 /* PersonServiceManager.swift in Sources */,
+				B59C3ED425246EC8000C9B08 /* UIImageView+UIImage.swift in Sources */,
 				B533916A2520A4F6009C8500 /* MambaSearchField.swift in Sources */,
 				F21BB03F251E128C00A64B34 /* UIColor+Extension.swift in Sources */,
 				F24C1FD9251E22D300F582F0 /* TVShowViewModel.swift in Sources */,

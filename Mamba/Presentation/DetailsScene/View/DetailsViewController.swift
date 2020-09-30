@@ -12,6 +12,7 @@ class DetailsViewController: BaseViewController, DetailsStoryboardLodable {
     // MARK: - IBOutlets
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var viewHeader: DetailsHeaderView!
+    @IBOutlet private weak var imageViewGlitchTransition: UIImageView!
     @IBOutlet private weak var imageViewPoster: NEOImageView!
     @IBOutlet private weak var viewPosterOuterView: UIView!
     @IBOutlet private weak var viewContent: UIView!

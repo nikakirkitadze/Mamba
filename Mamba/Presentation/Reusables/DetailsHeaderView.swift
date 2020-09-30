@@ -18,6 +18,7 @@ class DetailsHeaderView: UIView {
     
     // MARK: - Private properties
     private var imageViewHeader: NEOImageView?
+    private var imageViewGlitch: UIImageView?
     private var viewGradient: GradientView?
     
     // MARK: - Internal properties
@@ -41,6 +42,7 @@ class DetailsHeaderView: UIView {
     
     private func setupLayout() {
         createImageViewHeader()
+        createImageViewGlitch()
         createNoiseImage()
         createViewGradient()
     }
@@ -50,6 +52,20 @@ class DetailsHeaderView: UIView {
         imageViewHeader?.translatesAutoresizingMaskIntoConstraints = false
         addSubview(imageViewHeader!)
         imageViewHeader?.fillSuperview()
+    }
+    
+    private func createImageViewGlitch() {
+        imageViewGlitch = UIImageView()
+        imageViewGlitch?.isHidden = true
+        imageViewGlitch?.alpha = 0.25
+        imageViewGlitch?.loadGif(name: "gif-glitch-transition")
+        imageViewGlitch?.translatesAutoresizingMaskIntoConstraints = false
+        imageViewGlitch?.contentMode = .scaleToFill
+        addSubview(imageViewGlitch!)
+        imageViewGlitch?.fillSuperview()
+        
+        glitchInitialAnimation()
+        glitchAnimation()
     }
     
     private func createViewGradient() {
@@ -67,5 +83,34 @@ class DetailsHeaderView: UIView {
         iv.translatesAutoresizingMaskIntoConstraints = false
         addSubview(iv)
         iv.fillSuperview()
+    }
+    
+    private func glitchInitialAnimation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.imageViewGlitch?.isHidden = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                self.imageViewGlitch?.isHidden = true
+            }
+        }
+    }
+    
+    private func glitchAnimation() {
+        let randomSeconds = [2, 3, 4, 3.5]
+        let randomAlphas: [CGFloat] = [0.3, 0.4, 0.5, 0.1]
+
+        let randomSecond = randomSeconds[Int.random(in: 0..<randomSeconds.count)]
+        let randomAlpha = randomAlphas[Int.random(in: 0..<randomAlphas.count)]
+        
+        imageViewGlitch?.alpha = randomAlpha
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + randomSecond) {
+            self.imageViewGlitch?.isHidden = false
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.imageViewGlitch?.isHidden = true
+                
+                self.glitchAnimation()
+            }
+        }
     }
 }

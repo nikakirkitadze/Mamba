@@ -20,21 +20,29 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-logo-mamba" translatesAutoresizingMaskIntoConstraints="NO" id="ryH-Fp-mn4">
                                 <rect key="frame" x="160.5" y="204" width="93" height="56"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fyj-Td-OvT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bNC-d0-Blf"/>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fyj-Td-OvT" secondAttribute="bottom" id="EIx-KH-h3A"/>
                             <constraint firstItem="ryH-Fp-mn4" firstAttribute="top" secondItem="yPj-dE-9Bu" secondAttribute="top" constant="204" id="GyR-WB-I3x"/>
                             <constraint firstItem="ryH-Fp-mn4" firstAttribute="centerX" secondItem="yPj-dE-9Bu" secondAttribute="centerX" id="UB2-7M-twd"/>
+                            <constraint firstItem="fyj-Td-OvT" firstAttribute="leading" secondItem="yPj-dE-9Bu" secondAttribute="leading" id="pOa-1Z-hpg"/>
+                            <constraint firstItem="fyj-Td-OvT" firstAttribute="top" secondItem="yPj-dE-9Bu" secondAttribute="top" id="qJx-Eq-BBm"/>
+                            <constraint firstAttribute="trailing" secondItem="fyj-Td-OvT" secondAttribute="trailing" id="qn8-Aa-Naf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageViewGlitchTransition" destination="fyj-Td-OvT" id="0pK-06-EWJ"/>
                         <outlet property="imageViewLogo" destination="ryH-Fp-mn4" id="j7Y-W5-gtR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6H6-71-WM7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="148" y="117"/>
+            <point key="canvasLocation" x="147.82608695652175" y="116.51785714285714"/>
         </scene>
     </scenes>
     <resources>
