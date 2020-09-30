@@ -68,6 +68,10 @@ class MambaProgressView: UIView {
     }
     
     private func show() {
+        let randomAlphas: [CGFloat] = [0.3, 0.4, 0.5, 0.1]
+        let randomAlpha = randomAlphas[Int.random(in: 0..<randomAlphas.count)]
+        
+        imageViewGlitch?.alpha = randomAlpha
         imageViewGlitch?.isHidden = false
     }
 }

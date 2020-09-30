@@ -77,18 +77,7 @@ class PersonViewController: BaseViewController, PersonStoryboardLodable {
 // MARK: - UIScrollViewDelegate
 extension PersonViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        Log.debug(scrollView.contentOffset.y)
         setPageTitle()
-        updateHeaderFrame()
-    }
-    
-    func updateHeaderFrame() {
-        var headerRect = CGRect(x: 0, y: 0, width: scrollView.bounds.width, height: headerHeight)
-        if scrollView.contentOffset.y < 0 {
-            headerRect.size.height = -scrollView.contentOffset.y + headerHeight
-        }
-//        imageViewHeader.frame = headerRect
-//        constraingHeaderHeight.constant = headerRect.height
     }
     
     func setPageTitle() {

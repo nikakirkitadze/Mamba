@@ -105,7 +105,7 @@ extension DetailsViewController: UIScrollViewDelegate {
     
     func setPageTitle() {
         navigationController?.navigationBar.isBackgroundHidden = scrollView.contentOffset.y <= topBarShowPoint
-//        navigationController?.navigationBar.tintColor = scrollView.contentOffset.y <= topBarShowPoint ? .white : Colors.textSecondary
+        navigationController?.navigationBar.tintColor = scrollView.contentOffset.y <= topBarShowPoint ? Colors.barTintColorHide : Colors.barTintColorShow
         
         guard let viewModel = showViewModel else{return}
         navigationItem.title = scrollView.contentOffset.y <= topBarShowPoint ? "" : viewModel.title
