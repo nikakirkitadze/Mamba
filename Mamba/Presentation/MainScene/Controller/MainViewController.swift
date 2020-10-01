@@ -180,9 +180,9 @@ extension MainViewController {
     
     @objc private func onFilter(_ sender: UIBarButtonItem) {
         guard let welcome = UIApplication.topVC() as? WelcomeContainerViewController else {return}
-        isFilterOpen ? welcome.hideBottomSheet(animated: true) : welcome.showBottomSheet(animated: true)
-        isFilterOpen.toggle()
+        welcome.isHide ? welcome.showBottomSheet(animated: true) : welcome.hideBottomSheet(animated: true)
         
+        // taptic feedback
         Taptic.light()
     }
 }

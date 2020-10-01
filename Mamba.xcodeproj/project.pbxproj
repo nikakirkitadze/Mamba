@@ -90,6 +90,11 @@
 		F2A74C9825234FFA0076B94A /* Person.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2A74C9725234FFA0076B94A /* Person.storyboard */; };
 		F2A74C9D2523501C0076B94A /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A74C9C2523501C0076B94A /* PersonViewController.swift */; };
 		F2D6B0352524A44A000B171A /* MambaProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D6B0342524A44A000B171A /* MambaProgressView.swift */; };
+		F2DE8B3B2525FB6C00E5C70A /* GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DE8B392525FB6C00E5C70A /* GenreCell.swift */; };
+		F2DE8B3C2525FB6C00E5C70A /* GenreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2DE8B3A2525FB6C00E5C70A /* GenreCell.xib */; };
+		F2DE8B412525FC3400E5C70A /* GenreFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DE8B402525FC3400E5C70A /* GenreFlowLayout.swift */; };
+		F2DE8B472525FFE600E5C70A /* GenreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DE8B462525FFE600E5C70A /* GenreViewModel.swift */; };
+		F2DE8B4F252600FE00E5C70A /* GenresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DE8B4E252600FE00E5C70A /* GenresViewModel.swift */; };
 		F2E3CF5E252217A5002C13B1 /* DetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3CF5D252217A5002C13B1 /* DetailsHeaderView.swift */; };
 		F2E3CF6325221919002C13B1 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3CF6225221919002C13B1 /* UIView+Layout.swift */; };
 		F2E3CF6B2522194E002C13B1 /* AnchoredConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3CF6A2522194E002C13B1 /* AnchoredConstraints.swift */; };
@@ -205,6 +210,11 @@
 		F2A74C9725234FFA0076B94A /* Person.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Person.storyboard; sourceTree = "<group>"; };
 		F2A74C9C2523501C0076B94A /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		F2D6B0342524A44A000B171A /* MambaProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MambaProgressView.swift; sourceTree = "<group>"; };
+		F2DE8B392525FB6C00E5C70A /* GenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCell.swift; sourceTree = "<group>"; };
+		F2DE8B3A2525FB6C00E5C70A /* GenreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreCell.xib; sourceTree = "<group>"; };
+		F2DE8B402525FC3400E5C70A /* GenreFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreFlowLayout.swift; sourceTree = "<group>"; };
+		F2DE8B462525FFE600E5C70A /* GenreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewModel.swift; sourceTree = "<group>"; };
+		F2DE8B4E252600FE00E5C70A /* GenresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresViewModel.swift; sourceTree = "<group>"; };
 		F2E3CF5D252217A5002C13B1 /* DetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeaderView.swift; sourceTree = "<group>"; };
 		F2E3CF6225221919002C13B1 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		F2E3CF6A2522194E002C13B1 /* AnchoredConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchoredConstraints.swift; sourceTree = "<group>"; };
@@ -274,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				B53C471C2525BCCD00F36711 /* View */,
+				F2DE8B452525FFE000E5C70A /* ViewModel */,
 				B53C472D2525BF9D00F36711 /* Controllers */,
 			);
 			path = FilterScene;
@@ -282,7 +293,9 @@
 		B53C471C2525BCCD00F36711 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F2DE8B382525FB5700E5C70A /* Cell */,
 				B53C471D2525BCD700F36711 /* Filter.storyboard */,
+				F2DE8B402525FC3400E5C70A /* GenreFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -664,6 +677,24 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		F2DE8B382525FB5700E5C70A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F2DE8B392525FB6C00E5C70A /* GenreCell.swift */,
+				F2DE8B3A2525FB6C00E5C70A /* GenreCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F2DE8B452525FFE000E5C70A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F2DE8B462525FFE600E5C70A /* GenreViewModel.swift */,
+				F2DE8B4E252600FE00E5C70A /* GenresViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F2F95FBF251E1F6400A83700 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,8 +708,8 @@
 		F2F95FCD251E214400A83700 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				B53C471B2525BCC600F36711 /* FilterScene */,
 				B5E2513F251F0F6C0033973D /* Base */,
+				B53C471B2525BCC600F36711 /* FilterScene */,
 				F24C1FE0251E236600F582F0 /* Reusables */,
 				B5474F3D2520D48A00A5979B /* SplashScene */,
 				F282952A251E21C900DA1140 /* MainScene */,
@@ -817,6 +848,7 @@
 				B5993B052522662500E312A9 /* CastCell.xib in Resources */,
 				B53C471E2525BCD700F36711 /* Filter.storyboard in Resources */,
 				B581248F251F608A00778496 /* SimilarShows.storyboard in Resources */,
+				F2DE8B3C2525FB6C00E5C70A /* GenreCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,6 +880,8 @@
 				F2E3CF6B2522194E002C13B1 /* AnchoredConstraints.swift in Sources */,
 				F21BB073251E12EA00A64B34 /* DeleteWebServiceOperation.swift in Sources */,
 				F21BB040251E128C00A64B34 /* UICollectionView+Extension.swift in Sources */,
+				F2DE8B472525FFE600E5C70A /* GenreViewModel.swift in Sources */,
+				F2DE8B4F252600FE00E5C70A /* GenresViewModel.swift in Sources */,
 				F24C1FF1251E2DDA00F582F0 /* TVShowsResponse.swift in Sources */,
 				B5474F452520D4C900A5979B /* SplashViewController.swift in Sources */,
 				B53C47332525C01E00F36711 /* WelcomeViewController.swift in Sources */,
@@ -856,6 +890,7 @@
 				B53C47022525ABE900F36711 /* CastsViewModel.swift in Sources */,
 				F21BB041251E128C00A64B34 /* UICollectionViewCell+Extension.swift in Sources */,
 				B5993B042522662500E312A9 /* CastCell.swift in Sources */,
+				F2DE8B412525FC3400E5C70A /* GenreFlowLayout.swift in Sources */,
 				B53C47232525BCE300F36711 /* FilterViewController.swift in Sources */,
 				B58A4D3F2523CC8E0058C7D7 /* Storyboarded.swift in Sources */,
 				F21BB002251E10D300A64B34 /* AppDelegate.swift in Sources */,
@@ -873,6 +908,7 @@
 				F24C1FFC251E2EEB00F582F0 /* APP.swift in Sources */,
 				F21BB072251E12EA00A64B34 /* PostWebServiceOperation.swift in Sources */,
 				B54A74192520E601005C0067 /* UIStackView+Extensions.swift in Sources */,
+				F2DE8B3B2525FB6C00E5C70A /* GenreCell.swift in Sources */,
 				F282951E251E219300DA1140 /* TVShowCell.swift in Sources */,
 				B5308A2625250E2800561975 /* Video.swift in Sources */,
 				F21120B22523638600FDE779 /* PersonViewModel.swift in Sources */,

@@ -9,6 +9,9 @@ import UIKit
 
 class BottomSheetContainerViewController<Content: UIViewController, BottomSheet: UIViewController> : UIViewController, UIGestureRecognizerDelegate {
     
+    // MARK: - Public properties
+    public var isHide: Bool = true
+    
     // MARK: - Initialization
     public init(contentViewController: Content,
                 bottomSheetViewController: BottomSheet,
@@ -41,6 +44,8 @@ class BottomSheetContainerViewController<Content: UIViewController, BottomSheet:
             self.view.layoutIfNeeded()
             self.state = .full
         }
+        
+        isHide = false
     }
     
     public func hideBottomSheet(animated: Bool = true) {
@@ -61,6 +66,8 @@ class BottomSheetContainerViewController<Content: UIViewController, BottomSheet:
             self.view.layoutIfNeeded()
             self.state = .initial
         }
+        
+        isHide = true
     }
     
     // MARK: - Pan Action
