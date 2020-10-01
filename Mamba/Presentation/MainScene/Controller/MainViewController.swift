@@ -27,13 +27,12 @@ class MainViewController: BaseViewController, MainStoryboardLodable {
     private var paginated = true
     private var currentPage = 1
     private let paginationIndicatorInset: CGFloat = 35 //25
-    private var isSearchOpen = false
+    private var isFilterOpen = false
     private var searchText: String?
     private var searchAfterDelay = 0.3
     
     weak var delegate: MainViewControllerDelegate?
     weak var coordinator: MainCoordinator?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -166,28 +165,28 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
             MambaProgressView.show()
             
             currentPage += 1
-            isSearchOpen ? loadSearch(page: currentPage) : load(page: currentPage)
+            isFilterOpen ? loadSearch(page: currentPage) : load(page: currentPage)
         }
     }
 }
 
-// MARK: Search
+// MARK: - Filter
 extension MainViewController {
     private func addSearchBarButton() {
-        let barButtonSearch = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-search"), style: .plain, target: self, action: #selector(onToggleSearch(_:)))
-        barButtonSearch.tintColor = .white
-        navigationItem.rightBarButtonItem = barButtonSearch
+        let barButtonFilter = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-filter"), style: .plain, target: self, action: #selector(onFilter(_:)))
+        barButtonFilter.tintColor = .white
+        navigationItem.rightBarButtonItem = barButtonFilter
     }
     
-    @objc private func onToggleSearch(_ sender: UIBarButtonItem) {
-        constraingCollectionViewTopMargin.constant = isSearchOpen ? 0 : 54 + 5 + 5
-        _ = isSearchOpen ? fieldSearch.resignFirstResponder() : fieldSearch.becomeFirstResponder()
-        isSearchOpen.toggle()
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
-        }
+    @objc private func onFilter(_ sender: UIBarButtonItem) {
+        guard let welcome = UIApplication.topVC() as? WelcomeContainerViewController else {return}
+        isFilterOpen ? welcome.hideBottomSheet(animated: true) : welcome.showBottomSheet(animated: true)
+        isFilterOpen.toggle()
     }
-    
+}
+
+// MARK: - Search
+extension MainViewController {
     private func configureFieldSearch() {
         fieldSearch.mambaFieldEditingChanged = { [weak self] query in
             guard let strongSelf = self else {return}
