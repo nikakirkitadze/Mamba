@@ -15,8 +15,20 @@
                     <view key="view" contentMode="scaleToFill" id="rCP-l7-NZj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFc-4s-8yi">
+                                <rect key="frame" x="185.5" y="437.5" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="0X4-WQ-AVr"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GFc-4s-8yi" firstAttribute="centerY" secondItem="rCP-l7-NZj" secondAttribute="centerY" id="dD0-8J-dXo"/>
+                            <constraint firstItem="GFc-4s-8yi" firstAttribute="centerX" secondItem="rCP-l7-NZj" secondAttribute="centerX" id="uzp-NO-XV3"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sax-W8-0Lv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

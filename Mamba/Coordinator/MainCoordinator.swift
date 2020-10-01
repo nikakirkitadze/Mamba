@@ -34,7 +34,7 @@ class MainCoordinator: Coordinator {
             contentViewController: navigationController,
             bottomSheetViewController: FilterViewController.instantiate(),
             bottomSheetConfiguration: .init(
-                height: UIScreen.main.bounds.height * 0.8,
+                height: UIScreen.main.bounds.height * 0.55,
                 initialOffset: 0 //60 + window!.safeAreaInsets.bottom
             )
         )

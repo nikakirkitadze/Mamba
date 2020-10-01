@@ -182,6 +182,8 @@ extension MainViewController {
         guard let welcome = UIApplication.topVC() as? WelcomeContainerViewController else {return}
         isFilterOpen ? welcome.hideBottomSheet(animated: true) : welcome.showBottomSheet(animated: true)
         isFilterOpen.toggle()
+        
+        Taptic.light()
     }
 }
 
