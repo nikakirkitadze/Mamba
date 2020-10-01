@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5003809252670220037B924 /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5003808252670220037B924 /* DeviceHelper.swift */; };
 		B51B8D792523B551002442F2 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51B8D782523B551002442F2 /* DetailsViewModel.swift */; };
 		B5308A2625250E2800561975 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5308A2525250E2800561975 /* Video.swift */; };
 		B5308A2B25250FB200561975 /* VideoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5308A2A25250FB200561975 /* VideoResponse.swift */; };
@@ -122,6 +123,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B5003808252670220037B924 /* DeviceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
 		B51B8D782523B551002442F2 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		B5308A2525250E2800561975 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		B5308A2A25250FB200561975 /* VideoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoResponse.swift; sourceTree = "<group>"; };
@@ -250,6 +252,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5003807252670130037B924 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B5003808252670220037B924 /* DeviceHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		B51B8D772523B545002442F2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +502,7 @@
 		F21BB039251E123100A64B34 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				B5003807252670130037B924 /* Helpers */,
 				B558F1D5252647A8009D4AA6 /* UIKit */,
 				F21BB056251E12DF00A64B34 /* Network */,
 				F21BB046251E12AF00A64B34 /* Utility */,
@@ -945,6 +956,7 @@
 				B575D824251E6D540015216C /* DiscardableImageCacheItem.swift in Sources */,
 				B5308A2B25250FB200561975 /* VideoResponse.swift in Sources */,
 				B51B8D792523B551002442F2 /* DetailsViewModel.swift in Sources */,
+				B5003809252670220037B924 /* DeviceHelper.swift in Sources */,
 				F21BB068251E12EA00A64B34 /* HeadWebServiceOperation.swift in Sources */,
 				B5E2514D251F11CA0033973D /* Coordinator.swift in Sources */,
 				F21BB04D251E12BB00A64B34 /* Taptic.swift in Sources */,
