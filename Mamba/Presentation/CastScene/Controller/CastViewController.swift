@@ -61,7 +61,6 @@ extension CastViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 extension CastViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
         delegate?.openPersonPage(viewModel: castViewModels[indexPath.row])
     }
 }

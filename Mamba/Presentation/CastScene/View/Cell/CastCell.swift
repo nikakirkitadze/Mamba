@@ -23,7 +23,7 @@ class CastCell: UICollectionViewCell {
     }
 
     internal func configure(with viewModel: CastViewModel) {
-        imageViewPerson.loadImage(urlString: viewModel.profilePath)
+        imageViewPerson.loadImage(urlString: viewModel.profilePath, placeholder: #imageLiteral(resourceName: "ic-picture-placeholder"))
         labelActorName.text = viewModel.actorName
     }
 }

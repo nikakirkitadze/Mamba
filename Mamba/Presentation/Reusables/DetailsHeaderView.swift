@@ -25,7 +25,7 @@ class DetailsHeaderView: UIView {
     internal var imageUrl: String? {
         didSet {
             if let url = imageUrl {
-                imageViewHeader?.loadImage(urlString: url)
+                imageViewHeader?.loadImage(urlString: url, placeholder: #imageLiteral(resourceName: "shows-placeholder"))
             }
         }
     }
@@ -79,7 +79,7 @@ class DetailsHeaderView: UIView {
     }
     
     private func createNoiseImage() {
-        let iv = UIImageView(image: UIImage(named: "img-noise"))
+        let iv = UIImageView(image: #imageLiteral(resourceName: "img-noise"))
         iv.translatesAutoresizingMaskIntoConstraints = false
         addSubview(iv)
         iv.fillSuperview()

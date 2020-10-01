@@ -175,7 +175,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 // MARK: Search
 extension MainViewController {
     private func addSearchBarButton() {
-        let barButtonSearch = UIBarButtonItem(image: UIImage(named: "ic-search"), style: .plain, target: self, action: #selector(onToggleSearch(_:)))
+        let barButtonSearch = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-search"), style: .plain, target: self, action: #selector(onToggleSearch(_:)))
         barButtonSearch.tintColor = .white
         navigationItem.rightBarButtonItem = barButtonSearch
     }

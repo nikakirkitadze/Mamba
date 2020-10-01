@@ -85,7 +85,7 @@ class TVShowCell: UICollectionViewCell {
     }
 
     internal func configure(with viewModel: TVShowViewModel) {
-        imageViewPoster.loadImage(urlString: viewModel.posterUrlString)
+        imageViewPoster.loadImage(urlString: viewModel.posterUrlString, placeholder: #imageLiteral(resourceName: "shows-placeholder"))
         labelShowTitle.text = viewModel.title
         labelDate.text = viewModel.date
         viewRatingContainer.avgRaiting = viewModel.avgRaiting

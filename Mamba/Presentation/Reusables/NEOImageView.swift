@@ -48,8 +48,8 @@ class NEOImageView: UIImageView {
      - parameter completion: Optionally execute some task after the image download completes
      */
     
-    func loadImage(urlString: String, completion: (() -> ())? = nil) {
-        image = nil
+    func loadImage(urlString: String, placeholder: UIImage? = nil, completion: (() -> ())? = nil) {
+        image = placeholder
         
         self.urlStringForChecking = urlString
         
@@ -86,6 +86,8 @@ class NEOImageView: UIImageView {
                                           animations: { strongSelf.image = image },
                                           completion: nil)
                         completion?()
+                    } else {
+                        Log.info("Did not set image")
                     }
                 }
             }

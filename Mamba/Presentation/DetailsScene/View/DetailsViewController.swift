@@ -74,7 +74,7 @@ class DetailsViewController: BaseViewController, DetailsStoryboardLodable {
     private func presentShowInfo() {
         guard let viewModel = showViewModel else {return}
         viewHeader.imageUrl = viewModel.backdropUrlString
-        imageViewPoster.loadImage(urlString: viewModel.posterUrlString)
+        imageViewPoster.loadImage(urlString: viewModel.posterUrlString, placeholder: #imageLiteral(resourceName: "ic-picture-placeholder"))
         labelShowTitle.text = viewModel.title
         labelRating.attributedText = viewModel.attributedVoteAvarage
         labelShowTitleBig.text = viewModel.titleBig

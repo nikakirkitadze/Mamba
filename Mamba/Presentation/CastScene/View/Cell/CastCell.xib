@@ -23,7 +23,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="100" height="180"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Thh-2Y-1s0" customClass="NEOImageView" customModule="Mamba" customModuleProvider="target">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-picture-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Thh-2Y-1s0" customClass="NEOImageView" customModule="Mamba" customModuleProvider="target">
                         <rect key="frame" x="12.5" y="0.0" width="75" height="75"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="75" id="AmL-gK-imc"/>
@@ -58,6 +58,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="ic-picture-placeholder" width="241" height="303"/>
         <namedColor name="textColorSecondary">
             <color red="0.49399998784065247" green="0.49399998784065247" blue="0.49399998784065247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
