@@ -10,6 +10,7 @@ import UIKit
 class GenreCell: UICollectionViewCell {
 
     @IBOutlet weak var labelGenreName: UILabel!
+    @IBOutlet weak var labelGenreMaxHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var labelGenreNameMaxWidthConstraint: NSLayoutConstraint!
 
     private var horizontalPadding: CGFloat = 32

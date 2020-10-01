@@ -13,6 +13,9 @@
         <array key="FiraGO-Book.otf">
             <string>FiraGO-Book</string>
         </array>
+        <array key="FiraGO-Light.otf">
+            <string>FiraGO-Light</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Filter View Controller-->
@@ -24,53 +27,92 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d9D-TU-Y9D">
-                                <rect key="frame" x="0.0" y="94" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="216" width="414" height="646"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="NIZ-Er-hWx"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zZl-dA-9bu">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="128" height="40"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="F1T-sk-csf">
-                                        <rect key="frame" x="0.0" y="-39" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hg0-tF-CVN">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="128" height="40"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter tv shows" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8es-uR-tEF">
-                                <rect key="frame" x="24" y="44" width="366" height="24"/>
+                                <rect key="frame" x="24" y="54" width="366" height="24"/>
                                 <fontDescription key="fontDescription" name="FiraGO-Book" family="FiraGO" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LA6-v9-Lob">
+                                <rect key="frame" x="24" y="184" width="366" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="sow-bS-j53"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FiraGO-Light" family="FiraGO" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLf-y3-F6E">
+                                <rect key="frame" x="24" y="108" width="366" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="3U5-Hk-qDV"/>
+                                </constraints>
+                                <string key="text">Minimum User Votes 
+</string>
+                                <fontDescription key="fontDescription" name="FiraGO-Light" family="FiraGO" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="500" translatesAutoresizingMaskIntoConstraints="NO" id="pCj-XE-tt7">
+                                <rect key="frame" x="22" y="140" width="370" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="hEl-fb-yDD"/>
+                                </constraints>
+                                <color key="minimumTrackTintColor" red="1" green="0.66274509800000003" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="mOf-gz-qcZ" eventType="valueChanged" id="ADC-XY-wb6"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0X4-WQ-AVr"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0X4-WQ-AVr" firstAttribute="trailing" secondItem="d9D-TU-Y9D" secondAttribute="trailing" id="Ua3-Ij-g4N"/>
+                            <constraint firstItem="d9D-TU-Y9D" firstAttribute="leading" secondItem="0X4-WQ-AVr" secondAttribute="leading" id="A2u-Ls-N5I"/>
+                            <constraint firstItem="pCj-XE-tt7" firstAttribute="top" secondItem="vLf-y3-F6E" secondAttribute="bottom" constant="8" id="BHh-rT-nnc"/>
+                            <constraint firstItem="pCj-XE-tt7" firstAttribute="leading" secondItem="0X4-WQ-AVr" secondAttribute="leading" constant="24" id="HRC-AB-LQn"/>
+                            <constraint firstItem="d9D-TU-Y9D" firstAttribute="top" secondItem="LA6-v9-Lob" secondAttribute="bottom" constant="8" id="K7N-u4-RlX"/>
+                            <constraint firstItem="0X4-WQ-AVr" firstAttribute="trailing" secondItem="pCj-XE-tt7" secondAttribute="trailing" constant="24" id="P6W-vW-mCO"/>
+                            <constraint firstItem="LA6-v9-Lob" firstAttribute="top" secondItem="pCj-XE-tt7" secondAttribute="bottom" constant="15" id="PNa-4E-GJV"/>
                             <constraint firstItem="8es-uR-tEF" firstAttribute="leading" secondItem="0X4-WQ-AVr" secondAttribute="leading" constant="24" id="WDz-ow-xlC"/>
-                            <constraint firstItem="d9D-TU-Y9D" firstAttribute="top" secondItem="0X4-WQ-AVr" secondAttribute="top" constant="50" id="jk3-mM-Ovh"/>
+                            <constraint firstItem="vLf-y3-F6E" firstAttribute="leading" secondItem="0X4-WQ-AVr" secondAttribute="leading" constant="24" id="WdO-ni-7NL"/>
+                            <constraint firstItem="vLf-y3-F6E" firstAttribute="top" secondItem="8es-uR-tEF" secondAttribute="bottom" constant="30" id="YHu-1P-vVr"/>
+                            <constraint firstItem="LA6-v9-Lob" firstAttribute="leading" secondItem="0X4-WQ-AVr" secondAttribute="leading" constant="24" id="aPi-Mr-ScB"/>
+                            <constraint firstItem="0X4-WQ-AVr" firstAttribute="bottom" secondItem="d9D-TU-Y9D" secondAttribute="bottom" id="dfI-KE-ttF"/>
+                            <constraint firstItem="0X4-WQ-AVr" firstAttribute="trailing" secondItem="LA6-v9-Lob" secondAttribute="trailing" constant="24" id="gSg-M6-1yp"/>
+                            <constraint firstItem="0X4-WQ-AVr" firstAttribute="trailing" secondItem="vLf-y3-F6E" secondAttribute="trailing" constant="24" id="gUO-Kb-RMQ"/>
+                            <constraint firstItem="d9D-TU-Y9D" firstAttribute="trailing" secondItem="0X4-WQ-AVr" secondAttribute="trailing" id="n3G-7E-Qvg"/>
                             <constraint firstItem="0X4-WQ-AVr" firstAttribute="trailing" secondItem="8es-uR-tEF" secondAttribute="trailing" constant="24" id="rBM-yR-nTC"/>
-                            <constraint firstItem="d9D-TU-Y9D" firstAttribute="leading" secondItem="0X4-WQ-AVr" secondAttribute="leading" id="rRw-gn-API"/>
-                            <constraint firstItem="8es-uR-tEF" firstAttribute="top" secondItem="0X4-WQ-AVr" secondAttribute="top" id="rvK-p0-t36"/>
+                            <constraint firstItem="8es-uR-tEF" firstAttribute="top" secondItem="0X4-WQ-AVr" secondAttribute="top" constant="10" id="rvK-p0-t36"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="d9D-TU-Y9D" id="AyD-uY-Lru"/>
+                        <outlet property="sliderMinimumUserVote" destination="pCj-XE-tt7" id="gf0-iM-Oy3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sax-W8-0Lv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110" y="104"/>
+            <point key="canvasLocation" x="108.69565217391305" y="103.79464285714285"/>
         </scene>
     </scenes>
     <resources>

@@ -18,7 +18,7 @@ struct GenreViewModel {
     }
     
     var backgroundColor: UIColor? {
-        return selected ? .green : UIColor(hex: "d7d7d7")
+        return selected ? UIColor(hex: "FFA90A") : UIColor(hex: "d7d7d7")
     }
     
     init(genre: Genre) {

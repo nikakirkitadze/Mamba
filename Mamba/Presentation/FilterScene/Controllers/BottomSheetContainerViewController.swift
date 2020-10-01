@@ -59,9 +59,9 @@ class BottomSheetContainerViewController<Content: UIViewController, BottomSheet:
                            options: [.curveEaseOut],
                            animations: {
                             self.view.layoutIfNeeded()
-            }, completion: { _ in
-                self.state = .initial
-            })
+                           }, completion: { _ in
+                            self.state = .initial
+                           })
         } else {
             self.view.layoutIfNeeded()
             self.state = .initial
@@ -71,19 +71,20 @@ class BottomSheetContainerViewController<Content: UIViewController, BottomSheet:
     }
     
     // MARK: - Pan Action
-    @objc func handlePan(_ sender: UIPanGestureRecognizer) {
+    @objc func handlePan(_ sender: DirectedPanGestureRecognizer) {
         let translation = sender.translation(in: bottomSheetViewController.view)
         let velocity = sender.velocity(in: bottomSheetViewController.view)
+        guard let direction = sender.direction else {return}
+        if direction == .left || direction == .up { return }
         
         let yTranslationMagnitude = translation.y.magnitude
         
         switch sender.state {
         case .began, .changed:
+            
             if self.state == .full {
                 guard translation.y > 0 else { return }
-                
                 topConstraint.constant = -(configuration.height - yTranslationMagnitude)
-                
                 self.view.layoutIfNeeded()
             } else {
                 let newConstant = -(configuration.initialOffset + yTranslationMagnitude)
@@ -95,25 +96,18 @@ class BottomSheetContainerViewController<Content: UIViewController, BottomSheet:
                 }
                 
                 topConstraint.constant = newConstant
-                
                 self.view.layoutIfNeeded()
             }
         case .ended:
             if self.state == .full {
-                
                 if yTranslationMagnitude >= configuration.height / 2 || velocity.y > 1000 {
-                    
                     self.hideBottomSheet()
                 } else {
-
                     self.showBottomSheet()
                 }
             } else {
-                
                 if yTranslationMagnitude >= configuration.height / 2 || velocity.y < -1000 {
-                    
                     self.showBottomSheet()
-                    
                 } else {
                     self.hideBottomSheet()
                 }
@@ -152,8 +146,8 @@ class BottomSheetContainerViewController<Content: UIViewController, BottomSheet:
     private var topConstraint = NSLayoutConstraint()
     
     // MARK: - Pan Gesture
-    lazy var panGesture: UIPanGestureRecognizer = {
-        let pan = UIPanGestureRecognizer()
+    lazy var panGesture: DirectedPanGestureRecognizer = {
+        let pan = DirectedPanGestureRecognizer()
         pan.delegate = self
         pan.addTarget(self, action: #selector(handlePan))
         return pan

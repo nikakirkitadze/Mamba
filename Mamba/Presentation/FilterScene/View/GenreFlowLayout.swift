@@ -15,6 +15,8 @@ class GenreFlowLayout: UICollectionViewFlowLayout {
         
         var leftMargin: CGFloat = 0.0;
         
+        
+        
         for attributes in attributesForElementsInRect! {
             if (attributes.frame.origin.x == self.sectionInset.left) {
                 leftMargin = self.sectionInset.left

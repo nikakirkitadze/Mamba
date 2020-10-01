@@ -40,6 +40,14 @@ final class TVShowsViewModel {
         }
     }
     
+    func filter(with params: [String:String], and page: Int = 1) {
+        DispatchQueue.main.async {self.isRefreshing?(true)}
+        TVShowServiceManager.filterWith(page: page, filterParams: params) { [weak self] (data) in
+            guard let strongSelf  = self else { return }
+            strongSelf.finishShowsFetching(with: data)
+        }
+    }
+    
     private func finishShowsFetching(with shows: [TVShow]) {
         DispatchQueue.main.async {self.isRefreshing?(false)}
         self.tvShows = shows

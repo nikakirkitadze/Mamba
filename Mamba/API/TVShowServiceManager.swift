@@ -8,7 +8,10 @@
 import Foundation
 
 class TVShowServiceManager {
-    static func fetchShows(page: Int = 1, completion: @escaping ([TVShow]) -> ()) {
+    
+    typealias ShowsCallback = ([TVShow]) -> ()
+    
+    static func fetchShows(page: Int = 1, completion: @escaping ShowsCallback) {
         let params: [String:String] = [
             "api_key":ApiConfiguration.apiKey,
             "page": "\(page)"
@@ -25,7 +28,7 @@ class TVShowServiceManager {
         }
     }
     
-    static func fetchSimilarShows(id: Int, completion: @escaping ([TVShow]) -> ()) {
+    static func fetchSimilarShows(id: Int, completion: @escaping ShowsCallback) {
         let params: [String:String] = [
             "api_key":ApiConfiguration.apiKey
         ]
@@ -41,7 +44,7 @@ class TVShowServiceManager {
         }
     }
     
-    static func search(with query: String, and page: Int = 1, completion: @escaping ([TVShow]) -> ()) {
+    static func search(with query: String, and page: Int = 1, completion: @escaping ShowsCallback) {
         let params: [String:String] = [
             "api_key":ApiConfiguration.apiKey,
             "query": query,
@@ -87,4 +90,34 @@ class TVShowServiceManager {
             }
         }
     }
+    
+    static func filterWith(page: Int = 1, filterParams: [String:String], completion: @escaping ShowsCallback) {
+//        with_genres
+        var params: [String:String] = [
+            "api_key":ApiConfiguration.apiKey,
+            "page": "\(page)"
+        ]
+        
+        params.merge(dict: filterParams)
+        
+        WebServiceManager.shared.get(endpoint: "tv/popular", params: params) { (result: Result<TVShowsResponse?, NeoError>) in
+            switch result {
+            case .success(let response):
+                guard let response = response else {return}
+                guard let results = response.results else {return}
+                completion(results)
+            case .failure(let err):
+                Log.error(err)
+            }
+        }
+    }
 }
+
+extension Dictionary {
+    mutating func merge(dict: [Key: Value]){
+        for (k, v) in dict {
+            updateValue(v, forKey: k)
+        }
+    }
+}
+

@@ -26,6 +26,7 @@
 		B5474F3F2520D49700A5979B /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5474F3E2520D49700A5979B /* Splash.storyboard */; };
 		B5474F452520D4C900A5979B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5474F442520D4C900A5979B /* SplashViewController.swift */; };
 		B54A74192520E601005C0067 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54A74182520E601005C0067 /* UIStackView+Extensions.swift */; };
+		B558F1D7252647B4009D4AA6 /* DirectedPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558F1D6252647B4009D4AA6 /* DirectedPanGestureRecognizer.swift */; };
 		B575D81F251E6D170015216C /* NEOImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575D81E251E6D170015216C /* NEOImageView.swift */; };
 		B575D824251E6D540015216C /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */; };
 		B5812485251F551E00778496 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812484251F551E00778496 /* UIFont+Extension.swift */; };
@@ -140,6 +141,7 @@
 		B5474F3E2520D49700A5979B /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		B5474F442520D4C900A5979B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		B54A74182520E601005C0067 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		B558F1D6252647B4009D4AA6 /* DirectedPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectedPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		B575D81E251E6D170015216C /* NEOImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEOImageView.swift; sourceTree = "<group>"; };
 		B575D823251E6D540015216C /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
 		B5812484251F551E00778496 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -335,6 +337,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B558F1D5252647A8009D4AA6 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				B558F1D6252647B4009D4AA6 /* DirectedPanGestureRecognizer.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		B581248C251F607700778496 /* SimilarShowsScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +492,7 @@
 		F21BB039251E123100A64B34 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				B558F1D5252647A8009D4AA6 /* UIKit */,
 				F21BB056251E12DF00A64B34 /* Network */,
 				F21BB046251E12AF00A64B34 /* Utility */,
 				F21BB03A251E128500A64B34 /* Extensions */,
@@ -899,6 +910,7 @@
 				F2E3CF5E252217A5002C13B1 /* DetailsHeaderView.swift in Sources */,
 				B533916325208F38009C8500 /* RatingView.swift in Sources */,
 				F2D6B0352524A44A000B171A /* MambaProgressView.swift in Sources */,
+				B558F1D7252647B4009D4AA6 /* DirectedPanGestureRecognizer.swift in Sources */,
 				F21BB06C251E12EA00A64B34 /* GetWebServiceOperation.swift in Sources */,
 				F21BB076251E12EA00A64B34 /* WebServiceManager.swift in Sources */,
 				B575D81F251E6D170015216C /* NEOImageView.swift in Sources */,

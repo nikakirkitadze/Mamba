@@ -28,8 +28,10 @@ class MainViewController: BaseViewController, MainStoryboardLodable {
     private var currentPage = 1
     private let paginationIndicatorInset: CGFloat = 35 //25
     private var isFilterOpen = false
+    private var isFiltering = false
     private var searchText: String?
     private var searchAfterDelay = 0.3
+    private var filterParams = [String : String]()
     
     weak var delegate: MainViewControllerDelegate?
     weak var coordinator: MainCoordinator?
@@ -70,6 +72,33 @@ class MainViewController: BaseViewController, MainStoryboardLodable {
         
         // calls api
         viewModel.ready(for: page)
+        
+        // callbacks response
+        viewModel.didFetchShowsData = { [weak self] shows in
+            guard let strongSelf = self else { return }
+            strongSelf.isLoading = false
+            
+            MambaProgressView.dismiss(delay: 1)
+            strongSelf.spinner.stopAnimating()
+            
+            if shows.isEmpty {
+                strongSelf.collectionView.contentInset.bottom = 50
+            } else {
+                strongSelf.hasNextPage = true
+            }
+            
+            strongSelf.showViewModels.append(contentsOf: shows)
+            DispatchQueue.main.async { strongSelf.collectionView.reloadData() }
+        }
+    }
+    
+    func loadFiltered(page: Int) {
+        guard !isLoading else { return }
+        isLoading = true
+        hasNextPage = false
+        
+        // calls api
+        viewModel.filter(with: filterParams, and: page)
         
         // callbacks response
         viewModel.didFetchShowsData = { [weak self] shows in
@@ -165,13 +194,17 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
             MambaProgressView.show()
             
             currentPage += 1
-            isFilterOpen ? loadSearch(page: currentPage) : load(page: currentPage)
+            if fieldSearch.text!.count > 0 {
+                loadSearch(page: currentPage)
+            } else {
+                isFiltering ? loadFiltered(page: currentPage) : load(page: currentPage)
+            }
         }
     }
 }
 
 // MARK: - Filter
-extension MainViewController {
+extension MainViewController: FilterViewControllerDelegate {
     private func addSearchBarButton() {
         let barButtonFilter = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-filter"), style: .plain, target: self, action: #selector(onFilter(_:)))
         barButtonFilter.tintColor = .white
@@ -181,9 +214,16 @@ extension MainViewController {
     @objc private func onFilter(_ sender: UIBarButtonItem) {
         guard let welcome = UIApplication.topVC() as? WelcomeContainerViewController else {return}
         welcome.isHide ? welcome.showBottomSheet(animated: true) : welcome.hideBottomSheet(animated: true)
-        
+        welcome.bottomSheetViewController.delegate = self
         // taptic feedback
         Taptic.light()
+    }
+    
+    func filterShows(with params: [String : String]) {
+        filterParams = params
+        isFiltering = true
+        showViewModels.removeAll()
+        viewModel.filter(with: params)
     }
 }
 
