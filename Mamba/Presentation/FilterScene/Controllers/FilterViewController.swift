@@ -41,11 +41,6 @@ class FilterViewController: UIViewController, FilterStoryboardLodable {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerNib(class: GenreCell.self)
-        
-//        if let flowLayout = collectionView.collectionViewLayout as? GenreFlowLayout {
-////            flowLayout.scrollDirection = .horizontal
-//            flowLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-//        }
     }
     
     private func configureViewModel() {
@@ -95,5 +90,9 @@ extension FilterViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cell = collectionView.deque(GenreCell.self, for: indexPath)
         return cell.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 0, left: 24, bottom: 0, right: 24)
     }
 }

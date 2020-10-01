@@ -36,4 +36,5 @@ class GenreCell: UICollectionViewCell {
         labelGenreName.textColor = viewModel.textColor
         backgroundColor = viewModel.backgroundColor
     }
+
 }
