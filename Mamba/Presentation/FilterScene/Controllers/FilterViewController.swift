@@ -21,6 +21,7 @@ class FilterViewController: UIViewController, FilterStoryboardLodable {
     private var genresViewModel = GenresViewModel()
     private var genreViewModels = [GenreViewModel]()
     private var selectedGenres = [Int:Int]()
+    private var voteCount: Int?
 
     private var filterParams = [String:String]() {
         didSet {
@@ -78,7 +79,14 @@ class FilterViewController: UIViewController, FilterStoryboardLodable {
     }
     
     @IBAction func sliderValueChanged(_ slider: UISlider) {
-        filterParams["vote_count.gte"] = "\(slider.value)"
+        voteCount = Int(slider.value)
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(callAPI), object: nil)
+        self.perform(#selector(callAPI), with: nil, afterDelay: 0.5)
+    }
+    
+    @objc private func callAPI() {
+        Log.info("Calling..")
+        filterParams["vote_count.gte"] = "\(voteCount ?? 0)"
     }
 }
 

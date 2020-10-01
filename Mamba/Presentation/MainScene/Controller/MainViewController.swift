@@ -39,7 +39,7 @@ class MainViewController: BaseViewController, MainStoryboardLodable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addSearchBarButton()
+        addFilterBarButton()
         configureFieldSearch()
         configureCollectionView()
         configureViewModel()
@@ -205,7 +205,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: - Filter
 extension MainViewController: FilterViewControllerDelegate {
-    private func addSearchBarButton() {
+    private func addFilterBarButton() {
         let barButtonFilter = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-filter"), style: .plain, target: self, action: #selector(onFilter(_:)))
         barButtonFilter.tintColor = .white
         navigationItem.rightBarButtonItem = barButtonFilter
