@@ -26,11 +26,29 @@ class MainCoordinator: Coordinator {
     }
     
     func main() {
-        let vc = MainViewController.instantiate()
-        vc.coordinator = self
-        navigationController.navigationBar.isHidden = false
-        navigationController.setViewControllers([vc], animated: false)
+        let mainVC = MainViewController.instantiate()
+        mainVC.coordinator = self
+        navigationController = UINavigationController(rootViewController: mainVC)
+        
+        let welcome = WelcomeContainerViewController(
+            contentViewController: navigationController,
+            bottomSheetViewController: FilterViewController.instantiate(),
+            bottomSheetConfiguration: .init(
+                height: UIScreen.main.bounds.height * 0.8,
+                initialOffset: 0 //60 + window!.safeAreaInsets.bottom
+            )
+        )
+        
+        window?.rootViewController = welcome
+        window?.makeKeyAndVisible()
     }
+    
+//    func main() {
+//        let vc = MainViewController.instantiate()
+//        vc.coordinator = self
+//        navigationController.navigationBar.isHidden = false
+//        navigationController.setViewControllers([vc], animated: false)
+//    }
     
     func details(with viewModel: TVShowViewModel) {
         let vc = DetailsViewController.instantiate()

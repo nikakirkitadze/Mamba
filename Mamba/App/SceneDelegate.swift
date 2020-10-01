@@ -51,10 +51,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func setRootViewController(scene: UIWindowScene) {
         let navController = UINavigationController()
-        coordinator = MainCoordinator(navigationController: navController)
+        window = UIWindow(windowScene: scene)
+        coordinator = MainCoordinator(window: window, navigationController: navController)
         coordinator?.start()
         
-        window = UIWindow(windowScene: scene)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }

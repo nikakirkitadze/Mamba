@@ -22,6 +22,7 @@ extension Storyboarded {
 
 protocol SplashStoryboardLodable: Storyboarded {}
 protocol MainStoryboardLodable: Storyboarded {}
+protocol FilterStoryboardLodable: Storyboarded {}
 protocol DetailsStoryboardLodable: Storyboarded {}
 protocol PersonStoryboardLodable: Storyboarded {}
 
@@ -34,6 +35,12 @@ extension SplashStoryboardLodable where Self: UIViewController {
 extension MainStoryboardLodable where Self: UIViewController {
     @nonobjc static var storyboardName: String {
         return "Main"
+    }
+}
+
+extension FilterStoryboardLodable where Self: UIViewController {
+    @nonobjc static var storyboardName: String {
+        return "Filter"
     }
 }
 

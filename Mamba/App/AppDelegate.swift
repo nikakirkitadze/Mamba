@@ -12,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var coordinator: MainCoordinator?
+    static var shared: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -36,10 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setRootViewController() {
         let navController = UINavigationController()
-        coordinator = MainCoordinator(navigationController: navController)
+        window = UIWindow(frame: UIScreen.main.bounds)
+        coordinator = MainCoordinator(window: window, navigationController: navController)
         coordinator?.start()
         
-        window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }
