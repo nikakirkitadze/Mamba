@@ -24,9 +24,6 @@ class PersonViewController: BaseViewController, PersonStoryboardLodable {
     private var viewModel = PersonPageViewModel()
     private var personName: String?
     private let topBarShowPoint: CGFloat = -40
-    private var headerHeight: CGFloat {
-        return UIDevice.isIpad ? 450 : 240
-    }
     
     weak var coordinator: MainCoordinator?
     var personId: Int?
@@ -68,7 +65,7 @@ class PersonViewController: BaseViewController, PersonStoryboardLodable {
                 strongSelf.labelBirthday.text = personViewModel.birthday
                 strongSelf.labelPlaceOfBirth.text = personViewModel.placeOfBirth
                 strongSelf.labelPersonBio.text = personViewModel.bio
-                strongSelf.imageViewPerson.loadImage(urlString: personViewModel.personImageUrl)
+                strongSelf.imageViewPerson.loadImage(urlString: personViewModel.personImageUrl, placeholder: #imageLiteral(resourceName: "ic-picture-placeholder"))
             }
         }
     }

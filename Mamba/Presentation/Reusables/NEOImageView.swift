@@ -86,8 +86,6 @@ class NEOImageView: UIImageView {
                                           animations: { strongSelf.image = image },
                                           completion: nil)
                         completion?()
-                    } else {
-                        Log.info("Did not set image")
                     }
                 }
             }

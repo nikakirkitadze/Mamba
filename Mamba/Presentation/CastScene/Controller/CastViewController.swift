@@ -13,9 +13,13 @@ protocol CastViewControllerDelegate: class {
 
 class CastViewController: BaseViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet private weak var collectionView: UICollectionView!
     
+    // MARK: - Private properties
+    private var castsViewModel = CastsViewModel()
     private var castViewModels = [CastViewModel]()
+    
     internal var showId: Int?
     
     weak var delegate: CastViewControllerDelegate?
@@ -24,7 +28,7 @@ class CastViewController: BaseViewController {
         super.viewDidLoad()
 
         configureCollectionView()
-        fetchData()
+        configureViewModel()
     }
 
     private func configureCollectionView() {
@@ -33,14 +37,22 @@ class CastViewController: BaseViewController {
         collectionView.registerNib(class: CastCell.self)
     }
     
-    private func fetchData() {
-        guard let showId = showId else {return}
-        TVShowServiceManager.fetchCasts(showId: showId) { (data) in
-            self.castViewModels = data.map({ CastViewModel(cast: $0) })
-            
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+    private func configureViewModel() {
+        castsViewModel.isRefreshing = { loading in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = loading
+        }
+        
+        load(for: showId)
+    }
+    
+    private func load(for showId: Int?) {
+        castsViewModel.ready(for: showId)
+        
+        // callbacks response
+        castsViewModel.didFetchCastsData = { [weak self] data in
+            guard let strongSelf = self else { return }
+            strongSelf.castViewModels.append(contentsOf: data)
+            DispatchQueue.main.async { strongSelf.collectionView.reloadData() }
         }
     }
 }

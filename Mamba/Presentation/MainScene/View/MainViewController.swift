@@ -34,9 +34,6 @@ class MainViewController: BaseViewController, MainStoryboardLodable {
     weak var delegate: MainViewControllerDelegate?
     weak var coordinator: MainCoordinator?
     
-    override func loadView() {
-        super.loadView()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +42,6 @@ class MainViewController: BaseViewController, MainStoryboardLodable {
         configureFieldSearch()
         configureCollectionView()
         configureViewModel()
-        load(page: 1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +52,7 @@ class MainViewController: BaseViewController, MainStoryboardLodable {
     private func configureCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.keyboardDismissMode = .interactive
         collectionView.registerNib(class: TVShowCell.self)
     }
     
@@ -63,6 +60,8 @@ class MainViewController: BaseViewController, MainStoryboardLodable {
         viewModel.isRefreshing = { loading in
             UIApplication.shared.isNetworkActivityIndicatorVisible = loading
         }
+        
+        load(page: 1)
     }
     
     func load(page: Int) {
