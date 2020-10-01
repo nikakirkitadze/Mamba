@@ -16,6 +16,8 @@ class SimilarShowsViewController: BaseViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var collectionView: UICollectionView!
     
+    // MARK: - Private properties
+    private var showsViewModel = SimilarShowsViewModel()
     private var showViewModels = [TVShowViewModel]()
     
     weak var delegate: SimilarShowsViewControllerDelegate?
@@ -25,7 +27,7 @@ class SimilarShowsViewController: BaseViewController {
         super.viewDidLoad()
 
         configureCollectionView()
-        fetchSimilarShows()
+        configureViewModel()
     }
     
     private func configureCollectionView() {
@@ -33,15 +35,23 @@ class SimilarShowsViewController: BaseViewController {
         collectionView.dataSource = self
         collectionView.registerNib(class: TVShowCell.self)
     }
-
-    private func fetchSimilarShows() {
-        guard let showId = showId else {return}
-        TVShowServiceManager.fetchSimilarShows(id: showId) { (data) in
-            self.showViewModels = data.map({ TVShowViewModel(show: $0) })
-            
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+    
+    private func configureViewModel() {
+        showsViewModel.isRefreshing = { loading in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = loading
+        }
+        
+        load(for: showId)
+    }
+    
+    private func load(for showId: Int?) {
+        showsViewModel.ready(for: showId)
+        
+        // callbacks response
+        showsViewModel.didFetchSimilarShowsData = { [weak self] data in
+            guard let strongSelf = self else { return }
+            strongSelf.showViewModels.append(contentsOf: data)
+            DispatchQueue.main.async { strongSelf.collectionView.reloadData() }
         }
     }
 }

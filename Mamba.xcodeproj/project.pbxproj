@@ -16,6 +16,7 @@
 		B533B7A1251E5A220030E640 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B7A0251E5A220030E640 /* Array+Extension.swift */; };
 		B533B7A6251E5A4F0030E640 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533B7A5251E5A4F0030E640 /* UIView+Extension.swift */; };
 		B53C47022525ABE900F36711 /* CastsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53C47012525ABE900F36711 /* CastsViewModel.swift */; };
+		B53C47082525AE8100F36711 /* SimilarShowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53C47072525AE8100F36711 /* SimilarShowsViewModel.swift */; };
 		B5474F3F2520D49700A5979B /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5474F3E2520D49700A5979B /* Splash.storyboard */; };
 		B5474F452520D4C900A5979B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5474F442520D4C900A5979B /* SplashViewController.swift */; };
 		B54A74192520E601005C0067 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54A74182520E601005C0067 /* UIStackView+Extensions.swift */; };
@@ -119,6 +120,7 @@
 		B533B7A0251E5A220030E640 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		B533B7A5251E5A4F0030E640 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B53C47012525ABE900F36711 /* CastsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastsViewModel.swift; sourceTree = "<group>"; };
+		B53C47072525AE8100F36711 /* SimilarShowsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarShowsViewModel.swift; sourceTree = "<group>"; };
 		B5474F3E2520D49700A5979B /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		B5474F442520D4C900A5979B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		B54A74182520E601005C0067 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
@@ -250,6 +252,14 @@
 			path = RatingView;
 			sourceTree = "<group>";
 		};
+		B53C47062525AE7400F36711 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B53C47072525AE8100F36711 /* SimilarShowsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B5474F3D2520D48A00A5979B /* SplashScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +289,7 @@
 		B581248C251F607700778496 /* SimilarShowsScene */ = {
 			isa = PBXGroup;
 			children = (
+				B53C47062525AE7400F36711 /* ViewModel */,
 				B581248D251F608200778496 /* View */,
 			);
 			path = SimilarShowsScene;
@@ -815,6 +826,7 @@
 				F21BB06C251E12EA00A64B34 /* GetWebServiceOperation.swift in Sources */,
 				F21BB076251E12EA00A64B34 /* WebServiceManager.swift in Sources */,
 				B575D81F251E6D170015216C /* NEOImageView.swift in Sources */,
+				B53C47082525AE8100F36711 /* SimilarShowsViewModel.swift in Sources */,
 				B5E2515F251F13150033973D /* Storyboard+Extension.swift in Sources */,
 				B5E2515A251F12AC0033973D /* AppStoryboard.swift in Sources */,
 				F24C1FFC251E2EEB00F582F0 /* APP.swift in Sources */,
