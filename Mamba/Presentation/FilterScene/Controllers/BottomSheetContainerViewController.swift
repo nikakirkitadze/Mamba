@@ -128,7 +128,7 @@ class BottomSheetContainerViewController<Content: UIViewController, BottomSheet:
         let initialOffset: CGFloat
     }
     
-    private let configuration: BottomSheetConfiguration
+    private var configuration: BottomSheetConfiguration
     
     // MARK: - State
     public enum BottomSheetState {
@@ -144,6 +144,7 @@ class BottomSheetContainerViewController<Content: UIViewController, BottomSheet:
     
     // MARK: - Top Constraint
     private var topConstraint = NSLayoutConstraint()
+    private var heightConstraint = NSLayoutConstraint()
     
     // MARK: - Pan Gesture
     lazy var panGesture: DirectedPanGestureRecognizer = {
@@ -192,11 +193,41 @@ class BottomSheetContainerViewController<Content: UIViewController, BottomSheet:
             topConstraint
         ])
         
+        // heigt of sheet
+        heightConstraint = bottomSheetViewController.view.heightAnchor.constraint(equalToConstant: configuration.height)
+        
         bottomSheetViewController.didMove(toParent: self)
+    }
+    
+    private func relayout() {
+        NSLayoutConstraint.activate([
+            bottomSheetViewController.view.heightAnchor
+                .constraint(equalToConstant: configuration.height),
+            bottomSheetViewController.view.leftAnchor
+                .constraint(equalTo: self.view.leftAnchor),
+            bottomSheetViewController.view.rightAnchor
+                .constraint(equalTo: self.view.rightAnchor),
+            topConstraint
+        ])
     }
     
     // MARK: - UIGestureRecognizer Delegate
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
+    }
+    
+    // MARK: - viewWillTransition
+    // TODO: - will fix
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            let height = UIScreen.main.bounds.height * 0.35
+            heightConstraint.constant = height
+            self.bottomSheetViewController.view.setNeedsLayout()
+        } else {
+            let height = UIScreen.main.bounds.height * 0.55
+            heightConstraint.constant = height
+            self.bottomSheetViewController.view.setNeedsLayout()
+        }
     }
 }

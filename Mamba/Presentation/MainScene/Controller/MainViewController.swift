@@ -253,7 +253,7 @@ extension MainViewController {
         loadSearch()
     }
     
-     private func loadSearch(page: Int = 1) {
+    private func loadSearch(page: Int = 1) {
         guard !isLoading else { return }
         isLoading = true
         hasNextPage = false
