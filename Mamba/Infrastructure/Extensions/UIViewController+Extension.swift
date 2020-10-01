@@ -46,4 +46,21 @@ extension UIViewController {
         guard nc.viewControllers.count > 4 else {return}
         for vc in nc.viewControllers[range] { vc.removeFromParent() }
     }
+    
+    func topMostViewController() -> UIViewController {
+        
+        if let presented = self.presentedViewController {
+            return presented.topMostViewController()
+        }
+        
+        if let navigation = self as? UINavigationController {
+            return navigation.visibleViewController?.topMostViewController() ?? navigation
+        }
+        
+        if let tab = self as? UITabBarController {
+            return tab.selectedViewController?.topMostViewController() ?? tab
+        }
+        
+        return self
+    }
 }
